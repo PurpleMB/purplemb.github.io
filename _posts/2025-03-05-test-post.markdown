@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Testing Posts!"
+date:   2025-03-05 12:16:30 -0600
+categories: jekyll update learning
+---
+This is a test post to see how making posts works!
+
+So far, this seems like a very simple and efficient way to make a personal static site!
+
+`Hello World`
