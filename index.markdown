@@ -5,4 +5,9 @@
 layout: home
 ---
 
-Hello! Will this add some content to the home page? Let's see!
+Hello! I am Carter Boclair, a game dev and software engineer.
+
+Index:
+    - Name
+    - What are you
+    - Easy way to begin navigating site
