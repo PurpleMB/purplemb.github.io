@@ -23,7 +23,7 @@ author:
   name: Carter Boclair
   email: carterboclair268@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Portfolio site showcasing game development and software engineering projects.
+  Portfolio showcasing game development and software engineering projects.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "purplemb.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
