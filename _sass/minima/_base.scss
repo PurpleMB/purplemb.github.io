@@ -273,3 +273,18 @@ table {
             -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 }
+
+/**
+ * Text Area
+ */
+textarea {
+  resize: none;
+  width: 75%;
+}
+
+/**
+ * Input
+ */
+input {
+  width :75%;
+}
