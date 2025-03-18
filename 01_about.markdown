@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 nav-include: true
 nav-order: 1
+next-page: /projects/
+next-page-name: Projects
 ---
 
 I am a software developer specializing in gameplay and systems programming. I craft clean, modular code that can adapt to the ever-changing landscape of development. 
@@ -22,5 +24,3 @@ Familiar Tools:
     - Godot
     - Unreal
     - Git
-    
-<a class="navbutton" href="/projects">Projects</a>

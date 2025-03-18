@@ -45,6 +45,8 @@ layout: base
     </form>
   </div>
 
-  <a class="navbutton" href="/index">Return</a>
+  {%- if page.next-page -%}
+    <a class="navbutton" href={{page.next-page}}>{{page.next-page-name}}</a>
+  {%- endif -%}
 
 </article>

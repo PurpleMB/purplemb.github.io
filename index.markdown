@@ -1,9 +1,10 @@
 ---
 layout: home
-nav-include: true\
+permalink: /
+nav-include: true
 nav-order: 0
+next-page: /about/
+next-page-name: About
 ---
 
 Welcome! I'm Carter Boclair, a gameplay programmer and software engineer.
-
-<a class="navbutton" href="/about">About Me</a>
