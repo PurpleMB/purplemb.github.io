@@ -20,16 +20,18 @@ layout: base
     });
   });
   </script>
-
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  <div class="post-content">
-    {{ content }}
-  </div>
-
+  
   <div class="contact">
+
+    {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
+
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
     <form 
       method="POST" 
       action="https://script.google.com/macros/s/AKfycbx0XFGWOIAyeTX8-CWoq99hkBu5v53wlTPkY4m5lrTdfJRipPVLUa7ZDxRiiHhDiRSy/exec"
