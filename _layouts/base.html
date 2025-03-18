@@ -19,4 +19,18 @@
 
   </body>
 
+  <div class="leftnav">
+    {%- if page.prev-page -%}
+      <a class="navbutton" href={{page.prev-page}}>
+        <img src="../assets/icons/test.jpg" alt={{page.prev-page-name}}>
+      </a>
+    {%- endif -%}
+  </div>
+  
+  <div class="rightnav">
+    {%- if page.next-page -%}
+      <a class="navbutton" href={{page.next-page}}>{{page.next-page-name}}</a>
+    {%- endif -%}
+  </div>
+
 </html>

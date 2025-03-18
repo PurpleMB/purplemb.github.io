@@ -6,6 +6,8 @@ nav-include: true
 nav-order: 1
 next-page: /projects/
 next-page-name: Projects
+prev-page: /
+prev-page-name: Home
 ---
 
 I am a software developer specializing in gameplay and systems programming. I craft clean, modular code that can adapt to the ever-changing landscape of development. 
@@ -17,10 +19,20 @@ Each project and challenge is an opportunity to grow and deepen my understanding
 Beyond programming, I love learning about anything I can find information on. Whether it’s a breakdown on the hardware architecture of a retro console or a lengthy dive into the art history underlying an innocuous card game illustration, I am endlessly curious about the world and the things that people craft within it. 
 
 Familiar Tools:
+<div class="skill-icons">
+<img class="img" src="/assets/icons/test.jpg" />
+<img class="" src="" />
+<img class="" src="" />
+</div>
+<div class="skill-icons">
+<img class="img" src="/assets/icons/test.jpg" />
+<img class="" src="" />
+<img class="" src="" />
+</div>
 
-    - C#
-    - C++
-    - Unity
-    - Godot
-    - Unreal
-    - Git
+- C#
+- C++
+- Unity
+- Godot
+- Unreal
+- Git

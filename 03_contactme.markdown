@@ -6,6 +6,8 @@ nav-include: true
 nav-order: 3
 next-page: /
 next-page-name: Return to home
+prev-page: /projects
+prev-page-name: Projects
 ---
 
 Reach out if you have any questions or want to work together.
