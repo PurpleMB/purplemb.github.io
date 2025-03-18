@@ -2,6 +2,8 @@
 layout: contact
 title: Contact
 permalink: /contact/
+nav-include: true
+nav-order: 3
 ---
 
 Reach out if you have any questions or want to work together.

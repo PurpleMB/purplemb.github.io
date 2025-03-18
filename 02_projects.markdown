@@ -2,6 +2,8 @@
 layout: home
 title: Projects
 permalink: /projects/
+nav-include: true
+nav-order: 2
 ---
 
 Projects:

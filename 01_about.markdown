@@ -2,6 +2,8 @@
 layout: page
 title: About
 permalink: /about/
+nav-include: true
+nav-order: 1
 ---
 
 I am a software developer specializing in gameplay and systems programming. I craft clean, modular code that can adapt to the ever-changing landscape of development. 
