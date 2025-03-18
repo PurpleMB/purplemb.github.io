@@ -2,12 +2,9 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: page
 ---
 
-Hello! I am Carter Boclair, a game dev and software engineer.
+Welcome! I'm Carter Boclair, a gameplay programmer and software engineer.
 
-Index:
-    - Name
-    - What are you
-    - Easy way to begin navigating site
+Button to advance into site.
