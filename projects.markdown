@@ -21,3 +21,4 @@ Per Project:
     - Lessons learned
     - Link to appropriate additional project resources
 
+<a class="navbutton" href="/contact">Contact Me</a>

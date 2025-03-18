@@ -288,3 +288,14 @@ textarea {
 input {
   width :75%;
 }
+
+/**
+ * NavButton
+ */
+.navbutton {
+  width :25%;
+  appearance: button;
+  text-decoration: none;
+  color: #000;
+  padding: 0.2em 0.4em;
+}
