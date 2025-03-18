@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 nav-include: true\
 nav-order: 0
 ---
