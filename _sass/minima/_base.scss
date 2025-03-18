@@ -274,19 +274,31 @@ table {
   }
 }
 
+.contact {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
 /**
  * Text Area
  */
-textarea {
+textarea.input {
+  margin-top: 10px;
   resize: none;
-  width: 75%;
+  width: 100%;
 }
 
 /**
  * Input
  */
 input {
-  width :75%;
+  width: 100%;
+}
+
+.buttonSubmit {
+  margin-left: 35%;
+  width: 30%;
 }
 
 /**

@@ -27,7 +27,9 @@ layout: base
 
   <div class="post-content">
     {{ content }}
+  </div>
 
+  <div class="contact">
     <form 
       method="POST" 
       action="https://script.google.com/macros/s/AKfycbx0XFGWOIAyeTX8-CWoq99hkBu5v53wlTPkY4m5lrTdfJRipPVLUa7ZDxRiiHhDiRSy/exec"
@@ -39,8 +41,10 @@ layout: base
       <br>
       <textarea name="Message"class="input" rows="5" col="20" placeholder="Message" required></textarea>
       <br>
-      <button type="submit">Send</button>
+      <button class="buttonSubmit" type="submit">Submit</button>
     </form>
   </div>
+
+  <a class="navbutton" href="/index">Return</a>
 
 </article>
