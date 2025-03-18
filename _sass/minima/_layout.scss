@@ -436,22 +436,26 @@ input {
 
 .leftnav {
   height: 100%;
-  width: 15%;
+  width: 5%;
+  padding-left: 5%;
+  padding-top: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  padding-top: 25%;
-  padding-bottom: 25%;
+}
+
+.leftnav>a>img{
+  transform: scale(-1, 1);
 }
 
 .rightnav {
   height: 100%;
-  width: 15%;
+  width: 5%;
+  padding-right: 5%;
+  padding-top: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
-  padding-top: 25%;
-  padding-bottom: 25%;
 }

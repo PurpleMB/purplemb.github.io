@@ -29,7 +29,9 @@
   
   <div class="rightnav">
     {%- if page.next-page -%}
-      <a class="navbutton" href={{page.next-page}}>{{page.next-page-name}}</a>
+      <a class="navbutton" href={{page.next-page}}>
+        <img src="../assets/icons/test.jpg" alt={{page.next-page-name}}>
+      </a>
     {%- endif -%}
   </div>
 
