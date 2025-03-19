@@ -385,7 +385,7 @@
 .contact {
   display: block;
   margin: auto;
-  width: 50%;
+  width: 65%;
 }
 
 /**
@@ -413,10 +413,9 @@ input {
  * NavButton
  */
 .navbutton {
-  padding: auto;
+  width :25%;
   appearance: button;
   text-decoration: none;
-  justify-content: space-evenly;
   color: #000;
   padding: 0.2em 0.4em;
 }
