@@ -407,8 +407,6 @@ input {
  */
 .navbutton {
   padding: auto;
-  width :15%;
-  height:15%;
   appearance: button;
   text-decoration: none;
   justify-content: space-evenly;
@@ -418,7 +416,7 @@ input {
 
 .skill-icons {
   display: flex;
-  //width: 100%;
+  width: 100%;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
@@ -428,34 +426,46 @@ input {
 .skill-icons>img {
   display: flex;
   padding: 10px;
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 100%;
   flex:1;
   border: 0px solid #ccc;
 }
 
-.leftnav {
+.sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
-  width: 5%;
-  padding-left: 5%;
-  padding-top: 20%;
+  width: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
+}
+
+.left {
   left: 0;
+  a>img {
+    transform: scale(-1, 1);
+  }
 }
 
-.leftnav>a>img{
-  transform: scale(-1, 1);
-}
-
-.rightnav {
-  height: 100%;
-  width: 5%;
-  padding-right: 5%;
-  padding-top: 20%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
+.sidenav.right {
   right: 0;
+}
+
+
+
+ul.horizontal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  li {
+    margin: 0%;
+    width: 100%;
+  }
+  li + li {
+    margin-left: 25px;
+  }
 }
