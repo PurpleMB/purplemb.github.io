@@ -26,6 +26,10 @@
   &:visited {
     color: $site-title-color;
   }
+  &:hover {
+    color: lighten($site-title-color, 25%);
+    text-decoration: none;
+  }
 }
 
 .site-nav {
@@ -157,6 +161,9 @@
 .social-links {
   @include relative-font-size(1.5);
   color: $brand-color;
+  :hover {
+    color: lighten($brand-color, 25%);
+  }
 }
 
 .footer-col {
