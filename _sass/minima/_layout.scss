@@ -451,14 +451,17 @@ input {
 
 .left {
   left: 0;
-  a>img {
+  a>svg {
     transform: scale(-1, 1);
-    color: $border-color-01;
+    color: $text-color;
   }
 }
 
 .sidenav.right {
   right: 0;
+  a>svg {
+    color: $text-color;
+  }
 }
 
 
