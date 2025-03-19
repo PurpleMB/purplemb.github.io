@@ -31,7 +31,6 @@ url: "purplemb.github.io" # the base hostname & protocol for your site, e.g. htt
 remote_theme: jekyll/minima
 
 minima:
-  skin: solarized
   social_links:
     - title: My GitHub
       icon: github

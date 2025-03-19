@@ -34,10 +34,3 @@ prev-page-name: Home
         </div>
     </li>
 </ul>
-
-- C#
-- C++
-- Unity
-- Godot
-- Unreal
-- Git

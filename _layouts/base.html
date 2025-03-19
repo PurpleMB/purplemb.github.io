@@ -13,26 +13,25 @@
       </div>
     </main>
 
+    <div class="sidenav left">
+      {%- if page.prev-page -%}
+        <a class="navbutton" href={{page.prev-page}}>
+          <img src="../assets/icons/arrow.svg" alt={{page.prev-page-name}}>
+        </a>
+      {%- endif -%}
+    </div>
+    
+    <div class="sidenav right">
+      {%- if page.next-page -%}
+        <a class="navbutton" href={{page.next-page}}>
+          <img src="../assets/icons/arrow.svg" alt={{page.next-page-name}}>
+        </a>
+      {%- endif -%}
+    </div>
+  
     {%- include footer.html -%}
 
     {%- include sub-footer.html -%}
 
   </body>
-
-  <div class="sidenav left">
-    {%- if page.prev-page -%}
-      <a class="navbutton" href={{page.prev-page}}>
-        <img src="../assets/icons/test.jpg" alt={{page.prev-page-name}}>
-      </a>
-    {%- endif -%}
-  </div>
-  
-  <div class="sidenav right">
-    {%- if page.next-page -%}
-      <a class="navbutton" href={{page.next-page}}>
-        <img src="../assets/icons/test.jpg" alt={{page.next-page-name}}>
-      </a>
-    {%- endif -%}
-  </div>
-
 </html>
