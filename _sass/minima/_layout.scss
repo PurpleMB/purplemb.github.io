@@ -519,6 +519,7 @@ ul.horizontal-list {
 
 ul.project-preview {
   background-color: lighten($background-color, 25%);
+  height: 100%;
 }
 
 .project-preview>a {
@@ -530,10 +531,13 @@ ul.project-preview {
   color: $text-color;
   h3 {
     color: $link-base-color;
+    font-weight: bold;
   }
 }
 
 .project-img {
   padding: 0;
+  display: flex;
+  
 }
 
