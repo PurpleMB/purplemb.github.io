@@ -24,17 +24,26 @@ layout: base
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- for post in posts -%}
     <li>
-      <span class="post-meta"></span>
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-      {%- if post.description -%}
-        {{ post.description }}
-      {%- elsif site.minima.show_excerpts -%}
-        {{ post.excerpt }}
-      {%- endif -%}
+      <ul class="horizontal-list">
+        <li class="project-info">
+          <span class="post-meta"></span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {%- if post.description -%}
+            {{ post.description }}
+          {%- elsif site.minima.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+        </li>
+        <li class="project-img">
+          {%- if post.preview_img -%}
+            <img src={{post.preview_img}} alt="aaaaaaa" width="100" height="100">
+          {%- endif -%}
+        </li>
+      </ul>
     </li>
     {%- endfor -%}
   </ul>

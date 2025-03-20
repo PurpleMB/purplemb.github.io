@@ -503,13 +503,11 @@ input[type=submit] {
   }
 }
 
-
-
 ul.horizontal-list {
   list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
-  display: flex;
   li {
     margin: 0%;
     width: 100%;
@@ -518,3 +516,9 @@ ul.horizontal-list {
     margin-left: 25px;
   }
 }
+
+.project-list {
+  list-style: none;
+  display: flex;
+}
+
