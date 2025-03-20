@@ -98,6 +98,7 @@
   .nav-item {
     display: block;
     padding: 5px 0;
+    font-weight: bold;
     color: $site-title-color;
     line-height: $base-line-height;
     &:hover {
@@ -105,26 +106,6 @@
       text-decoration: none;
     }
   }
-/*
-  @include relative-font-size(2);
-  font-weight: 300;
-  letter-spacing: -1px;
-  margin-bottom: 0;
-  float: left;
-
-  @include media-query($on-palm) {
-    padding-right: 45px;
-  }
-
-  &,
-  &:visited {
-    color: $site-title-color;
-  }
-  &:hover {
-    color: lighten($site-title-color, 25%);
-    text-decoration: none;
-  }
-    */
 
   @media screen and (min-width: $on-medium) {
     position: static;
@@ -144,7 +125,7 @@
     }
 
     .nav-item {
-      display: inline;
+      display: inline-block;
       padding: 0;
       margin-left: auto;
 
