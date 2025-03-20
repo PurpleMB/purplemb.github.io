@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Testing Posts!"
-date:   2025-03-05 12:16:30 -0600
+title:  "Testing Project Preview"
+date:   2025-03-20 12:16:30 -0600
 categories: jekyll update learning
+description: A bold, new test to advance site presentation! Here's us testing making the line longer!
 preview_img: /assets/previews/test.jpg
 ---
 This is a test post to see how making posts works!

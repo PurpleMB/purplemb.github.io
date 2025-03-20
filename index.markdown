@@ -1,8 +1,20 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+permalink: /
+nav-include: true
+nav-order: 0
+next-page: /about/
+next-page-name: About
 ---
 
-Hello! Will this add some content to the home page? Let's see!
+<div class="centered">
+    <ul class="home-text">
+        <li>
+            <span class="greeting">Welcome!</span> 
+        I'm <span class="full-name">Carter Boclair</span>, 
+        </li>
+        <li>
+            a gameplay and systems programmer.
+        </li>
+    </ul>
+</div>
