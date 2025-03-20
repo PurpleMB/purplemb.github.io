@@ -525,6 +525,7 @@ ul.project-preview {
   }
   :hover {
     text-decoration: none;
+    background-color: lighten($background-color, 30%);
     .project-title-preview {
       color: $link-hover-color;
     }
