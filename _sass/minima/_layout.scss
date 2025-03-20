@@ -517,8 +517,23 @@ ul.horizontal-list {
   }
 }
 
-.project-list {
-  list-style: none;
+ul.project-preview {
+  background-color: lighten($background-color, 25%);
+}
+
+.project-preview>a {
   display: flex;
+}
+
+.project-info {
+  padding: 10px;
+  color: $text-color;
+  h3 {
+    color: $link-base-color;
+  }
+}
+
+.project-img {
+  padding: 0;
 }
 
