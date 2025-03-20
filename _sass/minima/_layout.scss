@@ -232,7 +232,7 @@
 
 .page-heading {
   @include relative-font-size(2);
-  color: #a3f0c5;
+  color: $site-title-color;
   font-weight: bold;
 }
 
@@ -406,7 +406,7 @@
 }
 
 .contact-container {
-
+  margin-top: -10px;
 }
 
 input, textarea {
