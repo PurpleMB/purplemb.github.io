@@ -183,10 +183,9 @@
 
 .footer-col-wrapper,
 .social-links {
-  @include relative-font-size(1.5);
-  color: $brand-color;
+  @include relative-font-size(2);
   :hover {
-    color: lighten($brand-color, 25%);
+    color: lighten(#a3f0c5, 25%);
   }
 }
 
