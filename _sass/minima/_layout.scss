@@ -440,10 +440,12 @@ input {
   border-color: #a3f0c5;
   border-style: solid;
   background-color: $background-color;
+  font-weight: bold;
   color: $text-color;
   &:hover {
     background-color: #a3f0c5;
     color: $brand-color-dark;
+  }
 }
 
 /**
