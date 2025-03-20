@@ -27,9 +27,9 @@ layout: base
       <ul class="horizontal-list project-preview">
         <a href="{{ post.url | relative_url }}">
           <li class="project-info">
-            <h3>
+            <p class="project-title-preview">
               {{ post.title | escape }}
-            </h3>
+            </p>
             {%- if post.description -%}
               {{ post.description }}
             {%- elsif site.minima.show_excerpts -%}
