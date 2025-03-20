@@ -493,14 +493,20 @@ input {
   left: 0;
   a>svg {
     transform: scale(-1, 1);
-    color: $site-title-color;
+    color: $link-base-color;
+    &:hover {
+      color: $link-hover-color;
+    }
   }
 }
 
 .sidenav.right {
   right: 0;
   a>svg {
-    color: $site-title-color;
+    color: $link-base-color;
+    &:hover {
+      color: $link-hover-color;
+    }
   }
 }
 
