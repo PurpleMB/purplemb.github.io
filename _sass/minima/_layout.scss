@@ -98,10 +98,10 @@
   .nav-item {
     display: block;
     padding: 5px 0;
-    color: $text-color;
+    color: $site-title-color;
     line-height: $base-line-height;
     &:hover {
-      color: lighten($text-color, 25%);
+      color: lighten($site-title-color, 25%);
       text-decoration: none;
     }
   }
@@ -275,12 +275,12 @@
 .post-link {
   display: block;
   @include relative-font-size(1.5);
-  color: $text-color;
+  color: $site-title-color;
   &:visited {
-    color: $text-color;
+    color: $site-title-color;
   }
   &:hover {
-    color: lighten($text-color, 25%);
+    color: lighten($site-title-color, 25%);
     text-decoration: none;
   }
 }
@@ -485,14 +485,14 @@ input {
   left: 0;
   a>svg {
     transform: scale(-1, 1);
-    color: $text-color;
+    color: $site-title-color;
   }
 }
 
 .sidenav.right {
   right: 0;
   a>svg {
-    color: $text-color;
+    color: $site-title-color;
   }
 }
 
