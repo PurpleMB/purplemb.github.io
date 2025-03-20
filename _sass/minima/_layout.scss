@@ -274,12 +274,12 @@
 .post-link {
   display: block;
   @include relative-font-size(1.5);
-  color: $site-title-color;
+  color: $link-base-color;
   &:visited {
-    color: $site-title-color;
+    color: $link-base-color;
   }
   &:hover {
-    color: lighten($site-title-color, 25%);
+    color: $link-hover-color;
     text-decoration: none;
   }
 }
