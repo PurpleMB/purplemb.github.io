@@ -102,6 +102,7 @@
     font-weight: bold;
     color: $site-title-color;
     line-height: $base-line-height;
+    font-size: 18px;
     &:hover {
       color: lighten($site-title-color, 15%);
       text-decoration: none;
