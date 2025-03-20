@@ -575,12 +575,16 @@ ul.project-preview {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;;
  }
+
  ul.home-text {
   list-style: none;
   font-size: 3vw;
+  padding: 0;
   li {
-    display: block;
+    display: inline-block;
     margin: 0%;
     width: 100%;
   }
