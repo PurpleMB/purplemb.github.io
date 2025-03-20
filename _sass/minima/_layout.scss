@@ -523,8 +523,11 @@ ul.horizontal-list {
  */
 
 ul.project-preview {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
   background-color: lighten($background-color, 25%);
-  height: 200px;
 }
 
 .project-preview>a {
@@ -542,8 +545,8 @@ ul.project-preview {
 }
 
 .project-img {
+  display: inline-flex;
   padding: 0;
-  display: flex;
   right: 0;
 }
 
