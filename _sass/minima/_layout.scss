@@ -407,6 +407,14 @@ textarea.input {
   margin-top: 10px;
   resize: none;
   width: 100%;
+  background-color: lighten($background-color, 25%);
+  border-style: none;
+  font-family: $base-font-family;
+  color: $text-color;
+  ::placeholder {
+    font-family: $base-font-family;
+    font-size: medium;
+  }
 }
 
 /**
@@ -414,11 +422,28 @@ textarea.input {
  */
 input {
   width: 100%;
+  background-color: lighten($background-color, 25%);
+  border-style: none;
+  font-family: $base-font-family;
+  color: $text-color;
+  ::placeholder {
+    font-family: $base-font-family;
+    font-size: medium;
+  }
 }
 
 .buttonSubmit {
-  margin-left: 35%;
-  width: 30%;
+  font-weight: bold;
+  margin-left: 25%;
+  width: 50%;
+  border-radius: 0;
+  border-color: #a3f0c5;
+  border-style: solid;
+  background-color: $background-color;
+  color: $text-color;
+  &:hover {
+    background-color: #a3f0c5;
+    color: $brand-color-dark;
 }
 
 /**
