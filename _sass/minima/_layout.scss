@@ -432,14 +432,14 @@ input[type=submit] {
   margin-top: 2px;
   width: 40%;
   border: 2px;
-  border-color: #a3f0c5;
+  border-color: $link-base-color;
   border-style: solid;
   background-color: $background-color;
   font-weight: bold;
-  color: #a3f0c5;
+  color: $link-base-color;
   &:hover {
-    border-color: $text-color;
-    color: $text-color;
+    border-color: $link-hover-color;
+    color: $link-hover-color;
   }
 }
 
