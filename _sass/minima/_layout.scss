@@ -455,24 +455,6 @@ input[type=submit] {
   padding: 0.2em 0.4em;
 }
 
-.skill-icons {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: auto;
-}
-
-.skill-icons>img {
-  display: flex;
-  padding: 10px;
-  height: 100%;
-  width: 100%;
-  flex:1;
-  border: 0px solid #ccc;
-}
-
 .sidenav {
   display: flex;
   align-items: center;
@@ -598,3 +580,32 @@ ul.project-preview {
  .full-name {
   color: $brand-color-dark;
  }
+
+ /*
+ * Skills
+ */
+
+ .skill-icons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.skill-icons>img {
+  display: flex;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  flex:1;
+  border: 0px solid #ccc;
+}
+
+.skills-section {
+  color: $brand-color-dark;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
