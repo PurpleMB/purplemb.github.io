@@ -32,18 +32,18 @@ layout: base
       {{ content }}
     </div>
 
-    <form 
-      method="POST" 
-      action="https://script.google.com/macros/s/AKfycbx0XFGWOIAyeTX8-CWoq99hkBu5v53wlTPkY4m5lrTdfJRipPVLUa7ZDxRiiHhDiRSy/exec"
-      id = "contact-form"
-    >
-      <input name="Name" type="text" placeholder="Name" required>
-      <br>
-      <input name="Email" type="email" placeholder="Email" required>
-      <br>
-      <textarea name="Message"class="input" rows="5" col="20" placeholder="Message" required></textarea>
-      <br>
-      <button class="buttonSubmit" type="submit">Submit</button>
-    </form>
+    <div class="contact-container">
+      <form 
+        method="POST" 
+        action="https://script.google.com/macros/s/AKfycbx0XFGWOIAyeTX8-CWoq99hkBu5v53wlTPkY4m5lrTdfJRipPVLUa7ZDxRiiHhDiRSy/exec"
+        id = "contact-form"
+      >
+        <input name="Name" type="text" placeholder="Name" required>
+        <input name="Email" type="email" placeholder="Email" required>
+        <textarea name="Message" rows="5" col="20" placeholder="Message" required></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
   </div>
 </article>

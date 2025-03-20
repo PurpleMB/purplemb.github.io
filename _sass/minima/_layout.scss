@@ -396,22 +396,29 @@
   }
 }
 
+/**
+ * Contact Form
+ */
 .contact {
   display: block;
   margin: auto;
-  width: 65%;
+  width: 75%;
 }
 
-/**
- * Text Area
- */
-textarea.input {
-  margin-top: 10px;
+.contact-container {
+
+}
+
+input, textarea {
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  width: 100%;
+  border: 0;
+  background-color: lighten($background-color, 25%);
   resize: none;
-  width: 100%;
-  background-color: lighten($background-color, 25%);
-  border-style: none;
   font-family: $base-font-family;
+  font-size: $base-font-size;
   color: $text-color;
   ::placeholder {
     font-family: $base-font-family;
@@ -419,33 +426,19 @@ textarea.input {
   }
 }
 
-/**
- * Input
- */
-input {
-  width: 100%;
-  background-color: lighten($background-color, 25%);
-  border-style: none;
-  font-family: $base-font-family;
-  color: $text-color;
-  ::placeholder {
-    font-family: $base-font-family;
-    font-size: medium;
-  }
-}
-
-.buttonSubmit {
-  margin-left: 35%;
-  width: 30%;
-  border-radius: 0;
+input[type=submit] {
+  margin-left: 30%;
+  margin-top: 2px;
+  width: 40%;
+  border: 2px;
   border-color: #a3f0c5;
   border-style: solid;
   background-color: $background-color;
   font-weight: bold;
-  color: $text-color;
+  color: #a3f0c5;
   &:hover {
-    background-color: #a3f0c5;
-    color: $brand-color-dark;
+    border-color: $text-color;
+    color: $text-color;
   }
 }
 

@@ -10,5 +10,6 @@ prev-page: /projects
 prev-page-name: Projects
 ---
 
-Reach out if you have any questions or want to work together.
-I'll respond as soon as possible.
+Have any questions or want to work together?
+
+Send me a message and I'll get back to you ASAP.
