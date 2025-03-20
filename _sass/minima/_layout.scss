@@ -569,6 +569,13 @@ ul.project-preview {
 /*
  * Home Page
  */
+
+ .centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
  ul.home-text {
   list-style: none;
   font-size: 3vw;
