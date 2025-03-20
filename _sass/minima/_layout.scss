@@ -522,7 +522,6 @@ ul.horizontal-list {
 /*
  * Project Preview List
  */
-
 ul.project-preview {
   list-style: none;
   display: flex;
@@ -567,3 +566,23 @@ ul.project-preview {
   filter: saturate(75%) brightness(75%);
 }
 
+/*
+ * Home Page
+ */
+ ul.home-text {
+  list-style: none;
+  font-size: 3vw;
+  li {
+    display: block;
+    margin: 0%;
+    width: 100%;
+  }
+ }
+
+ .greeting {
+  color: $link-base-color;
+ }
+
+ .full-name {
+  color: $brand-color-dark;
+ }
