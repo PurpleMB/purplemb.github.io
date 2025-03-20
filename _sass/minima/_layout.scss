@@ -540,6 +540,9 @@ ul.project-preview {
     .project-title-preview {
       color: $link-hover-color;
     }
+    .project-img {
+      filter: saturate(100%) brightness(100%);
+    }
   }
 }
 
@@ -560,5 +563,6 @@ ul.project-preview {
 .project-img {
   display: inline-flex;
   padding: 0;
+  filter: saturate(75%) brightness(75%);
 }
 
