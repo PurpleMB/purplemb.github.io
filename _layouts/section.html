@@ -30,7 +30,9 @@ layout: base
           {{ post.title | escape }}
         </a>
       </h3>
-      {%- if site.minima.show_excerpts -%}
+      {%- if post.description -%}
+        {{ post.description }}
+      {%- elsif site.minima.show_excerpts -%}
         {{ post.excerpt }}
       {%- endif -%}
     </li>
