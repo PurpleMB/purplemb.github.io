@@ -626,6 +626,9 @@ li.skills-section {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    li + li {
+      margin-left: 0px;
+    }
   }
 }
 
@@ -634,6 +637,7 @@ li.skills-section {
   margin: 0;
   padding: 0;
   background-color: aqua;
+  justify-content: center;
   li{
     width: 10%;
     height: 10%;
