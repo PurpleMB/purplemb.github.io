@@ -10,6 +10,7 @@ prev-page: /
 prev-page-name: Home
 ---
 
+
 <ul class="horizontal-list">
     <li class = "about-me">
         <p>
@@ -27,41 +28,27 @@ prev-page-name: Home
 
     <li class="skills-section">
         Familiar Tools:
-        <div class="skill-icons">
-            <ul class="skill-icon">
-                <li>
-                    <img class="img" src="/assets/icons/test.jpg" />
-                </li>
-                <li>
-                    <p> ICON </p>
-                </li>
-            </ul>
-            <ul class="skill-icon">
-                <li>
-                    <img class="img" src="/assets/icons/test.jpg" />
-                </li>
-                <li>
-                    <p> ICON </p>
-                </li>
-            </ul>
-        </div>
-        <div class="skill-icons">
-            <ul class="skill-icon">
-                <li>
-                    <img class="img" src="/assets/icons/test.jpg" />
-                </li>
-                <li>
-                    <p> ICON </p>
-                </li>
-            </ul>
-            <ul class="skill-icon">
-                <li>
-                    <img class="img" src="/assets/icons/test.jpg" />
-                </li>
-                <li>
-                    <p> ICON </p>
-                </li>
-            </ul>
-        </div>
+        <ul class="skill-icons">
+            <li class="skill-icon">
+                <img class="img" src="/assets/icons/test.jpg" />
+                ICON
+            </li>
+            <li class="skill-icon">
+                <img class="img" src="/assets/icons/test.jpg" />
+                ICON
+            </li>
+            <li class="skill-icon">
+                <img class="img" src="/assets/icons/test.jpg" />
+                ICON
+            </li>
+            <li class="skill-icon">
+                <img class="img" src="/assets/icons/test.jpg" />
+                ICON
+            </li>
+            <li class="skill-icon">
+                <img class="img" src="/assets/icons/test.jpg" />
+                ICON
+            </li>
+        </ul>
     </li>
 </ul>

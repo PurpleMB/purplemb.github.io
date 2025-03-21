@@ -600,50 +600,48 @@ ul.project-preview {
  ul.horizontal-list {
   list-style: none;
   display: flex;
-  align-items: center;
   margin: 0;
-  margin-bottom: 20%;
   padding: 0;
+  margin-bottom: 20%;
+  background-color: bisque;
   li {
+    // /align-content: center;
+    background-color: red;
     margin: 0%;
     width: auto;
     min-width: 35%;
-    align-content: center;
   }
   li + li {
     margin-left: 25px;
   }
 }
 
-.skills-section {
+li.skills-section {
+  display: block;
   color: $brand-color-dark;
   font-weight: bold;
   font-size: 18px;
   text-align: center;
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
 
 .skill-icons {
-  display: flex;
-  width: auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: auto;
-  justify-content: center;
-}
-
-.skill-icon {
   list-style: none;
-  display: inline-block;
   margin: 0;
   padding: 0;
-  li {
-    align-content: center;
+  background-color: aqua;
+  li{
+    width: 10%;
+    height: 10%;
+    max-width: 100px;
+    max-width: 100px;
+    color: $text-color;
     font-weight: normal;
-    img {
-      max-width: 100px;
-      max-height: 100px;
-      min-width: 75px;
-      min-height: 75px;
-    }
   }
 }
+
+
