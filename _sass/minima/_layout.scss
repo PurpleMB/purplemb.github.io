@@ -540,6 +540,11 @@ ul.project-preview {
   filter: saturate(75%) brightness(75%);
 }
 
+.topics {
+  color: $site-title-color;
+  font-weight: bold;
+}
+
 /*
  * Home Page
  */
@@ -594,9 +599,9 @@ ul.project-preview {
 
 .skills-section {
   color: $brand-color-dark;
-  text-align: center;
   font-weight: bold;
   font-size: 18px;
+  text-align: center;
 }
 
 .skill-icons {

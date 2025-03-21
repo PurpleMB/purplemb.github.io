@@ -30,15 +30,31 @@ layout: base
             <p class="project-title-preview">
               {{ post.title | escape }}
             </p>
-            {%- if post.description -%}
-              {{ post.description }}
-            {%- elsif site.minima.show_excerpts -%}
-              {{ post.excerpt }}
-            {%- endif -%}
+            <p>
+              {%- if post.description -%}
+                {{ post.description }}
+              {%- elsif site.minima.show_excerpts -%}
+                {{ post.excerpt }}
+              {%- endif -%}
+            </p>
+            <p>
+              {%- if post.categories -%}
+                <span class="topics">Topics: </span> 
+                {%- assign topics = post.categories.size -%}
+                {%- assign topicCounter = 0 -%}
+                {%- for category in post.categories -%}
+                  {%- assign topicCounter = topicCounter | plus: 1 -%}
+                  {{ category }}
+                  {%- if topicCounter < topics -%}
+                  ,&#160
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            </p>
           </li>
           <li class="project-img">
             {%- if post.preview_img -%}
-              <img src={{post.preview_img}} alt="aaaaaaa">
+              <img src={{post.preview_img}} alt="project-preview-img">
             {%- endif -%}
           </li>
         </a>
