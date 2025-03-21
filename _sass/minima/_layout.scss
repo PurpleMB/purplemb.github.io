@@ -517,7 +517,10 @@ ul.project-preview {
     text-decoration: none;
     background-color: lighten($background-color, 30%);
     .project-title-preview {
-      color: $link-hover-color;
+      //color: $link-hover-color;
+    }
+    .topics {
+      //color: lighten($site-title-color, 15%);
     }
     .project-img {
       filter: saturate(100%) brightness(100%);
