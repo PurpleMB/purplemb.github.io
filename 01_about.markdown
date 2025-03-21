@@ -28,12 +28,40 @@ prev-page-name: Home
     <li class="skills-section">
         Familiar Tools:
         <div class="skill-icons">
-            <img class="img" src="/assets/icons/test.jpg" />
-            <img class="img" src="/assets/icons/test.jpg" />
+            <ul class="skill-icon">
+                <li>
+                    <img class="img" src="/assets/icons/test.jpg" />
+                </li>
+                <li>
+                    <p> ICON </p>
+                </li>
+            </ul>
+            <ul class="skill-icon">
+                <li>
+                    <img class="img" src="/assets/icons/test.jpg" />
+                </li>
+                <li>
+                    <p> ICON </p>
+                </li>
+            </ul>
         </div>
         <div class="skill-icons">
-            <img class="img" src="/assets/icons/test.jpg" />
-            <img class="img" src="/assets/icons/test.jpg" />
+            <ul class="skill-icon">
+                <li>
+                    <img class="img" src="/assets/icons/test.jpg" />
+                </li>
+                <li>
+                    <p> ICON </p>
+                </li>
+            </ul>
+            <ul class="skill-icon">
+                <li>
+                    <img class="img" src="/assets/icons/test.jpg" />
+                </li>
+                <li>
+                    <p> ICON </p>
+                </li>
+            </ul>
         </div>
     </li>
 </ul>
