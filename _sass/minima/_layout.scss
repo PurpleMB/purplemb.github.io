@@ -578,6 +578,7 @@ ul.project-preview {
  ul.horizontal-list {
   list-style: none;
   display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
   li {
@@ -591,7 +592,14 @@ ul.project-preview {
   }
 }
 
- .skill-icons {
+.skills-section {
+  color: $brand-color-dark;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.skill-icons {
   display: flex;
   width: auto;
   flex-direction: row;
@@ -611,11 +619,4 @@ ul.project-preview {
   max-width: 100px;
   flex:1;
   border: 0px solid #ccc;
-}
-
-.skills-section {
-  color: $brand-color-dark;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
 }

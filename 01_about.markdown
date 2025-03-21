@@ -9,8 +9,9 @@ next-page-name: Projects
 prev-page: /
 prev-page-name: Home
 ---
+
 <ul class="horizontal-list">
-    <li>
+    <li class = "about-me">
         <p>
             Specializing in gameplay and systems programming, I craft clean, modular code driven by research, iteration, and collaboration. 
         </p>
