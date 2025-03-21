@@ -20,7 +20,7 @@ prev-page-name: Home
         </p>
 
         <p>
-            Beyond programming, I love learning about anything I can find information on. Whether it’s a breakdown on the hardware architecture of a retro console or a lengthy dive into the art history underlying an innocuous card game illustration, I am endlessly curious about the world and the things that people craft within it.
+            Beyond programming, I love learning about anything I can find information on. Whether it’s a lengthy dive into the art history underlying an innocuous card game illustration or the evolutionary history of a eye-catching creature, I am endlessly curious about the world and everything within it.
         </p>
     </li>
 
