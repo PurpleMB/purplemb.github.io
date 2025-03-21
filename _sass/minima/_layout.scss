@@ -253,7 +253,7 @@
 .post-list {
   margin-left: 0;
   list-style: none;
-
+  margin-bottom: 25%;
   > li {
     margin-bottom: $spacing-unit;
   }
@@ -602,6 +602,7 @@ ul.project-preview {
   display: flex;
   align-items: center;
   margin: 0;
+  margin-bottom: 20%;
   padding: 0;
   li {
     margin: 0%;
