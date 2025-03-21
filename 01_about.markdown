@@ -12,15 +12,11 @@ prev-page-name: Home
 <ul class="horizontal-list">
     <li>
         <p>
-            I am a software developer specializing in gameplay and systems programming. I craft clean, modular code that can adapt to the ever-changing landscape of development. 
+            Specializing in gameplay and systems programming, I craft clean, modular code driven by research, iteration, and collaboration. 
         </p>
 
         <p>
-            I am experienced working as part of an interdisciplinary team, and relish the opportunity to produce systems tailored to the needs of the people using them.
-        </p>
-        
-        <p>
-            Each project and challenge is an opportunity to grow and deepen my understanding of programming and development through research, iteration,  and collaboration with my peers. 
+            I am experienced working as part of an interdisciplinary team, and constantly strive to deepen my understanding of development through the diverse knowledge of my peers. 
         </p>
 
         <p>
@@ -33,10 +29,8 @@ prev-page-name: Home
         <div class="skill-icons">
             <img class="img" src="/assets/icons/test.jpg" />
             <img class="img" src="/assets/icons/test.jpg" />
-            <img class="img" src="/assets/icons/test.jpg" />
         </div>
         <div class="skill-icons">
-            <img class="img" src="/assets/icons/test.jpg" />
             <img class="img" src="/assets/icons/test.jpg" />
             <img class="img" src="/assets/icons/test.jpg" />
         </div>

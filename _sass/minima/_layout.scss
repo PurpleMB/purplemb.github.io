@@ -582,6 +582,7 @@ ul.project-preview {
   li {
     margin: 0%;
     width: 100%;
+    align-content: center;
   }
   li + li {
     margin-left: 25px;
@@ -611,4 +612,5 @@ ul.project-preview {
   text-align: center;
   font-weight: bold;
   font-size: 18px;
+  top: 15%;
 }
