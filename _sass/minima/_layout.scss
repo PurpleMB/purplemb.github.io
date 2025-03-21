@@ -469,27 +469,31 @@ input[type=submit] {
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 150px;
+  width: 10%;
   position: fixed;
   z-index: 1;
   top: 0;
 }
 
 .left {
-  left: -25px;
+  left: 2.5%;
   a>svg {
     transform: scale(-1, 1);
     color: $link-base-color;
+    min-height: 30px;
+    min-width: 30px;
     &:hover {
       color: $link-hover-color;
     }
   }
 }
 
-.sidenav.right {
-  right: -25px;
+.right {
+  right: 2.5%;
   a>svg {
     color: $link-base-color;
+    min-height: 30px;
+    min-width: 30px;
     &:hover {
       color: $link-hover-color;
     }
