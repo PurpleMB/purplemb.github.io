@@ -503,6 +503,7 @@ ul.project-preview {
   background-color: lighten($background-color, 25%);
   height: 100%;
   a {
+    height: 100%;
     display: flex;
     li {
       margin: 0px;
@@ -536,16 +537,19 @@ ul.project-preview {
     font-size: $base-font-size * 1.5;
     font-weight: bold;
   }
+  .topics {
+    color: $site-title-color;
+    font-weight: bold;
+  }
 }
 
 .project-img {
   display: flex;
   filter: saturate(75%) brightness(75%);
-}
-
-.topics {
-  color: $site-title-color;
-  font-weight: bold;
+  height: auto;
+  max-width: 250px;
+  width: 25%;
+  height: 100%;
 }
 
 /*
