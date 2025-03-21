@@ -583,7 +583,7 @@ ul.project-preview {
   li {
     margin: 0%;
     width: auto;
-    min-width: 35%;
+    min-width: 25%;
     align-content: center;
   }
   li + li {
@@ -594,15 +594,15 @@ ul.project-preview {
  .skill-icons {
   display: flex;
   width: auto;
-  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
   height: auto;
+  justify-content: center;
 }
 
 .skill-icons>img {
   display: flex;
-  padding: 10px;
+  padding: 5px;
   height: 100%;
   width: 100%;
   min-height: 75px;
