@@ -30,24 +30,28 @@ prev-page-name: Home
         Familiar Tools:
         <ul class="skill-icons">
             <li class="skill-icon">
-                <img class="img" src="/assets/icons/test.jpg" />
-                ICON
+                <img class="img" src="/assets/icons/csharp.png" />
+                C#
             </li>
             <li class="skill-icon">
-                <img class="img" src="/assets/icons/test.jpg" />
-                ICON
+                <img class="img" src="/assets/icons/cpp.png" />
+                C++
             </li>
             <li class="skill-icon">
-                <img class="img" src="/assets/icons/test.jpg" />
-                ICON
+                <img class="img" src="/assets/icons/unity.png" />
+                Unity
             </li>
             <li class="skill-icon">
-                <img class="img" src="/assets/icons/test.jpg" />
-                ICON
+                <img class="img" src="/assets/icons/unreal.png" />
+                Unreal
             </li>
             <li class="skill-icon">
-                <img class="img" src="/assets/icons/test.jpg" />
-                ICON
+                <img class="img" src="/assets/icons/godot.png" />
+                Godot
+            </li>
+            <li class="skill-icon">
+                <img class="img" src="/assets/icons/git.png" />
+                Git
             </li>
         </ul>
     </li>
