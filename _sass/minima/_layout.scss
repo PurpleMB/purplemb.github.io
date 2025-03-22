@@ -594,6 +594,11 @@ ul.project-preview {
   color: saturate(lighten($site-title-color,5%), 10%);
  }
 
+ .accent {
+  color: saturate(lighten($site-title-color,5%), 10%);
+  font-weight: bold;
+ }
+
  /*
  * Skills
  */
