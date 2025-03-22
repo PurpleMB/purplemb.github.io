@@ -30,7 +30,7 @@
     color: $site-title-color;
   }
   &:hover {
-    color: lighten($site-title-color, 25%);
+    color: lighten($site-title-color, 15%);
     text-decoration: none;
   }
 }
