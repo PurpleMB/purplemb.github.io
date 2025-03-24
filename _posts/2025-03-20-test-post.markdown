@@ -9,7 +9,10 @@ description: A bold, new test to advance site presentation! Here's us testing ma
 preview_img: /assets/previews/giftest.gif
 engine: Unity(C#)
 role: Programmer
+team-size: 2
 live-link: https://purpleml.itch.io/shadow-falls
+video-link: https://youtu.be/dQw4w9WgXcQ?si=CHbUFqc7M0rsQ5R_
+repo-link: https://github.com/PurpleMB
 ---
 This is a test post to see how making posts works!
 

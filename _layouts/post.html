@@ -11,11 +11,39 @@ layout: base
 
   <div class="post-breakdown">
     <ul class="post-bd-list">
-      <li class="project-info">
-        
+      <li class="project-overview">
+        {%- if page.engine -%}
+          <span class="accent">Engine:</span> {{page.engine}}
+          <br>
+        {%- endif -%}
+        {%- if page.role -%}
+        <span class="accent">Role:</span> {{page.role}}
+          <br>
+        {%- endif -%}
+        {%- if page.team-size -%}
+        <span class="accent">Team Size:</span> {{page.team-size}}
+          <br>
+        {%- endif -%}
       </li>
       <li class="project-links">
-
+        {%- if page.live-link -%}
+          <a href={{page.live-link}} target="_blank">
+            Live Link
+          </a>
+          <br>
+        {%- endif -%}
+        {%- if page.video-link -%}
+          <a href={{page.video-link}} target="_blank">
+            Video Link
+          </a>
+          <br>
+        {%- endif -%}
+        {%- if page.repo-link -%}
+          <a href={{page.repo-link}} target="_blank">
+            Repo Link
+          </a>
+          <br>
+        {%- endif -%}
       </li>
     </ul>
   </div>
