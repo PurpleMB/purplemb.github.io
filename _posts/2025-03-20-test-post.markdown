@@ -4,9 +4,12 @@ title:  "Testing Project Preview"
 date:   2025-03-20 12:16:30 -0600
 prev-page: /projects
 prev-page-name: About Me
-categories: jekyll update learning
-description: A bold, new test to advance site presentation! Here's us testing making the line longer!
+categories: jekyll update learning webdev
+description: A bold, new test to advance site presentation! Here's us testing making the line longer! Who knows, maybe this will even look good eventually!
 preview_img: /assets/previews/giftest.gif
+engine: Unity(C#)
+role: Programmer
+live-link: https://purpleml.itch.io/shadow-falls
 ---
 This is a test post to see how making posts works!
 

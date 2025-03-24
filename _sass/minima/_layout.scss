@@ -283,10 +283,10 @@
  * Posts
  */
 .post-header {
-  margin-bottom: $spacing-unit;
+  //margin-bottom: $spacing-unit;
   padding-bottom: 18px;
   text-align: center;
-  border-bottom: 1px solid $border-color-01;
+  //border-bottom: 1px solid $border-color-01;
 }
 
 .post-meta {
@@ -608,7 +608,7 @@ ul.project-preview {
   margin: 0;
   padding: 0;
   margin-bottom: 20%;
-  //background-color: bisque;
+  background-color: bisque;
   align-items: center;
   li {
     // /align-content: center;
@@ -657,6 +657,39 @@ li.skills-section {
     font-weight: normal;
     font-size: $base-font-size;
   }
+}
+
+
+.post-breakdown {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  //padding-bottom: 18px;
+  margin-bottom: $spacing-unit;
+  background-color: lighten($background-color, 25%);
+  align-items: center;
+  //border-bottom: 1px solid $border-color-01;
+}
+
+ul.post-bd-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  //align-items: center;
+  width: 100%;
+  li {
+    margin: 0%;
+    width: 100%;
+  }
+}
+
+.project-info {
+  background-color: aqua;
+}
+
+.project-links {
+  background-color: green;
 }
 
 
