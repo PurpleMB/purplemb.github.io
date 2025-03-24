@@ -310,6 +310,7 @@
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1.15;
+  color: $link-base-color;
 
   @media screen and (min-width: $on-large) {
     @include relative-font-size(2.625);
@@ -608,7 +609,7 @@ ul.project-preview {
   margin: 0;
   padding: 0;
   margin-bottom: 20%;
-  background-color: bisque;
+  //background-color: bisque;
   align-items: center;
   li {
     // /align-content: center;
@@ -666,7 +667,7 @@ li.skills-section {
   padding: 0;
   //padding-bottom: 18px;
   margin-bottom: $spacing-unit;
-  background-color: lighten($background-color, 25%);
+  //background-color: lighten($background-color, 25%);
   align-items: center;
   //border-bottom: 1px solid $border-color-01;
 }
@@ -682,6 +683,10 @@ ul.post-bd-list {
     margin: 0%;
     width: 100%;
     padding: 15px;
+    background-color: lighten($background-color, 25%);
+  }
+  li + li {
+    margin-left: 15px;
   }
 }
 
