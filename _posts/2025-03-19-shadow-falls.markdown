@@ -1,18 +1,17 @@
 ---
 layout: post
-title:  "PUNCHERMAN!"
-date:   2025-03-20 12:16:30 -0600
+title:  "Shadow Falls"
+date:   2025-03-19 12:16:30 -0600
 prev-page: /projects
-prev-page-name: About Me
-topic-list: User Interface, Event-driven Programming, Playtesting
-description: PUNCHERMAN! is a comedic first-person dad simulator where the player is tasked with completing chores despite only being able to punch. Developed in Unity across two development cycles, PUNCHERMAN! is currently free to download on Steam.
+prev-page-name: Projects
+topic-list: Gameplay Systems, World Design, Game Jams
+description: Shadow Falls is a puzzle game built around an innovative, multi-object shadow puzzle system. Created in Unity for Texas Game Jam, Shadow Falls was lauded for its novel tech and charming narrative.
 preview_img: /assets/previews/giftest.gif
 engine: Unity(C#)
 role: Programmer & Designer
-team-size: 7
-live-link: https://noahkuhn.itch.io/puncherman
-steam-link: https://store.steampowered.com/app/2364050/PUNCHERMAN_First_Day/
-video-link: https://youtu.be/dQw4w9WgXcQ?si=CHbUFqc7M0rsQ5R_
+team-size: 2
+itch-link: https://purpleml.itch.io/shadow-falls
+
 ---
 
 <div class="overview">
@@ -35,7 +34,7 @@ So far, this seems like a very simple and efficient way to make a personal stati
 
 `Hello World`
 
-<span class="section-title">User Interface</span>
+<span class="section-title">Shadow Puzzles</span>
 
 This is a test post to see how making posts works!
 
@@ -43,7 +42,7 @@ So far, this seems like a very simple and efficient way to make a personal stati
 
 `Hello World`
 
-<span class="section-title">Playtesting</span>
+<span class="section-title">World Design</span>
 
 This is a test post to see how making posts works!
 
