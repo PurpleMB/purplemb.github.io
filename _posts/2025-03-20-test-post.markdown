@@ -14,6 +14,19 @@ live-link: https://purpleml.itch.io/shadow-falls
 video-link: https://youtu.be/dQw4w9WgXcQ?si=CHbUFqc7M0rsQ5R_
 repo-link: https://github.com/PurpleMB
 ---
+
+<div class="overview">
+    <span class="section-title">Overview</span>
+    <br>
+    <p>
+        Hello! This is the overview box for a project!
+        This will contain a TLDR for the project, its key elements,
+        and what I learned working on it!
+
+        As you can see, quite a lot of info can fit into this area!
+    </p>
+</div>
+
 This is a test post to see how making posts works!
 
 So far, this seems like a very simple and efficient way to make a personal static site!

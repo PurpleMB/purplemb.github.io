@@ -665,10 +665,11 @@ li.skills-section {
   display: flex;
   margin: 0;
   padding: 0;
+  width: 100%;
   //padding-bottom: 18px;
-  margin-bottom: $spacing-unit;
+  margin-bottom: 15px;
   //background-color: lighten($background-color, 25%);
-  align-items: center;
+  //align-items: center;
   //border-bottom: 1px solid $border-color-01;
 }
 
@@ -696,6 +697,27 @@ ul.post-bd-list {
 
 .project-links {
   //background-color: green;  
+}
+
+.section-title {
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: $site-title-color;
+}
+
+.overview {
+  margin: 0px;
+  padding: 15px;
+  width: auto;
+  background-color: lighten($background-color, 25%);
+  margin-bottom: $spacing-unit;
+  p {
+    margin: 0;
+    margin-top: 8px;
+  }
+  .section-title {
+    margin: 0;
+  }
 }
 
 
