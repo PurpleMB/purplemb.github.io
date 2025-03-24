@@ -26,6 +26,13 @@ layout: base
         {%- endif -%}
       </li>
       <li class="project-links">
+        {%- if page.steam-link -%}
+          <a href={{page.steam-link}} target="_blank">
+            Steam Link
+            <img src="/assets/icons/link-colored.png">
+          </a>
+          <br>
+        {%- endif -%}
         {%- if page.live-link -%}
           <a href={{page.live-link}} target="_blank">
             Live Link

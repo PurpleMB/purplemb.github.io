@@ -1,22 +1,22 @@
 ---
 layout: post
-title:  "Testing Project Preview"
+title:  "PUNCHERMAN!"
 date:   2025-03-20 12:16:30 -0600
 prev-page: /projects
 prev-page-name: About Me
-categories: jekyll update learning webdev
-description: A bold, new test to advance site presentation! Here's us testing making the line longer! Who knows, maybe this will even look good eventually!
+categories: UI Events Playtesting
+description: PUNCHERMAN! is a comedic first-person dad simulator where the player is tasked with completing chores despite only being able to punch. Developed in Unity across two development cycles, PUNCHERMAN! is currently free to download on Steam.
 preview_img: /assets/previews/giftest.gif
 engine: Unity(C#)
-role: Programmer
-team-size: 2
-live-link: https://purpleml.itch.io/shadow-falls
+role: Programmer & Designer
+team-size: 7
+live-link: https://noahkuhn.itch.io/puncherman
+steam-link: https://store.steampowered.com/app/2364050/PUNCHERMAN_First_Day/
 video-link: https://youtu.be/dQw4w9WgXcQ?si=CHbUFqc7M0rsQ5R_
-repo-link: https://github.com/PurpleMB
 ---
 
 <div class="overview">
-    <span class="section-title">Overview</span>
+    <span class="overview-title">Overview</span>
     <br>
     <p>
         Hello! This is the overview box for a project!
@@ -27,8 +27,35 @@ repo-link: https://github.com/PurpleMB
     </p>
 </div>
 
+<span class="section-title">Introduction</span>
+
 This is a test post to see how making posts works!
 
 So far, this seems like a very simple and efficient way to make a personal static site!
 
 `Hello World`
+
+<span class="section-title">User Interface</span>
+
+This is a test post to see how making posts works!
+
+So far, this seems like a very simple and efficient way to make a personal static site!
+
+`Hello World`
+
+<span class="section-title">Playtesting</span>
+
+This is a test post to see how making posts works!
+
+So far, this seems like a very simple and efficient way to make a personal static site!
+
+`Hello World`
+
+<span class="section-title">Lessons Learned</span>
+
+This is a test post to see how making posts works!
+
+So far, this seems like a very simple and efficient way to make a personal static site!
+
+`Hello World`
+
