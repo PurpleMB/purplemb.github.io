@@ -696,7 +696,16 @@ ul.post-bd-list {
 }
 
 .project-links {
-  //background-color: green;  
+  font-weight: bold;  
+  img {
+    height: 1em;
+    filter: saturate(100%) brightness(95%);
+  }
+  :hover {
+    img {
+      filter: saturate(100%) brightness(115%);
+    }
+  }
 }
 
 .section-title {
