@@ -38,17 +38,9 @@ layout: base
               {%- endif -%}
             </p>
             <p>
-              {%- if post.categories -%}
+              {%- if post.topic-list -%}
                 <span class="topics">Topics: </span> 
-                {%- assign topics = post.categories.size -%}
-                {%- assign topicCounter = 0 -%}
-                {%- for category in post.categories -%}
-                  {%- assign topicCounter = topicCounter | plus: 1 -%}
-                  {{ category }}
-                  {%- if topicCounter < topics -%}
-                  ,&#160
-                  {%- endif -%}
-                {%- endfor -%}
+                {{ post.topic-list }}
               {%- endif -%}
             </p>
           </li>
