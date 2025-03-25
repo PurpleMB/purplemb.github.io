@@ -318,7 +318,7 @@
 }
 
 .post-content {
-  margin-bottom: $spacing-unit;
+  margin-bottom: 25%;;
 
   h1, h2, h3, h4, h5, h6 { margin-top: $spacing-unit }
 
@@ -701,7 +701,14 @@ ul.post-bd-list {
     height: 1em;
     filter: saturate(100%) brightness(95%);
   }
+  :visited {
+    color: $link-base-color;
+    img {
+      filter: saturate(100%) brightness(95%);
+    }
+  }
   :hover {
+    color: $link-hover-color;
     img {
       filter: saturate(100%) brightness(115%);
     }
