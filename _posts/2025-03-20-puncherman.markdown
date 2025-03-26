@@ -4,7 +4,7 @@ title:  "PUNCHERMAN!"
 date:   2025-03-20 12:16:30 -0600
 prev-page: /projects
 prev-page-name: Projects
-topic-list: User Interface, Event-driven Programming, Playtesting
+topic-list: AGILE Development, User Interface, Playtesting, Player Communication, Steam
 description: PUNCHERMAN! is a comedic first-person dad simulator where the player is tasked with completing chores despite only being able to punch. Developed in Unity across two development cycles, PUNCHERMAN! is currently free to download on Steam.
 preview_img: /assets/gifs/puncherman-preview.gif
 engine: Unity (C#)
@@ -33,11 +33,11 @@ Ultimately, PUNCHERMAN! came together as a comedic, first-person game that blend
 
 <span class="section-title">AGILE Development</span>
 
-At the risk of sounding like a broken record, PUNCHERMAN!'s development was structured using AGILE methodology. From the onset of the project, we had a dedicated SCRUM master who ensured everyone adhered to a schedule of daily standups and regular sprint review and planning meetings. At these meetings we maintained, updated, and added to our project development board, being sure to note any tendencies in time estimation and time consumption in order to improve our timeline management as the project progressed.
+At the risk of sounding like a broken record, PUNCHERMAN!'s development was structured using AGILE methodology. From the onset of the project, we had a dedicated SCRUM master who ensured everyone adhered to a schedule of daily standups and regular sprint review and planning meetings. At these meetings we maintained, updated, and added to our project development board, being sure to note any tendencies in time estimation and consumption in order to improve our timeline management as the project progressed.
 
 Due to the environment that the initial development of PUNCHERMAN! was taking place in, it was paramount that we maintained a firm grasp on our development timeline in order to meet playtest and release deadlines (an aspect of the project I will delve into later). As such, having a framework for project organization and communication that granted us the ability to easily determine development velocity and priorities leading up to these deadlines was invaluable.
 
-The consistency and frequency of this communication also ensured that every member of the team had a solid idea of how each facet of development was progressing. Due to the horizontal nature of the development team's structure, this unified understanding of the project's development and growth ensured that we were constantly able to source new ideas or solutions to problems from all members of the team. 
+The consistency and frequency of this communication also ensured that every member of the team had a solid idea of how each facet of development was progressing. Due to the horizontal nature of the development team's structure, this unified understanding of the project's formation and growth ensured that we were constantly able to source new ideas and solutions from all members of the team. 
 
 As the project advanced from early documentation and prototyping, we gained a larger and larger pool of data with which to evaluate our own capabilities. Once the time for playtesting arrived, the time spent cultivating an understanding of the production realities of our team granted us a clearer view of the ways we would be able to adjust in tandem with player feedback. 
 
@@ -45,16 +45,41 @@ AGILE, ultimately, provided us channels for communication and evaluation that al
 
 <span class="section-title">User Interface</span>
 
-<img src="/assets/gifs/journal.gif">
-<img src="/assets/gifs/stopwatch.gif">
+Something every game needs and that many developers dread: a user interface. During the course of PUNCHERMAN!'s development, I wound up gravitating towards being the programmer primarily responsible for building out the UI elements of the game. However, far from being a cross I bore through development, the various screens, menus, and indicators of PUNCHERMAN! are features I am thrilled to have been able to construct alongside the visual artists.
 
-This is a test post to see how making posts works!
+From the beginning of the project, we knew we wanted to lean heavily into the comedic aspects of the fact that this is a game, despite any other pretentions, about being a dad. The first area of the game is a suburban neighborhood and the quests feature such fantastical feats as "doing laundry" or "buying groceries". As such, we knew that the standard slew of sleek, serious interface designs seen in other games weren't going to fit our needs.
 
-So far, this seems like a very simple and efficient way to make a personal static site!
+<ul class="img-row">
+    <li>
+        <img src="/assets/gifs/wallet.gif" height="150">
+    </li>
+    <li>
+        What dad  doesn't have a wallet crammed with too many cards?
+    </li>
+</ul>
 
-`Hello World`
+As the game takes place in a largely realistic setting, we considered the everyday objects people, and particularly dads, might have to faciliate their daily activities. Thus, classic symbols of fatherhood, such as an iconic leather wallet or sticky notes haphazardly scrawled with to-dos, became obvious choices to present standard UI information in a more thematically-appropriate manner.
+
+<ul class="img-row">
+    <li>
+        <img src="/assets/gifs/journal-ui.gif" height="150">
+    </li>
+    <li>
+        <img src="/assets/gifs/stopwatch.gif" height="150">
+    </li>
+    <li>
+        Most UI elements have some element of physical movement to them.
+    </li>
+</ul>
+
+As most elements of the UI were now tangible objects, as opposed to abstract boxes filled with information, I made sure to pay attention to developing the ways the UIs presented themselves to and interacted with the player. For example, the stopwatch and journal gradually move in and out of the screen, serving to evoke an object being removed from a pocket instead of a menu materializing in view. 
+
+Overall, I spent considerable time and effort striving to create a set of interfaces and menus that worked to build and deepen the themes of the game as much as the gameplay itself. During playtesting, the glowing praise testers gave to innocuous and often forgettable elements, such as the travel loading screen, served to vindicate these efforts.
 
 <span class="section-title">Playtesting</span>
+
+<img src="/assets/gifs/busstop.gif">
+<img src="/assets/gifs/pb.gif">
 
 This is a test post to see how making posts works!
 
@@ -64,7 +89,7 @@ So far, this seems like a very simple and efficient way to make a personal stati
 
 <span class="section-title">Steam Release</span>
 
-After around a year of collective active development, it was time for PUNCHERMAN! to fly the coop of its itch.io nest. After receiving industry guidance from the talented folks over at Graffiti Games, we began navigating the process of obtaining Steam certification.
+After around a year of collective active development, it was time for PUNCHERMAN! to fly the coop of its itch.io nest. After receiving industry guidance from some of the lovely folks over at Graffiti Games, we began navigating the process of obtaining Steam certification.
 
 While not quite the impenetrable bastion that it once was, seeking certification from Steam did mandate that we reach a level of consistency, usability, and compatability that is less than certain after a game undergoes two distinct periods of development with two different teams. Ultimately, we leveraged the extensive amount of feedback that we had already gathered in terms of player communication, user controls, and interface presentation to craft a more unified, market-ready version of the game to submit for certification.
 

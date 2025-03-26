@@ -743,4 +743,26 @@ ul.post-bd-list {
   color: $site-title-color;
 }
 
+ul.img-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: auto;
+  align-items: center;
+  li {
+    display: block;
+    margin: 0%;
+    width: auto;
+    max-width: 250px;
+    padding: 15px;
+    color: darken($text-color, 15%);
+    font-style: italic;
+    text-overflow: wrap;
+  }
+  li + li {
+    margin-left: 25px;
+  }
+}
+
 
