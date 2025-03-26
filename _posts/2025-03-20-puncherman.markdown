@@ -74,18 +74,54 @@ As the game takes place in a largely realistic setting, we considered the everyd
 
 As most elements of the UI were now tangible objects, as opposed to abstract boxes filled with information, I made sure to pay attention to developing the ways the UIs presented themselves to and interacted with the player. For example, the stopwatch and journal gradually move in and out of the screen, serving to evoke an object being removed from a pocket instead of a menu materializing in view. 
 
+These animations are a mix of "static" animations made using the Unity animator window and "dynamic" animations driven by interpolating and manipulating position values via code. During the second development cycle, the adoption of DOTween for use in the project made the development of more complex animations such as the stopwatch's rolling much easier to adjust and tweek.
+
 Overall, I spent considerable time and effort striving to create a set of interfaces and menus that worked to build and deepen the themes of the game as much as the gameplay itself. During playtesting, the glowing praise testers gave to innocuous and often forgettable elements, such as the travel loading screen, served to vindicate these efforts.
 
 <span class="section-title">Playtesting</span>
 
-<img src="/assets/gifs/busstop.gif">
-<img src="/assets/gifs/pb.gif">
+PUNCHERMAN! is, in some ways, an unorthodox game. It strives to deliver fairly standard gameplay filtered through a level of genre commentary that primarily manifests in limiting the way the player interacts with the game world. Or rather: it's a game where pretty much all you do is punch things, even things you would really rather not punch.
 
-This is a test post to see how making posts works!
+As PUNCHERMAN! was, from its inception, predicated on the idea of limiting the player, we had to spend considerable time finding out how to do that in a way that wasn't frustrating or obtuse. This is where another development boogeyman appeared to save the day with some tough love: playtesting.
 
-So far, this seems like a very simple and efficient way to make a personal static site!
+PUNCHERMAN! had, truth be told, some rough playtests. As PUNCHERMAN! showcased what was supposed to be a beta build, we got one resounding piece of feedback: "I don't know what I'm doing, and whatever I am doing is not fun".
 
-`Hello World`
+Playtesting is, ultimately, an exercise in translation. Players give you feedback, but filtered through an entirely different relationship to the game than a developer. With the additional context clues of notes gathered during their play session, it then falls to the developer to translate "I don't know what I'm doing" into something concrete like "The feedback for actions doesn't let me know if I did them successfully".
+
+Thus, we had two main tasks: translate what "I don't know what I'm doing" and "Whatever I am doing is not fun" into actionable changes we could make to the game given our development constraints.
+
+The issue of player communication expressed by "I don't know what I'm doing" was a fairly easy problem to triage. Observing players revealed very obvious shortcomings in aspects of the game, such as the level design and art direction, that were making it difficult for players to dig into the game.
+
+<ul class="img-row">
+    <li>
+        <img src="/assets/gifs/busstop.gif" height="150">
+    </li>
+    <li>
+        <img src="/assets/gifs/pb.gif" height="150">
+    </li>
+    <li>
+        Turns out, people look at the objects that are actually visible.
+    </li>
+</ul>
+
+The solution was, of course, simply to communicate more with the player. Some changes required only implicit information (such as coloring important objects more brightly) while some mandated we swallow a bit of pride and just tell the player something (the task UI telling the player how to check their tasks). Regardless, making it easier for the player to simply gain comprehension about the game and its possibility space led to more testers actually having meaningful game experiences.
+
+Beyond that, however, lay the much more troubling sentiment of "Whatever I am doing is not fun". We did not have the ability to completely rebuild the game mechanics, so we had to identify ways that the existing systems could be leveraged into more enjoyable gameplay moments. Considering that the game was build around the comedy of doing everyday tasks via punching, it seemed our only recourse was to lean into that as much as possible.
+
+Thus, we got to work making changes such as adding a host of particles to every punch, making more objects in the world punchable, and just generally increasing the sense of chaos the player was able to create through their punches. In a game with one central mechanic you don't have too many places to look to in order to improve the gameplay experience.
+
+<ul class="img-row">
+    <li>
+        <img src="/assets/gifs/store.gif" height="150">
+    </li>
+    <li>
+        There's no chaos like physics-object chaos.
+    </li>
+</ul>
+
+The best example of these changes is the grocery store. Shopping as a task was present from the very first build of the game, though it experienced almost constant evolution through development. Early on, their was a level of restraint in terms of asking questions like "how can we have the player get a fruit into the cart by punching it?". By the end of development, the question had shifted to something more akin to "how many fruits need to be in this pile that when it explodes from a punch some fly into the cart?".
+
+That paradigm shift, of going from ways to work around punching as a limitation to designing the world to accomodate punching as a fun activity, marked a change in our understanding of the game that would not have occured without getting a lot of negative playtest feedback. We continued to showcase PUNCHERMAN!, even getting to go to Unity Developer Day at Unity's Austin office, and each time feedback got better and better as we learned ways to leverage feedback into an improved understanding of the game.
 
 <span class="section-title">Steam Release</span>
 
