@@ -6,7 +6,7 @@ prev-page: /projects
 prev-page-name: Projects
 topic-list: Gameplay Systems, World Design, Game Jams
 description: Shadow Falls is a puzzle game built around an innovative, multi-object shadow puzzle system. Created in Unity for Texas Game Jam, Shadow Falls was lauded for its novel tech and charming narrative.
-preview_img: /assets/previews/giftest.gif
+preview_img: /assets/gifs/shadowfalls-preview.gif
 engine: Unity(C#)
 role: Programmer & Designer
 team-size: 2
