@@ -65,13 +65,15 @@ layout: base
   {%- if page.sections -%}
   <div class="section-links">
     {%- assign section_names = page.sections | split: ", " -%}
+    {%- assign section_anchors = page.section-anchors | split: ", " -%}
+    {%- assign sections = section_names.size -%}
     <ul>
       <li>
         <p class="accent">Sections:</p>
       </li>
-      {%- for section in section_names -%}
+      {%- for secIndex in (0..sections) -%}
       <li>
-        <a href=#{{section}}>{{section}}</a>
+        <a href=#{{section_anchors[secIndex]}}>{{section_names[secIndex]}}</a>
       </li>
       {%- endfor -%}
     </ul>

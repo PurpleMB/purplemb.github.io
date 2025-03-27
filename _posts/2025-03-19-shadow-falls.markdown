@@ -13,6 +13,7 @@ team-size: 2
 itch-link: https://purpleml.itch.io/shadow-falls
 video-link: https://youtu.be/uZlRKLsu1sc
 sections: Introduction, Shadow Puzzles, World Design, Lessons
+section-anchors: intro, puzzles, world, lessons
 ---
 
 <div class="overview">
@@ -34,7 +35,7 @@ Many of the topics discussed in this article, and more, are also addressed in a 
 
 </div>
 
-<span class="anchor" id="Introduction"></span>
+<span class="anchor" id="intro"></span>
 <div>
 <p class="section-title">
 Introduction
@@ -42,7 +43,7 @@ Introduction
 
 </div>
 
-<span class="anchor" id="Shadow Puzzles"></span>
+<span class="anchor" id="puzzles"></span>
 <div>
 <p class="section-title">
 Shadow Puzzles
@@ -50,7 +51,7 @@ Shadow Puzzles
 
 </div>
 
-<span class="anchor" id="World Design"></span>
+<span class="anchor" id="world"></span>
 <div>
 <p class="section-title">
 World Design
@@ -103,7 +104,7 @@ As stated at the beginning of this section, this uncritical approach to player c
 </p>
 </div>
 
-<span class="anchor" id="Lessons"></span>
+<span class="anchor" id="lessons"></span>
 <div>
 <p class="section-title">
 Lessons Learned

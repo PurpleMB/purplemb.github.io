@@ -14,6 +14,7 @@ itch-link: https://noahkuhn.itch.io/puncherman
 steam-link: https://store.steampowered.com/app/2364050/PUNCHERMAN_First_Day/
 video-link: https://youtu.be/wZH0PFK7jYw
 sections: Introduction, AGILE, UI, Playtesting, Steam, Lessons
+section-anchors: intro, agile, ui, playtesting, steam, lessons
 ---
 
 <div class="overview">
@@ -24,7 +25,7 @@ sections: Introduction, AGILE, UI, Playtesting, Steam, Lessons
     </p>
 </div>
 
-<span class="anchor" id="Introduction"></span>
+<span class="anchor" id="intro"></span>
 <div>
 <p class="section-title">
 Introduction
@@ -43,7 +44,7 @@ Ultimately, PUNCHERMAN! came together as a comedic, first-person game that blend
 </p>
 </div>
 
-<span class="anchor" id="AGILE"></span>
+<span class="anchor" id="agile"></span>
 <div>
 <p class="section-title">
 AGILE Development
@@ -71,7 +72,7 @@ AGILE, ultimately, provided us channels for communication and evaluation that al
 </p>
 </div>
 
-<span class="anchor" id="UI"></span>
+<span class="anchor" id="ui"></span>
 <div>
 <p class="section-title">
 User Interface
@@ -123,7 +124,7 @@ Overall, I spent considerable time and effort striving to create a set of interf
 </p>
 </div>
 
-<span class="anchor" id="Playtesting"></span>
+<span class="anchor" id="playtesting"></span>
 <div>
 <p class="section-title">
 Playtesting
@@ -195,7 +196,7 @@ That paradigm shift, of going from ways to work around punching as a limitation 
 </p>
 </div>
 
-<span class="anchor" id="Steam"></span>
+<span class="anchor" id="steam"></span>
 <div>
 <p class="section-title">
 Steam Release
@@ -214,7 +215,7 @@ After a review process that went surprisingly smoothly, PUNCHERMAN! was ready to
 </p>
 </div>
 
-<span class="anchor" id="Lessons"></span>
+<span class="anchor" id="lessons"></span>
 <div>
 <p class="section-title">
 Lessons Learned
