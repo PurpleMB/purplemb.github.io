@@ -476,6 +476,7 @@ input[type=submit] {
   position: fixed;
   z-index: 1;
   top: 0;
+  //background-color: aqua;
 }
 
 .left {
@@ -775,22 +776,22 @@ ul.img-row {
   align-items: center;
   justify-content: center;
   height: 100%;
-  //width: 10%;
+  width: 10%;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 2.5%;
-  background-color: aqua;
+  //background-color: aqua;
   ul{
     list-style: none;
-    background-color: bisque;
+    //background-color: bisque;
+    align-content: center;
     li {
       width: 100%;
-      background-color: purple;
+      //background-color: purple;
       a {
         width: 100%;
-        background-color: black;
-        sele
+        //background-color: black;
       }
     }
   }

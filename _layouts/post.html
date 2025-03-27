@@ -66,6 +66,9 @@ layout: base
   <div class="section-links">
     {%- assign section_names = page.sections | split: " " -%}
     <ul>
+      <li>
+        <p class="accent">Sections:</p>
+      </li>
       {%- for section in section_names -%}
       <li>
         <a href=#{{section}}>{{section}}</a>
