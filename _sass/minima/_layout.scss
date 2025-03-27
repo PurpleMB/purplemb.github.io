@@ -771,7 +771,7 @@ ul.img-row {
 
 .section-links {
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
   height: 100%;
   width: 10%;
@@ -786,10 +786,18 @@ ul.img-row {
     align-content: center;
     li {
       width: 100%;
+      text-decoration: none;
       //background-color: purple;
       a {
         width: 100%;
-        //background-color: black;
+        color: $link-base-color;
+        &:visited {
+          color: $link-base-color;
+        }
+        &:hover {
+          color: $link-hover-color;
+          text-decoration: none;
+        }
       }
     }
   }
