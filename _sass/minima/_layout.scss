@@ -236,7 +236,7 @@
 .page-content {
   padding-top: 60px + $spacing-unit;
   padding-inline: 0;
-  padding-bottom: $spacing-unit;
+  padding-bottom: $spacing-unit * 3;
   flex: 1 0 auto;
 }
 
@@ -318,8 +318,6 @@
 }
 
 .post-content {
-  margin-bottom: 25%;;
-
   h1, h2, h3, h4, h5, h6 { margin-top: $spacing-unit }
 
   h2 {
@@ -795,6 +793,13 @@ ul.img-row {
       }
     }
   }
+}
+
+.anchor{
+  display:block;
+  height:63px; /* this is the height of your header */
+  margin-top:-63px; /* this is again negative value of the height of your header */
+  visibility:hidden;
 }
 
 

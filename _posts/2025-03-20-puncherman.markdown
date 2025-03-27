@@ -24,7 +24,8 @@ sections: Introduction  AGILE  UI  Playtesting  Steam  Lessons
     </p>
 </div>
 
-<div id="Introduction">
+<span class="anchor" id="Introduction"></span>
+<div>
 <p class="section-title">
 Introduction
 </p>
@@ -42,7 +43,8 @@ Ultimately, PUNCHERMAN! came together as a comedic, first-person game that blend
 </p>
 </div>
 
-<div id="AGILE">
+<span class="anchor" id="AGILE"></span>
+<div>
 <p class="section-title">
 AGILE Development
 </p>
@@ -69,7 +71,8 @@ AGILE, ultimately, provided us channels for communication and evaluation that al
 </p>
 </div>
 
-<div id="UI">
+<span class="anchor" id="UI"></span>
+<div>
 <p class="section-title">
 User Interface
 </p>
@@ -120,7 +123,8 @@ Overall, I spent considerable time and effort striving to create a set of interf
 </p>
 </div>
 
-<div id="Playtesting">
+<span class="anchor" id="Playtesting"></span>
+<div>
 <p class="section-title">
 Playtesting
 </p>
@@ -191,7 +195,8 @@ That paradigm shift, of going from ways to work around punching as a limitation 
 </p>
 </div>
 
-<div id="Steam">
+<span class="anchor" id="Steam"></span>
+<div>
 <p class="section-title">
 Steam Release
 </p>
@@ -209,7 +214,8 @@ After a review process that went surprisingly smoothly, PUNCHERMAN! was ready to
 </p>
 </div>
 
-<div id="Lessons">
+<span class="anchor" id="Lessons"></span>
+<div>
 <p class="section-title">
 Lessons Learned
 </p>
