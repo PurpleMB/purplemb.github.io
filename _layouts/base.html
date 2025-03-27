@@ -13,8 +13,8 @@
       </div>
     </main>
 
+    {%- if page.prev-page -%}
     <div class="sidenav left">
-      {%- if page.prev-page -%}
         <a class="navbutton" href={{page.prev-page}}>
           <svg fill="currentColor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
@@ -24,11 +24,11 @@
                       c2.814,2.813,4.394,6.628,4.394,10.606C230,168.976,228.42,172.792,225.606,175.605z" />
           </svg>
         </a>
-      {%- endif -%}
     </div>
+    {%- endif -%}
     
+    {%- if page.next-page -%}
     <div class="sidenav right">
-      {%- if page.next-page -%}
         <a class="navbutton" href={{page.next-page}}>
           <svg fill="currentColor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
@@ -38,9 +38,10 @@
                               c2.814,2.813,4.394,6.628,4.394,10.606C230,168.976,228.42,172.792,225.606,175.605z" />
           </svg>
         </a>
-      {%- endif -%}
     </div>
-  
+    {%- endif -%}
+
+    
     {%- include footer.html -%}
 
     {%- include sub-footer.html -%}

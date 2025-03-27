@@ -772,7 +772,6 @@ ul.img-row {
 
 .section-links {
   display: flex;
-  list-style: none;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -781,8 +780,19 @@ ul.img-row {
   z-index: 1;
   top: 0;
   right: 2.5%;
-  li {
-    width: 100%;
+  background-color: aqua;
+  ul{
+    list-style: none;
+    background-color: bisque;
+    li {
+      width: 100%;
+      background-color: purple;
+      a {
+        width: 100%;
+        background-color: black;
+        sele
+      }
+    }
   }
 }
 
