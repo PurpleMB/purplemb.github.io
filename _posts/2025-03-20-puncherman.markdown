@@ -13,7 +13,7 @@ team-size: 8
 itch-link: https://noahkuhn.itch.io/puncherman
 steam-link: https://store.steampowered.com/app/2364050/PUNCHERMAN_First_Day/
 video-link: https://youtu.be/wZH0PFK7jYw
-sections: Introduction  AGILE  UI  Playtesting  Steam  Lessons
+sections: Introduction, AGILE, UI, Playtesting, Steam, Lessons
 ---
 
 <div class="overview">

@@ -12,7 +12,7 @@ role: Programmer & Designer
 team-size: 2
 itch-link: https://purpleml.itch.io/shadow-falls
 video-link: https://youtu.be/uZlRKLsu1sc
-
+sections: Introduction, Shadow Puzzles, World Design, Lessons
 ---
 
 <div class="overview">
@@ -27,35 +27,28 @@ video-link: https://youtu.be/uZlRKLsu1sc
     </p>
 </div>
 
-<span class="section-title">Introduction</span>
+<span class="anchor" id="Introduction"></span>
+<div>
+<p class="section-title">
+Introduction
+</p>
 
-This is a test post to see how making posts works!
+<span class="anchor" id="Shadow Puzzles"></span>
+<div>
+<p class="section-title">
+Shadow Puzzles
+</p>
 
-So far, this seems like a very simple and efficient way to make a personal static site!
+<span class="anchor" id="World Design"></span>
+<div>
+<p class="section-title">
+World Design
+</p>
 
-`Hello World`
+<span class="anchor" id="Lessons"></span>
+<div>
+<p class="section-title">
+Lessons Learned
+</p>
 
-<span class="section-title">Shadow Puzzles</span>
-
-This is a test post to see how making posts works!
-
-So far, this seems like a very simple and efficient way to make a personal static site!
-
-`Hello World`
-
-<span class="section-title">World Design</span>
-
-This is a test post to see how making posts works!
-
-So far, this seems like a very simple and efficient way to make a personal static site!
-
-`Hello World`
-
-<span class="section-title">Lessons Learned</span>
-
-This is a test post to see how making posts works!
-
-So far, this seems like a very simple and efficient way to make a personal static site!
-
-`Hello World`
 
