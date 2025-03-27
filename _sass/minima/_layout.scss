@@ -770,4 +770,20 @@ ul.img-row {
   color: $site-title-color;
 }
 
+.section-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  //width: 10%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 2.5%;
+  li {
+    width: 100%;
+  }
+}
+
 

@@ -62,5 +62,18 @@ layout: base
     {{ content }}
   </div>
 
+  <div class="section-links">
+    {%- if page.sections -%}
+    {%- assign section_names = page.sections | split: " " -%}
+    <ul>
+      {%- for section in section_names -%}
+      <li>
+        <a href=#{{section}}>{{section}}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+  </div>
+
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

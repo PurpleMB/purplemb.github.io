@@ -13,6 +13,7 @@ team-size: 8
 itch-link: https://noahkuhn.itch.io/puncherman
 steam-link: https://store.steampowered.com/app/2364050/PUNCHERMAN_First_Day/
 video-link: https://youtu.be/wZH0PFK7jYw
+sections: Introduction  AGILE  UI  Playtesting  Steam  Lessons
 ---
 
 <div class="overview">
@@ -23,13 +24,16 @@ video-link: https://youtu.be/wZH0PFK7jYw
     </p>
 </div>
 
+<div id="Introduction">
 <span class="section-title">Introduction</span>
+
 
 PUNCHERMAN! was born as a capstone project being worked on by an interdisciplinary team of 6 members, including myself. Utilizing AGILE development practices, we nurtured the game from preproduction and prototyping through playtesting and refinement until reaching our initial launch on Itch.io.     
 
 After a period of dormancy, PUNCHERMAN! re-entered development with a new team, containing 2 returning members and 2 new members. Armed with the knowledge gained from the previous development cycle, we iterated on virtually every aspect of the game. After months of redefining the visual style, game design, and underlying code architecture we released the game for free on Steam under the name PUNCHERMAN!: FIRST DAY.
 
 Ultimately, PUNCHERMAN! came together as a comedic, first-person game that blends elements of puzzle, simulation, and classic shooter games to create a stylish and charming experience that I am still proud to have been a part of. While it may not be perfect, I can attest to the love and learning that went into PUNCHERMAN! over the course of more than a year.
+</div>
 
 <span class="section-title">AGILE Development</span>
 
