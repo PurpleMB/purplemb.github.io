@@ -98,6 +98,18 @@ It is lucky, then, that I was tasked with assembling a basic ray tracer at rough
 I began by forming a system wherein an array of objects could, in tandem, check for an obstacle between them and a defined lightsource, mirroring an implementation of a direct shadow system from a graphics raycaster. From there I simply had to allow for each "checker node" to indicate whether it was wanting to be obstructed or not, allowing me to define a desired shape for the obstructed areas. At that point, I had a basic version of a system that could evaluate whether a specified "shape", defined by a set of individual points, was being obstructed from a light source.
 </p>
 
+<ul class="img-row">
+    <li>
+        <img src="/assets/gifs/shadows2.gif" height="150">
+    </li>
+    <li>
+        <img src="/assets/gifs/shadows1.gif" height="150">
+    </li>
+    <li>
+        Combining simple shapes lets the player freely craft complex shadows.
+    </li>
+</ul>
+
 <p>
 This approach, which relied only on the ability to cast a ray from one object to another, meant that any item could be used to solve a puzzle as long as it was properly configured within the collision system. Additionally, the number, size, and shape of the items casting shadows was completely inconsequential. Thus, the promise of a shadow puzzle system that allowed the player to use any number of items in any number of positions they wanted was fulfilled.
 </p>
