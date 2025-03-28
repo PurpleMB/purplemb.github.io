@@ -32,12 +32,15 @@ remote_theme: jekyll/minima
 
 minima:
   social_links:
-    - title: My GitHub
+    - title: Check out my GitHub
       icon: github
       url: "https://github.com/PurpleMB"
-    - title: My LinkedIn
+    - title: Connect with me on LinkedIn
       icon: linkedin
       url: "https://www.linkedin.com/in/carter-boclair/"
+    - title: View my Itch.io page
+      icon: itch-io
+      url: https://purpleml.itch.io/
 
 plugins:
   - jekyll-feed
