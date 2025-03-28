@@ -42,15 +42,15 @@ Introduction
 </p>
 
 <p>
-<span class="book-title">Shadow Falls</span> was developed within a little over 48 hours for the Texas Game Jam, the annual game jam thrown by the game development organization at the University of Texas. The given theme for the jam was "negative space".
+<span class="book-title">Shadow Falls</span> was developed within a little over 48 hours for the Texas Game Jam, an annual game jam thrown by the game development organization at the University of Texas. The given theme for the jam was "negative space".
 </p>
 
 <p>
-Almost immediately, my mind went to a "negative" that people are observing almost constantly: shadows. Being a perennial fan of the <span class="book-title">Resident Evil</span>  series, I was also reminded of a recurring puzzle type that I enjoy each time the series brings it back: the shadow puzzle. However, I always wish to test new ground with any project I undertake so I was reluctant to simply copy over the classic formula of rotating a bizarrely shaped object to create a thematically-appropriate shadow.
+Almost immediately, my mind went to a "negative" that people are observing almost constantly: shadows. Being a perennial fan of the <span class="book-title">Resident Evil</span>  series, I was also reminded of a recurring puzzle type that I enjoy each time the series brings it back: the shadow puzzle. Being tasked with rotating an object in just the right fashion to create a specifically shaped shadow is an intuitive, viscerally satisfying gameplay system. However, I always wish to test new ground with any project I undertake so I was reluctant to simply copy over the classic formula of rotating a bizarrely shaped object to create a thematically-appropriate shadow.
 </p>
 
 <p>
-Considering what I found compelling about the puzzles, however, left me with a question: why do they only ever use a single object? Of course, the answer, as with most things, is that it is much easier to set up a shadow puzzle that centers one, carefully crafted object. All it takes is a little bit of vector math and, bam, you have a functioning shadow puzzle system where you rotate an object until it is in a desired orientation.
+Considering what I found compelling about the puzzles, however, left me with a question: why do they only ever use a single object? Of course, the answer, as with most things, is that it is much easier to set up a shadow puzzle that centers one carefully crafted object. All it takes is a little bit of vector math and, bam, you have a functioning shadow puzzle system where you rotate an object until it is in a desired orientation.
 </p>
 
 <p>
@@ -90,12 +90,15 @@ It is lucky, then, that I was tasked with assembling a basic ray tracer at rough
         <img src="/assets/gifs/raycasting.gif" height="150">
     </li>
     <li>
+        <img src="/assets/gifs/lightmoving.gif" height="150">
+    </li>
+    <li>
         The rays are able to approximate the shadow cast by an object, even at a rough grain.
     </li>
 </ul>
 
 <p>
-I began by forming a system wherein an array of objects could, in tandem, check for an obstacle between them and a defined lightsource, mirroring an implementation of a direct shadow system from a graphics raycaster. From there I simply had to allow for each "checker node" to indicate whether it was wanting to be obstructed or not, allowing me to define a desired shape for the obstructed areas. At that point, I had a basic version of a system that could evaluate whether a specified "shape", defined by a set of individual points, was being obstructed from a light source.
+I began by forming a system wherein an array of objects could, in tandem, check for an obstacle between them and a defined lightsource, mirroring an implementation of a direct shadow system from a graphics ray tracer. From there I simply had to allow for each "checker node" to indicate whether it was wanting to be obstructed or not, allowing me to define a desired shape for the obstructed areas. At that point, I had a basic version of a system that could evaluate whether a specified "shape", defined by a set of individual points, was being obstructed from a light source.
 </p>
 
 <ul class="img-row">
@@ -115,7 +118,7 @@ This approach, which relied only on the ability to cast a ray from one object to
 </p>
 
 <p>
-However, there are a few major flaws inherent to this system. Firstly, it can be expensive. If you want a more accurate approximation of the actual shadow cast by an object then more rays must be cast, directly tying the precision of the system to how much time it takes. Additionally, and this is likely obvious if you ever see the puzzle designs in the game, it is a system most suited to evaluating shadows composed of rigid, orthogonal lines. It is, of course, possible to decrease the constraints imposed by this fact by casting a more extensive grid of rays, but that once again raises concerns of performance.
+However, there are a few major flaws inherent to this system. Firstly, it can be expensive. If you want a more accurate approximation of the actual shadow cast by an object then more rays must be cast, directly tying the precision of the system to how much time it takes. Additionally, and this is likely obvious if you ever see the puzzle designs in the game, it is a system most suited to evaluating shadows composed of rigid, orthogonal lines. Introducing curved shadows increases the chances of the actual shadow cast by an object being interpreted differently from the rays checking for an obstruction. It is, of course, possible to decrease the constraints imposed by this fact by casting a more extensive grid of rays, but that once again raises concerns of performance.
 </p>
 
 <p>
@@ -127,7 +130,7 @@ An alternative approach would be to amortize out the cost of checking rays by as
 </p>
 
 <p>
-Worse even than performance concerns is the fact that without time to develop adequate tools to support the system it is just painful to use. For this jam I went in for each puzzle, created around 100 checker nodes, and manually positioned and set the desired value for each one.
+Beyond performance concerns, without adequate tools this system is just painful to use. Having no time to develop a more formalized pipeline for creating puzzles, I had to take an extremely primitive approach to constructing the puzzles seen in this version of the game. For this jam I went in for each puzzle, created around 100 checker nodes, and manually positioned and set the desired value for each one.
 </p>
 
 <p>
@@ -156,7 +159,7 @@ Moving now to perhaps the greatest failure point of <span class="book-title">Sha
 
 <ul class="img-row">
     <li>
-        <img src="/assets/imgs/sfmap.jpg" height="150">
+        <img src="/assets/imgs/sfmap.jpg" height="200">
     </li>
     <li>
         If I removed the magenta dot, could you determine where the game started?
@@ -177,7 +180,7 @@ When designing this world layout, I was attempting to provide the player a "free
 
 <ul class="img-row">
     <li>
-        <img src="/assets/imgs/sfmapimproved.jpg" height="150">
+        <img src="/assets/imgs/sfnewmap.jpg" height="200">
     </li>
     <li>
         A mixture of linearity and freedom leads to more parsable, navigable game worlds.
@@ -185,11 +188,11 @@ When designing this world layout, I was attempting to provide the player a "free
 </ul>
 
 <p>
-If we consult this second, admittedly ugly, map then we can begin to imagine ways that <span class="book-title">Shadow Falls</span> could have been structured to better accommodate a mixture of player direction and exploration. On this version of the map, geographical features, such as the lake, can be used to constrain the play space in a way that feels inoffensive. Thus, the designer can be certain where the player is actually going as they play the opening stretch of the game. Once the player has been properly introduced to the game and its mechanics they can be given choices, as seen in the triangle of puzzles at the southern end of the map. After the player has made a choice, the world then provides a way for the player to navigate back towards the path they did not travel by connecting to it with a new, enticing path for the player to explore. 
+If we consult this second (unfortunately more ugly) map then we can begin to imagine ways that <span class="book-title">Shadow Falls</span> could have been structured to better accommodate a mixture of player direction and exploration. On this version of the map, geographical features, such as the lake, can be used to constrain the play space in a way that feels inoffensive. Thus, the designer can be certain where the player is actually going as they play the opening stretch of the game. Once the player has been properly introduced to the game and its mechanics they can be given choices, as seen in the triangle of puzzles at the southern end of the map. After the player has made a choice, the world then provides a way for the player to navigate back towards the path they did not travel by connecting to it with a new, enticing path for the player to explore. 
 </p>
 
 <p>
-While relatively simple and ripe for further improvement, a world designed in this way is much more understandable at both the macro and micro levels. A designer is able to have some degree of confidence in the order the player will progress through the game world while still facilitating player choice. Additionally, the player will, despite technically having less freedom, likely feel more engaged by the freedom they are later given as they have been placed in a space that wants to be explored and gave the player the information to effectively do so.
+While relatively simple and ripe for further improvement, a world designed in this way is much more understandable from both a designer and player perspective. A designer is able to have some degree of confidence in the order the player will progress through the game world while still facilitating player choice. Meanwhile, the player will, despite technically having less freedom, likely feel more engaged by the freedom they are later given as they have been placed in a space that wants to be explored and provides them the information to effectively do so.
 </p>
 
 <p>
@@ -212,11 +215,11 @@ On one hand, the success of the shadow puzzle system professes the virtue of cra
 </p>
 
 <p>
-Contrasting that success, lies the equally instructional missteps regarding the world design of the game. Mirroring general trends in the lackluster player communication of <span class="book-title">Shadow Falls</span>, an overly naive, open approach to world design left players without adequate guidance to truly enjoy the game. Rather than simply throwing players into the deep end (a potentially valid approach for a game not seeking to be primarily relaxing), a better decision would have been to slowly layer freedom and player choice onto a stronger foundation of game knowledge built during an initial period of linearity and stability.
+Contrasting that success, one can observe the equally instructional missteps regarding the world design of the game. Mirroring general trends in the lackluster player communication of <span class="book-title">Shadow Falls</span>, an overly naive, open approach to world design left players without adequate guidance to truly enjoy the game. Rather than simply throwing players into the deep end (while a potentially valid approach for a game not seeking to be primarily relaxing), a better decision would have been to slowly layer freedom and player choice onto a stronger foundation of game knowledge built during an initial period of linearity and stability.
 </p>
 
 <p>
-Overall, both lessons point to the importance of composition when creating anything of greater complexity. Looking for ways to leverage existing knowledge, be it from a developer or player, allows for one to more confidently build towards something novel and engaging. 
+Overall, both lessons point to the importance of composition when creating anything of greater complexity. Looking for ways to leverage existing knowledge, be it from a developer or player, allows for one to more confidently build towards something novel and engaging. It could be said, if one was feeling poetic, that the lessons of <span class="book-title">Shadow Falls'</span> development are much the same as the lessons contained within its defining gameplay system.
 </p>
 
 </div>
