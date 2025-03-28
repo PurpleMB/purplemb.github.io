@@ -5,7 +5,7 @@ date:   2025-03-19 12:16:30 -0600
 prev-page: /projects
 prev-page-name: Projects
 topic-list: Gameplay Systems, World Design, Game Jams
-description: Shadow Falls is a puzzle game built around an innovative, multi-object shadow puzzle system. Created in Unity for Texas Game Jam, Shadow Falls was lauded for its novel tech and charming narrative.
+description: <span class="book-title">Shadow Falls</span> is a puzzle game built around an innovative, multi-object shadow puzzle system. Created in Unity for Texas Game Jam, the game was lauded for its novel tech and charming narrative while other areas, such as its world design, left room for improvement.
 preview_img: /assets/gifs/shadowfalls-preview.gif
 engine: Unity(C#)
 role: Programmer & Designer
@@ -20,7 +20,7 @@ section-anchors: intro, puzzles, world, lessons
     <span class="overview-title">Overview</span>
     <br>
     <p>
-        Shadow Falls was a <span class="accent">jam game</span> created over the course of two days for Texas Game Jam. During its rapid development, I deepened my understanding of ways to twist standard game development concepts to <span class="accent">create novel gameplay systems</span>. The focal point of the game was its award-winning <span class="accent">shadow puzzle system</span>, which applied everyday graphics techniques in inventive ways to facilitate unique gameplay. Beyond that, however, its failures in areas such as <span class="accent">world design</span> and player communication also provided valuable development insights about the need for balance between player freedom and direction.
+        <span class="book-title">Shadow Falls</span> was a <span class="accent">jam game</span> created over the course of two days for Texas Game Jam. During its rapid development, I deepened my understanding of ways to twist standard game development concepts to <span class="accent">create novel gameplay systems</span>. The focal point of the game was its award-winning <span class="accent">shadow puzzle system</span>, which applied everyday graphics techniques in inventive ways to facilitate unique gameplay. Beyond that, however, its failures in areas such as <span class="accent">world design</span> and player communication also provided valuable development insights about the need for balance between player freedom and direction.
     </p>
 </div>
 
@@ -42,7 +42,7 @@ Introduction
 </p>
 
 <p>
-Shadow Falls was developed within a little over 48 hours for the Texas Game Jam, the annual game jam thrown by the game development organization at the University of Texas. The given theme for the jam was "negative space".
+<span class="book-title">Shadow Falls</span> was developed within a little over 48 hours for the Texas Game Jam, the annual game jam thrown by the game development organization at the University of Texas. The given theme for the jam was "negative space".
 </p>
 
 <p>
@@ -58,7 +58,7 @@ Confronted with this common limitation, I saw an avenue for exploration. If I co
 </p>
 
 <p>
-Roughly two days and many hours of rapid work later, we had assembled an admittedly rough demonstration of this gameplay concept wrapped in a cute, pastel shell. However, it would seem that the idea holds some amount of water as Shadow Falls went on to win first place for its  innovative technology (also winning first for its narrative, second for its visuals, and a judge's choice award).
+Roughly two days and many hours of rapid work later, we had assembled an admittedly rough demonstration of this gameplay concept wrapped in a cute, pastel shell. However, it would seem that the idea holds some amount of water as <span class="book-title">Shadow Falls</span> went on to win first place for its  innovative technology (also winning first for its narrative, second for its visuals, and a judge's choice award).
 </p>
 
 <p>
@@ -82,7 +82,7 @@ This approach, obviously, requires the designer to have pretty exact information
 </p>
 
 <p>
-It is lucky, then, that I was tasked with assembling a basic ray tracer at roughly the same time that Shadow Falls was being developed. While I considered multiple different ways to evaluate the collective shadow cast by a group of objects, including converting the shadowed surface to a texture to be evaluated per-pixel or even using shape recognition, they all seemed prone to one error or another. Instead, I figured why not just leverage a concept I was already experimenting with: casting rays.
+It is lucky, then, that I was tasked with assembling a basic ray tracer at roughly the same time that <span class="book-title">Shadow Falls</span> was being developed. While I considered multiple different ways to evaluate the collective shadow cast by a group of objects, including converting the shadowed surface to a texture to be evaluated per-pixel or even using shape recognition, they all seemed prone to one error or another. Instead, I figured why not just leverage a concept I was already experimenting with: casting rays.
 </p>
 
 <ul class="img-row">
@@ -139,7 +139,7 @@ World Design
 </p>
 
 <p>
-Moving now to perhaps the greatest failure point of Shadow Falls: its world design. The world design of Shadow Falls serves as a microcosm of many of the design issues that held the game back in spite of its better ideas. Simply put: it doesn't help the player have fun. Many players were left stumbling around a relatively barren, if pretty, world trying to find where exactly we had hidden the fun stuff.
+Moving now to perhaps the greatest failure point of <span class="book-title">Shadow Falls</span>: its world design. The world design of <span class="book-title">Shadow Falls</span> serves as a microcosm of many of the design issues that held the game back in spite of its better ideas. Simply put: it doesn't help the player have fun. Many players were left stumbling around a relatively barren, if pretty, world trying to find where exactly we had hidden the fun stuff.
 </p>
 
 <ul class="img-row">
@@ -160,7 +160,7 @@ Upon seeing this image, something immediately becomes apparent: this world has n
 </p>
 
 <p>
-When designing this world layout, I was attempting to provide the player a "free" and "unpressured" experience. However, in my uncritical attempts to do so I wound up making a world that is not designed to be navigated in a fun, intuitive way. In the time since the development of Shadow Falls, I have come to appreciate the ways in which adding some degree of structure and linearity can serve to augment and strengthen the sense of freedom provided by a game. If, instead of giving the player full freedom from the start of the game, I had placed them in a linear area that opened up into a freeform experience, then I am sure many more players would have walked away happy and feeling a sense of agency.
+When designing this world layout, I was attempting to provide the player a "free" and "unpressured" experience. However, in my uncritical attempts to do so I wound up making a world that is not designed to be navigated in a fun, intuitive way. In the time since the development of <span class="book-title">Shadow Falls</span>, I have come to appreciate the ways in which adding some degree of structure and linearity can serve to augment and strengthen the sense of freedom provided by a game. If, instead of giving the player full freedom from the start of the game, I had placed them in a linear area that opened up into a freeform experience, then I am sure many more players would have walked away happy and feeling a sense of agency.
 </p>
 
 <ul class="img-row">
@@ -173,7 +173,7 @@ When designing this world layout, I was attempting to provide the player a "free
 </ul>
 
 <p>
-If we consult this second, admittedly ugly, map then we can begin to imagine ways that Shadow Falls could have been structured to better accommodate a mixture of player direction and exploration. On this version of the map, geographical features, such as the lake, can be used to constrain the play space in a way that feels inoffensive. Thus, the designer can be certain where the player is actually going as they play the opening stretch of the game. Once the player has been properly introduced to the game and its mechanics they can be given choices, as seen in the triangle of puzzles at the southern end of the map. After the player has made a choice, the world then provides a way for the player to navigate back towards the path they did not travel by connecting to it with a new, enticing path for the player to explore. 
+If we consult this second, admittedly ugly, map then we can begin to imagine ways that <span class="book-title">Shadow Falls</span> could have been structured to better accommodate a mixture of player direction and exploration. On this version of the map, geographical features, such as the lake, can be used to constrain the play space in a way that feels inoffensive. Thus, the designer can be certain where the player is actually going as they play the opening stretch of the game. Once the player has been properly introduced to the game and its mechanics they can be given choices, as seen in the triangle of puzzles at the southern end of the map. After the player has made a choice, the world then provides a way for the player to navigate back towards the path they did not travel by connecting to it with a new, enticing path for the player to explore. 
 </p>
 
 <p>
@@ -181,7 +181,7 @@ While relatively simple and ripe for further improvement, a world designed in th
 </p>
 
 <p>
-As stated at the beginning of this section, my initial, lacking approach to player communication and freedom extends to other areas of the game, such as the tutorializing of the puzzle mechanics. As in this case, many of these related issues could be solved by a stronger balance between player agency and intentional design. In all, the failures of the world design of Shadow Falls serve as a good lesson in the ways that linearity and openness must be managed in all aspects of development.
+As stated at the beginning of this section, my initial, lacking approach to player communication and freedom extends to other areas of the game, such as the tutorializing of the puzzle mechanics. As in this case, many of these related issues could be solved by a stronger balance between player agency and intentional design. In all, the failures of the world design of <span class="book-title">Shadow Falls</span> serve as a good lesson in the ways that linearity and openness must be managed in all aspects of development.
 </p>
 </div>
 
@@ -192,7 +192,7 @@ Lessons Learned
 </p>
 
 <p>
-Having now deconstructed key points of success and failure for Shadow Falls, it becomes clear that both provide insight into creating engaging, player-driven experiences.
+Having now deconstructed key points of success and failure for <span class="book-title">Shadow Falls</span>, it becomes clear that both provide insight into creating engaging, player-driven experiences.
 </p>
 
 <p>
@@ -200,7 +200,7 @@ On one hand, the success of the shadow puzzle system professes the virtue of cra
 </p>
 
 <p>
-Contrasting that success, lies the equally instructional missteps regarding the world design of the game. Mirroring general trends in the lackluster player communication of Shadow Falls, an overly naive, open approach to world design left players without adequate guidance to truly enjoy the game. Rather than simply throwing players into the deep end (a potentially valid approach for a game not seeking to be primarily relaxing), a better decision would have been to slowly layer freedom and player choice onto a stronger foundation of game knowledge built during an initial period of linearity and stability.
+Contrasting that success, lies the equally instructional missteps regarding the world design of the game. Mirroring general trends in the lackluster player communication of <span class="book-title">Shadow Falls</span>, an overly naive, open approach to world design left players without adequate guidance to truly enjoy the game. Rather than simply throwing players into the deep end (a potentially valid approach for a game not seeking to be primarily relaxing), a better decision would have been to slowly layer freedom and player choice onto a stronger foundation of game knowledge built during an initial period of linearity and stability.
 </p>
 
 <p>
