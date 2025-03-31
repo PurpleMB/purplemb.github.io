@@ -6,10 +6,12 @@ prev-page: /projects
 prev-page-name: Projects
 topic-list: Event-driven Programming, Decoupling, ScriptableObjects, Dialogue
 description: Drink Game is a cozy 2D game about creating drinks for a cast of cute critters. It is being developed in Unity utilizing a ScriptableObject-based communication system to keep systems extensible and decoupled.
-preview_img: /assets/previews/giftest.gif
+preview_img: /assets/gifs/drinkgame-preview-rough.gif
 engine: Unity(C#)
 role: Programmer & Designer
 team-size: 2
+sections: Introduction, Event Channels, Scriptable Objects, Lessons
+section-anchors: intro, channels, scriptableobjects, lessons
 ---
 
 <div class="overview">
@@ -24,35 +26,43 @@ team-size: 2
     </p>
 </div>
 
-<span class="section-title">Introduction</span>
+<span class="anchor" id="intro"></span>
+<div>
+<p class="section-title">
+Introduction
+</p>
 
-This is a test post to see how making posts works!
+<p>
+This section has not been written yet!
+</p>     
 
-So far, this seems like a very simple and efficient way to make a personal static site!
+<span class="anchor" id="channels"></span>
+<div>
+<p class="section-title">
+Event Channels
+</p>
 
-`Hello World`
+<p>
+This section has not been written yet!
+</p>     
 
-<span class="section-title">Event Channels</span>
+<span class="anchor" id="scriptableobjects"></span>
+<div>
+<p class="section-title">
+Scriptable Objects
+</p>
 
-This is a test post to see how making posts works!
+<p>
+This section has not been written yet!
+</p>     
 
-So far, this seems like a very simple and efficient way to make a personal static site!
+<span class="anchor" id="lessons"></span>
+<div>
+<p class="section-title">
+Lessons Learned
+</p>
 
-`Hello World`
-
-<span class="section-title">Scriptable Objects</span>
-
-This is a test post to see how making posts works!
-
-So far, this seems like a very simple and efficient way to make a personal static site!
-
-`Hello World`
-
-<span class="section-title">Lessons Learned</span>
-
-This is a test post to see how making posts works!
-
-So far, this seems like a very simple and efficient way to make a personal static site!
-
-`Hello World`
+<p>
+This section has not been written yet!
+</p>     
 
