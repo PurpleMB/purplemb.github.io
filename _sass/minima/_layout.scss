@@ -459,8 +459,9 @@ input[type=submit] {
 /**
  * NavButton
  */
-.navbutton {
-  width :25%;
+ .navbutton {
+  width :100%;
+  max-width: 50px;
   appearance: button;
   text-decoration: none;
   color: #000;
@@ -470,7 +471,9 @@ input[type=submit] {
 .sidenav {
   display: flex;
   align-items: center;
+  //align-content: center;
   justify-content: center;
+  //justify-items: center;
   height: 100%;
   width: 10%;
   position: fixed;
