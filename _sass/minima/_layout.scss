@@ -10,7 +10,6 @@
   background-color: darken($background-color, 25%);
   //border-top: 10px solid $border-color-03;
   border-bottom: 0px solid $border-color-03;
-  margin-left: 0;
 }
 
 .site-title {
@@ -80,24 +79,26 @@
     clear: both;
     width: 0;
     height: calc(100vh - 60px);
-    transition: width 1s;
+    transition: width .5s;
     overflow: hidden;
     background-color: darken($background-color, 25%);
     //border-left: 1px solid;
     //border-left-color: transparent;
-    .drawer { opacity: 0 }
+    .drawer { 
+      opacity: 0;
+    }
   }
 
   #nav-trigger:checked ~ .drawer-container {
     width: 120px;
     padding-bottom: 5px;
-    transition: width .75s;
+    transition: width .5s;
     overflow: auto;
     border-left-color: $border-color-01;
     .drawer {
       padding: $spacing-unit * 0.5;
       opacity: 1;
-      transition: opacity 2s;
+      transition: opacity .25s .5s;
     }
   }
 
