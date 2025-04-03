@@ -574,18 +574,28 @@ ul.project-preview {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;;
+  align-content: center;
+  font-size: 3vmax;
+  width: 70%;
+  height: 80%;
  }
 
  ul.home-text {
   list-style: none;
-  font-size: 3vw;
+  font-size: auto;
+  height: 100%;
   padding: 0;
+  margin: 0;
   li {
     display: inline-block;
     margin: 0%;
     width: 100%;
+    height: 50%;
   }
+ }
+
+ .line {
+  display: inline-block;
  }
 
  .greeting {

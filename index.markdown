@@ -8,13 +8,7 @@ next-page-name: About
 ---
 
 <div class="centered">
-    <ul class="home-text">
-        <li>
-            <span class="greeting">Welcome!</span> 
-        I'm <span class="full-name">Carter Boclair</span>, 
-        </li>
-        <li>
-            a gameplay and systems programmer.
-        </li>
-    </ul>
+    <span class="line"><span class="greeting">Welcome!</span></span> 
+    <span class="line">I'm <span class="full-name">Carter Boclair</span>,</span> 
+    <span class="line">a gameplay and systems programmer.</span>
 </div>
