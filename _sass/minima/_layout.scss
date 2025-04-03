@@ -359,11 +359,11 @@
     min-width: 45px;
     min-height: 45px;
     text-align: center;
-    margin: 5px 10px 5px 0;
+    margin: 6px 10px 6px 0;
     &:last-of-type { margin-right: 0 }
     a {
       display: block;
-      padding: 10px 12px;
+      padding: 0px 8px;
       &:hover { border-color: $border-color-02 }
     }
   }
