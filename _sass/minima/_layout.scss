@@ -800,6 +800,12 @@ ul.img-row {
     margin: 0;
     width: 100%;
     align-content: center;
+    ::marker {
+      font-size: 2vmin;
+    }
+    p {
+      font-size: 3vmin;
+    }
     li {
       width: 100%;
       text-decoration: none;
@@ -807,6 +813,7 @@ ul.img-row {
       a {
         width: 100%;
         color: $link-base-color;
+        font-size: 2vmin;
         &:visited {
           color: $link-base-color;
         }
@@ -815,6 +822,9 @@ ul.img-row {
           text-decoration: none;
         }
       }
+    }
+    li + li {
+      margin-top: 5px;
     }
   }
 }
