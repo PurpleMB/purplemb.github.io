@@ -799,6 +799,9 @@ ul.img-row {
   top: 0;
   right: 2.5%;
   //background-color: aqua;
+  @media only screen and (max-width: 750px) {
+    display: none;
+  }
   ol{
     //background-color: bisque;
     margin: 0;
