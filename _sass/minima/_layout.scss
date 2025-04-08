@@ -1,6 +1,11 @@
 /**
  * Site header
  */
+.header-wrapper {
+  max-width: 100%;
+  padding: 0% 10%;
+}
+
 .site-header {
   position: fixed;
   z-index: 3;
@@ -38,7 +43,7 @@
 .site-nav {
   position: absolute;
   top: 9px;
-  right: $spacing-unit * .5;
+  right: 10%;
   background-color: $background-color;
   border: 1px solid $border-color-01;
   border-color: $site-title-color;
