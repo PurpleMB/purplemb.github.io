@@ -4,7 +4,7 @@
 .header-wrapper {
   max-width: 100%;
   padding: 0% 5vw;
-  @media screen and (min-width: $on-medium) {
+  @media screen and (min-width: 950px) {
     padding: 0 20vw;
   }
 }
@@ -123,7 +123,7 @@
     }
   }
 
-  @media screen and (min-width: $on-medium) {
+  @media screen and (min-width: 700px) {
     position: static;
     float: right;
     border: none;
