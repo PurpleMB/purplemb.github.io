@@ -3,7 +3,10 @@
  */
 .header-wrapper {
   max-width: 100%;
-  padding: 0% 10vw;
+  padding: 0% 5vw;
+  @media screen and (min-width: $on-medium) {
+    padding: 0 20vw;
+  }
 }
 
 .site-header {
@@ -43,7 +46,7 @@
 .site-nav {
   position: absolute;
   top: 9px;
-  right: 10vw;
+  right: 5vw;
   background-color: $background-color;
   border: 1px solid $border-color-01;
   border-color: $site-title-color;
@@ -80,7 +83,7 @@
   #nav-trigger ~ .drawer-container {
     position: absolute;
     top: 47px;
-    right: -10vw;
+    right: -5vw;
     clear: both;
     width: 0;
     height: calc(100vh - 60px);
@@ -131,7 +134,6 @@
     label[for="nav-trigger"] {
       display: none;
     }
-
     .slab {
       display: block;
       padding-top: 1px;
