@@ -640,6 +640,9 @@ ul.project-preview {
   //margin-bottom: 20%;
   //background-color: bisque;
   align-items: center;
+  @media screen and (max-width: 950px) {
+    align-items: normal;
+  }
   li {
     // /align-content: center;
     //background-color: red;
