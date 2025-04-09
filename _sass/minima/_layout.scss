@@ -649,6 +649,26 @@ ul.project-preview {
     margin: 0%;
     width: auto;
     min-width: 35%;
+    .skill-icons {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      //background-color: aqua;
+      justify-content: center;
+      li{
+        padding: 1vw;
+        width: 35%;
+        height: 35%;
+        max-width: 70px;
+        //max-height: 100px;
+        color: $text-color;
+        font-weight: normal;
+        font-size: $base-font-size;
+        @media screen and (max-width: 700px) {
+          font-size: $base-font-size * .8;
+        }
+      }
+    }
   }
   li + li {
     margin-left: 0px;
@@ -673,28 +693,6 @@ li.skills-section {
     }
   }
 }
-
-.skill-icons {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  //background-color: aqua;
-  justify-content: center;
-  li{
-    padding: 1vw;
-    width: 5%;
-    height: 5%;
-    max-width: 70px;
-    max-width: 70px;
-    color: $text-color;
-    font-weight: normal;
-    font-size: $base-font-size;
-    @media screen and (max-width: 700px) {
-      font-size: $base-font-size * .8;
-    }
-  }
-}
-
 
 .post-breakdown {
   display: flex;
