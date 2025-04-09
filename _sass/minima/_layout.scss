@@ -681,14 +681,14 @@ li.skills-section {
   //background-color: aqua;
   justify-content: center;
   li{
-    padding: 10px;
-    width: 7%;
-    height: 7%;
+    padding: 1vw;
+    width: 5%;
+    height: 5%;
     max-width: 70px;
     max-width: 70px;
     color: $text-color;
     font-weight: normal;
-    font-size: $base-font-size;
+    font-size: $base-font-size * .8;
   }
 }
 
