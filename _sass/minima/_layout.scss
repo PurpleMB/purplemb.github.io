@@ -421,9 +421,9 @@
   display: block;
   margin: auto;
   margin-top: 5%;
-  width: 65%;
+  width: 100%;
   min-width: 250px;
-  max-width: 650px;
+  max-width: 500px;
 }
 
 .contact-container {
@@ -451,6 +451,7 @@ input[type=submit] {
   margin-left: 30%;
   margin-top: 2px;
   width: 40%;
+  max-width: 250px;
   border: 2px;
   border-color: $link-base-color;
   border-style: solid;

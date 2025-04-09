@@ -203,6 +203,9 @@ pre {
   margin: 0 auto;
   padding: 0 $spacing-unit;
   @extend %clearfix;
+  @media screen and (max-width: 700px) {
+    max-width: 90vw;
+  }
 }
 
 
