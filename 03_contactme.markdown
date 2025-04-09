@@ -12,4 +12,4 @@ prev-page-name: Projects
 
 Have any questions or want to work together?
 
-Send me a message and I'll get back to you ASAP.
+Send a message and I'll get back to you ASAP.
