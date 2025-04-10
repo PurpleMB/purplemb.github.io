@@ -262,9 +262,12 @@
 .post-list {
   margin-left: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
   //margin-bottom: 25%;
   > li {
     margin-bottom: $spacing-unit;
+    min-width: 45%;
   }
 }
 
@@ -551,9 +554,9 @@ ul.project-preview {
       }
     }
     li + li {
-      padding: 5%;
-      height: 90%;
-      width: 90%;
+      padding: 25px;
+      height: calc(100% - 50px);
+      width: calc(100% - 50px);
     }
     img {
       border-radius: 5px 5px 0px 0px;
