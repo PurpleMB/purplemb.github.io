@@ -26,6 +26,11 @@ layout: base
     <li>
       <ul class="project-preview">
         <a href="{{ post.url | relative_url }}">
+          <li class="project-img">
+            {%- if post.preview_img -%}
+              <img src={{post.preview_img}} alt="project-preview-img">
+            {%- endif -%}
+          </li>
           <li class="project-info">
             <p class="project-title-preview">
               {{ post.title | escape }}
@@ -43,11 +48,6 @@ layout: base
                 {{ post.topic-list }}
               {%- endif -%}
             </p>
-          </li>
-          <li class="project-img">
-            {%- if post.preview_img -%}
-              <img src={{post.preview_img}} alt="project-preview-img">
-            {%- endif -%}
           </li>
         </a>
       </ul>

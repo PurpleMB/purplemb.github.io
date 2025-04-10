@@ -536,20 +536,23 @@ ul.project-preview {
   height: 100%;
   a {
     height: 100%;
-    display: flex;
+    //display: flex;
     li {
-      margin: 0px;
-      width: 100%;
+      margin: 5%;
+      padding: 0px;
+      width: 90%;
       height: 100%;
     }
     li + li {
-      margin-left: 25px;
+      margin-top: 25px;
+    }
+    img {
+      border-radius: 5px 5px 0px 0px;
     }
   }
   :hover {
     text-decoration: none;
     background-color: lighten($background-color, 30%);
-    border-radius: 5px;
     .project-title-preview {
       //color: $link-hover-color;
     }
