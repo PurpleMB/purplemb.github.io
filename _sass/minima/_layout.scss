@@ -671,10 +671,11 @@ ul.project-preview {
   list-style: none;
   display: flex;
   margin: 0;
-  padding: 0;
+  padding-top: 12px;
+  //height: calc(100vh - 180px - 63px);
   //margin-bottom: 20%;
   //background-color: bisque;
-  align-items: center;
+  align-items: normal;
   @media screen and (max-width: 950px) {
     align-items: normal;
   }
