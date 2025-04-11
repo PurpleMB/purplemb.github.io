@@ -676,7 +676,7 @@ ul.project-preview {
     // /align-content: center;
     //background-color: red;
     margin: 0%;
-    width: 40%;
+    width: 50%;
     //min-width: 35%;
     .skill-icons {
       list-style: none;
@@ -686,8 +686,8 @@ ul.project-preview {
       justify-content: center;
       li{
         padding: 1vw;
-        width: 35%;
-        height: 35%;
+        width: 40%;
+        height: 40%;
         max-width: 70px;
         //max-height: 100px;
         color: $text-color;
@@ -710,6 +710,7 @@ li.skills-section {
   font-weight: bold;
   font-size: 18px;
   text-align: center;
+  right: 0;
   ul{
     display: flex;
     flex-wrap: wrap;
