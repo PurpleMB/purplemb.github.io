@@ -547,12 +547,12 @@ ul.project-preview {
   width: 100%;
   a {
     height: 100%;
-    //display: flex;
+    display: block;
     li {
       //margin: 5%;
       padding: 0px;
-      width: 100%;
-      height: 100%;
+      //width: 100%;
+      //height: 100%;
       &.project-img {
         margin: 0;
         width: 100%;
@@ -560,8 +560,8 @@ ul.project-preview {
     }
     li + li {
       padding: 25px;
-      height: calc(100% - 50px);
-      width: calc(100% - 50px);
+      //height: calc(100% - 50px);
+      //width: calc(100% - 50px);
     }
     img {
       border-radius: 5px 5px 0px 0px;
@@ -572,6 +572,9 @@ ul.project-preview {
     text-decoration: none;
     background-color: lighten($background-color, 30%);
     border-radius: 5px;
+    img {
+      border-radius: 5px 5px 0px 0px;
+    }
     .project-title-preview {
       //color: $link-hover-color;
     }
