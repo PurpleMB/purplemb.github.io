@@ -268,11 +268,16 @@
   //margin-bottom: 25%;
   > li {
     //margin-bottom: $spacing-unit;
-    padding: 12px 0px 12px 0px;
     width: 100%;
     @media screen and (min-width: $on-palm) {
       width: calc(50% - 24px);
-      padding: 12px;
+      padding: 12px 12px 12px 12px;
+    }
+  }
+  li + li {
+    padding: 24px 0px 0px 0px;
+    @media screen and (min-width: $on-palm) {
+      padding: 12px 12px 12px 12px;
     }
   }
 }
