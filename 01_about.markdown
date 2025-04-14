@@ -11,19 +11,25 @@ prev-page-name: Home
 ---
 
 
-<ul class="horizontal-list">
+<ul class="tall horizontal-list">
     <li class = "about-me">
-        <p>
-            Specializing in gameplay and systems programming, I craft clean, <span class="accent">modular</span> code driven by research, iteration, and collaboration. 
-        </p>
-
-        <p>
-            I am experienced working as part of an <span class="accent">interdisciplinary</span> team, and constantly strive to deepen my understanding of development through the diverse knowledge of my peers. 
-        </p>
-
-        <p>
-            Beyond programming, I love learning about anything I can find information on. Whether it’s a lengthy dive into the art history underlying an innocuous card game illustration or the evolutionary history of a eye-catching creature, I am <span class="accent">endlessly curious</span> about the world and everything within it.
-        </p>
+        <ul>
+            <li>
+                <p>
+                    Specializing in gameplay and systems programming, I craft clean, <span class="accent">modular</span> code driven by research, iteration, and collaboration. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    I am experienced working as part of an <span class="accent">interdisciplinary</span> team, and constantly strive to deepen my understanding of development through the diverse knowledge of my peers. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Beyond programming, I love learning about anything I can find information on. Whether it’s a lengthy dive into the art history underlying an innocuous card game illustration or the evolutionary history of a eye-catching creature, I am <span class="accent">endlessly curious</span> about the world and everything within it.
+                </p>
+            </li>
+        </ul>
     </li>
 
     <li class="skills-section">

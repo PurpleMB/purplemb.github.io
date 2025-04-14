@@ -667,17 +667,24 @@ ul.project-preview {
  /*
  * Skills
  */
+.tall {
+  padding-top: calc((50vh - 90px - 63px) / 2);
+  //padding-bottom: calc(90px + 63px);
+  //height: calc(100vh - 180px - 126px);
+}
+
  ul.horizontal-list {
   list-style: none;
   display: flex;
   margin: 0;
-  padding-top: 12px;
+  //padding-top: calc(15vh + 12px);
   //height: calc(100vh - 180px - 63px);
   //margin-bottom: 20%;
   //background-color: bisque;
   align-items: normal;
   @media screen and (max-width: 950px) {
     align-items: normal;
+    padding-top: 12px;
   }
   li {
     // /align-content: center;
@@ -708,6 +715,23 @@ ul.project-preview {
   }
   li + li {
     margin-left: 0px;
+  }
+}
+
+.about-me {
+  p {
+    margin-bottom: 0;
+  }
+  ul{
+    margin-left: 0;
+    list-style: none;
+    width: 100%;
+    li{
+      width: 100%;
+    }
+    li + li {
+      margin-top: 15px;
+    }
   }
 }
 
