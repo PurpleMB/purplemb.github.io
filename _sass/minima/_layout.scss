@@ -669,6 +669,9 @@ ul.project-preview {
  */
 .tall {
   padding-top: calc((50vh - 90px - 63px) / 2);
+  @media screen and (max-width: 950px) {
+    padding-top: 0px;
+  }
   //padding-bottom: calc(90px + 63px);
   //height: calc(100vh - 180px - 126px);
 }
@@ -681,10 +684,10 @@ ul.project-preview {
   //height: calc(100vh - 180px - 63px);
   //margin-bottom: 20%;
   //background-color: bisque;
-  align-items: normal;
+  align-items: center;
   @media screen and (max-width: 950px) {
     align-items: normal;
-    padding-top: 12px;
+    padding-top: 0px;
   }
   li {
     // /align-content: center;
@@ -702,7 +705,7 @@ ul.project-preview {
         padding: 1vw;
         width: 40%;
         height: 40%;
-        max-width: 70px;
+        max-width: 90px;
         //max-height: 100px;
         color: $text-color;
         font-weight: normal;
