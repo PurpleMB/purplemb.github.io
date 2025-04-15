@@ -62,7 +62,8 @@ layout: base
     {{ content }}
   </div>
 
-  {%- if page.sections -%}
+  <!--
+    {%- if page.sections -%}
   <div class="section-links">
     {%- assign section_names = page.sections | split: ", " -%}
     {%- assign section_anchors = page.section-anchors | split: ", " -%}
@@ -77,6 +78,8 @@ layout: base
     </ol>
   </div>
   {%- endif -%}
+  -->
+
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
