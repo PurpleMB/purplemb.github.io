@@ -684,7 +684,7 @@ ul.project-preview {
   //height: calc(100vh - 180px - 63px);
   //margin-bottom: 20%;
   //background-color: bisque;
-  align-items: center;
+  align-items: normal;
   @media screen and (max-width: 950px) {
     align-items: normal;
     padding-top: 0px;
@@ -722,6 +722,10 @@ ul.project-preview {
 }
 
 .about-me {
+  padding-top: calc((50vh - 90px - 63px) / 2);
+  @media screen and (max-width: 950px) {
+    padding-top: 0px;
+  }
   p {
     margin-bottom: 0;
   }
@@ -739,12 +743,17 @@ ul.project-preview {
 }
 
 li.skills-section {
+  padding-top: calc((50vh - 90px - 63px) / 2 - 22px);
+  @media screen and (max-width: 950px) {
+    padding-top: 0px;
+  }
   display: block;
   color: $brand-color-dark;
   font-weight: bold;
   font-size: 18px;
   text-align: center;
   right: 0;
+  top: -22px;
   ul{
     display: flex;
     flex-wrap: wrap;

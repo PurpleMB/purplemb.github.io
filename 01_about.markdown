@@ -11,7 +11,7 @@ prev-page-name: Home
 ---
 
 
-<ul class="tall horizontal-list">
+<ul class="horizontal-list">
     <li class = "about-me">
         <ul>
             <li>
