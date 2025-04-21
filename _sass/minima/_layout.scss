@@ -563,9 +563,10 @@ ul.project-preview {
         margin: 0;
         width: 100%;
       }
+      height: auto;
     }
     li + li {
-      padding: 25px;
+      padding: 15px;
       //height: calc(100% - 50px);
       //width: calc(100% - 50px);
     }
@@ -589,6 +590,9 @@ ul.project-preview {
     }
     .project-img {
       filter: saturate(100%) brightness(100%);
+    }
+    .project-info {
+      padding: 15px;
     }
   }
 }
@@ -805,18 +809,18 @@ ul.post-bd-list {
   font-weight: bold;  
   img {
     height: 1em;
-    filter: saturate(100%) brightness(95%);
+    filter: saturate(95%) brightness(95%);
   }
   :visited {
     color: $link-base-color;
     img {
-      filter: saturate(100%) brightness(95%);
+      filter: saturate(95%) brightness(95%);
     }
   }
   :hover {
     color: $link-hover-color;
     img {
-      filter: saturate(100%) brightness(115%);
+      filter: saturate(105%) brightness(105%);
     }
   }
 }
