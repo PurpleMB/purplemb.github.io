@@ -613,7 +613,10 @@ ul.project-preview {
 
 .project-img {
   display: flex;
-  filter: saturate(75%) brightness(75%);
+  filter: saturate(80%) brightness(80%);
+  @media only screen and (max-width: 900px) {
+    filter: saturate(100%) brightness(100%);
+  }
   height: auto;
   //max-width: 250px;
   max-height: 300px;
@@ -809,18 +812,18 @@ ul.post-bd-list {
   font-weight: bold;  
   img {
     height: 1em;
-    filter: saturate(95%) brightness(95%);
+    filter: saturate(100%) brightness(85%);
   }
   :visited {
     color: $link-base-color;
     img {
-      filter: saturate(95%) brightness(95%);
+      filter: saturate(100%) brightness(85%);
     }
   }
   :hover {
     color: $link-hover-color;
     img {
-      filter: saturate(105%) brightness(105%);
+      filter: saturate(100%) brightness(115%);
     }
   }
 }
