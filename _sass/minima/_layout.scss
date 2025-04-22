@@ -102,6 +102,24 @@
     }
   }
 
+  #nav-trigger + label[for="nav-trigger"] {
+    .fa-x {
+      display: none;
+    }
+    .fa-bars {
+      display: block;
+    }
+  }
+
+  #nav-trigger:checked + label[for="nav-trigger"] {
+    .fa-bars {
+      display: none;
+    }
+    .fa-x {
+      display: block;
+    }
+  }
+
   #nav-trigger:checked ~ .drawer-container {
     width: 120px;
     padding-bottom: 5px;
