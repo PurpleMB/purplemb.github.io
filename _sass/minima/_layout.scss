@@ -69,6 +69,11 @@
     > svg path {
       fill: $border-color-03;
     }
+
+    &:hover {
+      color: lighten($site-title-color, 15%);
+      text-decoration: none;
+    }
   }
 
   label[for="nav-trigger"] {
