@@ -757,6 +757,7 @@ ul.project-preview {
   align-content: center;
   @media screen and (max-width: 950px) {
     padding-top: 0px;
+    align-content: normal;
   }
   p {
     margin-bottom: 0;
@@ -780,6 +781,7 @@ li.skills-section {
   align-content: center;
   @media screen and (max-width: 950px) {
     padding-top: 0px;
+    align-content: normal;
   }
   display: block;
   color: $brand-color-dark;
