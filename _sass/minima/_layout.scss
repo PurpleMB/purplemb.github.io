@@ -931,25 +931,22 @@ ul.img-row {
   z-index: 1;
   top: 0;
   right: 2.5%;
-  //background-color: aqua;
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 900px) {
     display: none;
   }
   ol{
-    //background-color: bisque;
     margin: 0;
     width: 100%;
     align-content: center;
     ::marker {
-      font-size: 2vmin;
+      //font-size: 2vmin;
     }
     p {
-      font-size: 3vmin;
+      //font-size: 3vw;
     }
     li {
       width: 100%;
       text-decoration: none;
-      //background-color: purple;
       a {
         width: 100%;
         color: $link-base-color;

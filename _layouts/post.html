@@ -62,24 +62,5 @@ layout: base
     {{ content }}
   </div>
 
-<!--
-  {%- if page.sections -%}
-  <div class="section-links">
-    {%- assign section_names = page.sections | split: ", " -%}
-    {%- assign section_anchors = page.section-anchors | split: ", " -%}
-    {%- assign sections = section_names.size | minus: 1 -%}
-    <ol>
-      <p class="accent">Sections:</p>
-      {%- for secIndex in (0..sections) -%}
-      <li>
-        <a href=#{{section_anchors[secIndex]}}>{{section_names[secIndex]}}</a>
-      </li>
-      {%- endfor -%}
-    </ol>
-  </div>
-  {%- endif -%}
--->
-
-
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
