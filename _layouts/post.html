@@ -42,7 +42,7 @@ layout: base
         {%- endif -%}
         {%- if page.video-link -%}
           <a href={{page.video-link}} target="_blank">
-            Video Playthrough
+            Demo Video
             <img src="/assets/icons/link-colored.png">
           </a>
           <br>
@@ -62,8 +62,8 @@ layout: base
     {{ content }}
   </div>
 
-  <!--
-    {%- if page.sections -%}
+<!--
+  {%- if page.sections -%}
   <div class="section-links">
     {%- assign section_names = page.sections | split: ", " -%}
     {%- assign section_anchors = page.section-anchors | split: ", " -%}
@@ -78,7 +78,7 @@ layout: base
     </ol>
   </div>
   {%- endif -%}
-  -->
+-->
 
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

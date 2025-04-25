@@ -36,16 +36,16 @@ layout: base
               {{ post.title | escape }}
             </p>
             <p>
+              {%- if post.topic-list -%}
+                <span class="topics">Topics: </span> 
+                {{ post.topic-list }}
+              {%- endif -%}
+            </p>
+            <p>
               {%- if post.description -%}
                 {{ post.description }}
               {%- elsif site.minima.show_excerpts -%}
                 {{ post.excerpt }}
-              {%- endif -%}
-            </p>
-            <p>
-              {%- if post.topic-list -%}
-                <span class="topics">Topics: </span> 
-                {{ post.topic-list }}
               {%- endif -%}
             </p>
           </li>
