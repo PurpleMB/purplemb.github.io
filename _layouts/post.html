@@ -16,6 +16,10 @@ layout: base
           <span class="accent">Engine:</span> {{page.engine}}
           <br>
         {%- endif -%}
+        {%- if page.tools -%}
+          <span class="accent">Tools Used:</span> {{page.tools}}
+          <br>
+        {%- endif -%}
         {%- if page.role -%}
         <span class="accent">Role:</span> {{page.role}}
           <br>
