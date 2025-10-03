@@ -7,7 +7,7 @@ prev-page-name: Projects
 topic-list: API Querying, Database Interaction, User Interfaces, Libraries
 description: Monster Curiosity Calculator is a statistics application created in C++. It utilizes the DearImGui library to facilitate user interaction with an SQLite database that is populated with data about pocket-sized monsters!
 preview_img: /assets/gifs/drinkgame-preview-rough.gif
-tools: C++, SQLite, DearImGui, Python 
+tools: C++, SQLite, Dear ImGui, Python 
 role: Programmer & Designer
 team-size: 1
 sections: Introduction, API Querying, Database Creation & Interaction, User Interface Development, Lessons
@@ -18,11 +18,7 @@ section-anchors: intro, api, database, interface, lessons
     <span class="overview-title">Overview</span>
     <br>
     <p>
-        Hello! This is the overview box for a project!
-        This will contain a TLDR for the project, its key elements,
-        and what I learned working on it!
-
-        As you can see, quite a lot of info can fit into this area!
+        <span class="book-title">Monster Curiosity Calculator (MCC)</span> is a <span class="accent">database-driven</span> statistics application developed to help answer niche questions about pocket-sized monsters. It uses a <span class="accent">Python</span> script to query an existing <span class="accent">restful API</span>, gathering all needed data into an easy to parse file. That data is then processed in a <span class="accent">C++</span> application to generate a <span class="accent">SQLite database</span> that can be interacted with using a GUI developed using the <span class="accent">Dear ImGui</span> library.
     </p>
 </div>
 
