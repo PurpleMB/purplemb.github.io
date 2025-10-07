@@ -87,8 +87,28 @@ User Interface Development
 </p>
 
 <p>
-This section has not been written yet!
+I utilized the <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> library to develop the interface for <span class="book-title">MCC</span> in C++. I chose to use <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> because it is open-source, allows for the rapid creation of a functional user-interface with only C++ code, and is designed to have functional similarities to the style of frame management and rendering used in video game engines. This allowed me to utilize some of my existing knowledge of graphics and game development, while minimizing the amount of additional languages and tools required to create a user-friendly interface for my applicaiton.
+</p>
+
+<p>
+Additionally, as I learned over the course of utilizing the library, <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is designed to be "self-documenting". Once downloaded, the library comes with an extensive demo which explores and explains the range of features included in the library. The link between any aspect of the demo and the corresponding code is extremely easy to find and the demo code is written to be as spatially-continuous as possible, meaning it is almost always intuitive to identify the code snippet responsible for an element and then dissect how that code works. 
+</p>
+
+<p>
+As such, learning and exploring <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is a very hands-on, self-driven process. This, in my experience, leads to the development process with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> being primarily defined by exploration, iteration, and curiosity in a way that many tools and libraries fail to be. Overall, the simple experience of getting to grips with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is more fun and engaging than many other interface development tools.
 </p>     
+
+<p>
+While <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> already handles much of the boiler-plate work required to establish a rendering environment (it helpfully includes examples of establishing a functional application for a wide range of rendering backends), there is still a small amount of "ugly code" that goes into creating an application with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a>. 
+</p>
+
+<p>
+To better isolate generic <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> code from project-specific code, I elected to migrate all backend and application preparation to an "App" class. In essense, App defined functions to contain any required preparation for <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> while leaving open virtual functions for project-specific code. As such, for any project that utilizes <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> I can now simply bring in this app framework and create a child class of App to contain the code for drawing the UI of that specific project.
+</p>
+
+<p>
+Armed with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a>'s intuitive design patterns and a framework to make working with the library even easier, fleshing out the interface of <span class="book-title">MCC</span> was a very enjoyable process of exploring what methods seemed effective at communicating the wide amount of information I wanted the user to be able to interface with.
+</p>
 
 <span class="anchor" id="lessons"></span>
 <div>
