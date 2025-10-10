@@ -44,6 +44,10 @@ prev-page-name: Home
                 C++
             </li>
             <li class="skill-icon">
+                <img class="img" src="/assets/icons/python-bg.png" />
+                Python
+            </li>
+            <li class="skill-icon">
                 <img class="img" src="/assets/icons/unity.png" />
                 Unity
             </li>
@@ -54,6 +58,10 @@ prev-page-name: Home
             <li class="skill-icon">
                 <img class="img" src="/assets/icons/godot.png" />
                 Godot
+            </li>
+            <li class="skill-icon">
+                <img class="img" src="/assets/icons/sqlite.png" />
+                SQLite
             </li>
             <li class="skill-icon">
                 <img class="img" src="/assets/icons/git.png" />
