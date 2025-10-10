@@ -16,12 +16,12 @@ prev-page-name: Home
         <ul>
             <li>
                 <p>
-                    Specializing in gameplay and systems programming, I craft clean, <span class="accent">modular</span> code driven by research, iteration, and collaboration. 
+                    With a diverse skillset ranging from systems development to graphics programming, I craft clean, <span class="accent">modular</span> code driven by research, iteration, and collaboration. 
                 </p>
             </li>
             <li>
                 <p>
-                    I am experienced working as part of an <span class="accent">interdisciplinary</span> team, and constantly strive to deepen my understanding of development through the diverse knowledge of my peers. 
+                    I am experienced working as part of an <span class="accent">interdisciplinary</span> team, and constantly deepen my understanding of development through the diverse knowledge of my peers. 
                 </p>
             </li>
             <li>
