@@ -10,6 +10,7 @@ preview_img: /assets/gifs/drinkgame-preview-rough.gif
 tools: C++, SQLite, Dear ImGui, Python 
 role: Programmer & Designer
 team-size: 1
+repo-link: https://github.com/PurpleMB/MCC
 sections: Introduction, API Querying, Database Creation & Interaction, User Interface Development, Lessons
 section-anchors: intro, api, database, interface, lessons
 ---
@@ -29,7 +30,11 @@ Introduction
 </p>
 
 <p>
-I've always had a desire to know obscure statistics regarding the places I am or the media I am interacting with. Frequently during my degree, for example, I would wonder at the average population of each floor of the library over the course of different days of the week (I wanted to be on the least populated floor). As a lifelong fan of battling pocket-sized monsters, I have similarly wondered about the properties of arbitrary subsets of possible monsters. "If I created two groups, each containing only monsters of certain types, which would tend to be faster?" As such, when I began to develop my skillset at interacting with SQL databases the first thought that came to my mind was, "Perhaps I can use this to finally answer all those little questions that pop into my mind." 
+I've always had a desire to know obscure statistics regarding the places I am or the media I am interacting with. Frequently during my degree, for example, I would wonder at the average population of each floor of the library over the course of different days of the week (I wanted to be on the least populated floor). 
+</p>
+
+<p>
+As a lifelong fan of battling pocket-sized monsters, I have similarly wondered about the properties of arbitrary subsets of possible monsters. "If I created two groups, each containing only monsters of certain types, which would tend to be faster?" As such, when I began to develop my skillset at interacting with SQL databases the first thought that came to my mind was, "Perhaps I can use this to finally answer all those little questions that pop into my mind." 
 </p>
 
 <p>
@@ -51,7 +56,7 @@ When beginning the development of <span class="book-title">MCC</span>, I began b
 </p>
 
 <p>
-Fortunately, during a previous project I had gained experience interacting with <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, a RESTful API with an intuitive and easy to process data structure. Knowing that the later parts of this project would take place in C++ (I had decided by this point to construct the eventual GUI in C++), I elected to create the script for querying the API in Python due to its very easy to use networking libraries.
+Fortunately, during a previous project I had gained experience interacting with <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, a RESTful API with an intuitive and easy to process data structure. Knowing that the later parts of this project would take place in C++ (I had decided by this point to construct the eventual GUI in C++), I elected to create the script for querying the API in Python due to its easy to use networking libraries.
 </p>     
 
 <p>
@@ -59,11 +64,11 @@ Fortunately, during a previous project I had gained experience interacting with 
 </p>
 
 <p>
-Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, I was able to retrieve a list of all monsters with query links to additional information for each monster. This made it easy to construct a dictionary of information for each monster, which could then be converted into a JSON file. The dictionary structure of the JSON file made it easy to visually evaluate to quickly debug, as well as making it easy to maintain a connection between column names and values for easier database generation using the JSON file.
+Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, I was able to retrieve a list of all monsters with query links to additional information for each monster. With this list I could construct a dictionary of information for each monster, ultimately combining all the entries together into a single JSON file. This cumulative JSON file, thanks to its list & dictionary structure, was easy to visually evaluate, making debug quick as well as making it easy to maintain a connection between column names and values for easier database generation.
 </p>
 
 <p>
-The data for a single, specific monster is comprised of information relating to that monster's form, species, and region, meaning that to generate the compiled information for 1000+ monsters required more than 3000 queries. This number of requests, when processed in sequence, could lead to data gathering taking almost a minute. During the process of development, where I was frequently regathering data to fix bugs or add new data fields, this meant that I was spending significant amounts of time simply waiting for my data to compile. 
+The data for a single monster is comprised of information relating to that monster, its overall species, and its specific form, meaning that to generate the compiled information for 1000+ monsters required more than 3000 queries. This number of requests, when processed in sequence, could lead to data gathering taking almost a minute. During the process of development, where I was frequently regathering data to fix bugs or add new data fields, this meant that I was spending significant amounts of time simply waiting for my data to compile. 
 </p>
 
 <p>
@@ -87,7 +92,7 @@ User Interface Development
 </p>
 
 <p>
-I utilized the <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> library to develop the interface for <span class="book-title">MCC</span> in C++. I chose to use <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> because it is open-source, allows for the rapid creation of a functional user-interface with only C++ code, and is designed to have functional similarities to the style of frame management and rendering used in video game engines. This allowed me to utilize some of my existing knowledge of graphics and game development, while minimizing the amount of additional languages and tools required to create a user-friendly interface for my applicaiton.
+I utilized the <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> library to develop the interface for <span class="book-title">MCC</span> in C++. I chose to use <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> because it is open-source, allows for the rapid creation of a functional user-interface with only C++ code, and is designed to have functional similarities to the style of frame management and rendering used in video game engines. This allowed me to utilize some of my existing knowledge of graphics and game development while minimizing the amount of additional languages and tools required to create a user-friendly interface for my applicaiton.
 </p>
 
 <p>
@@ -107,7 +112,7 @@ To better isolate generic <a href="https://github.com/ocornut/imgui" target="_bl
 </p>
 
 <p>
-Armed with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a>'s intuitive design patterns and a framework to make working with the library even easier, fleshing out the interface of <span class="book-title">MCC</span> was a very enjoyable process of exploring what methods seemed effective at communicating the wide amount of information I wanted the user to be able to interface with.
+Armed with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a>'s intuitive design patterns and a framework to make working with the library even easier, I fleshed out the interface for <span class="book-title">MCC</span> by determining its core features and use-stages and creating a simple, independently functional window for each stage of program usage. After creating windows for dataset refinement, dataset viewing, and dataset value calculation, I simply had to create a structure to encapsulate and preserve data that needed to be communicated between windows.
 </p>
 
 <span class="anchor" id="lessons"></span>
@@ -117,6 +122,10 @@ Lessons Learned
 </p>
 
 <p>
-This section has not been written yet!
+During the course of developing <span class="book-title">MCC</span>, I learned much about data gathering and sanitization, 
+</p>
+
+<p>
+While functional to my specifications, there are areas of <span class="book-title">MCC</span> that are still ripe for improvement.
 </p>    
 
