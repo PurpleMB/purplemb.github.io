@@ -73,7 +73,7 @@ This amount of data (30,000 cells at a conservative estimate), was beyond my cap
 </ul>
 
 <p>
-Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, I was able to retrieve a list of all monsters with query links to additional information for each monster. With this list I could construct a dictionary of information for each monster, ultimately combining all the entries together into a single JSON file. This cumulative JSON file, thanks to its list & dictionary structure, was easy to visually evaluate, making debugging errors quick as well as making it easy to maintain a connection between column names and values for easier database generation.
+Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, I was able to retrieve a list of all monsters with query links to additional information for each monster. With this list I could construct a dictionary of information for each monster, ultimately combining all the entries together into a single JSON file. I chose to organize this file as a list of dictionaries, as this made the file easy to visually evaluate, making debugging errors quick, while also maintaining a connection between column names and values for easier database generation down the line.
 </p>
 
 <p>
@@ -91,6 +91,10 @@ The data for a single monster is comprised of information relating to that monst
 
 <p>
 Each final entry is independent of each other final entry. As such, instead of processing each query in sequence it was possible to break them up into ~1000 asynchronous groups each containing only a few queries. Switching to this asynchronous request grouping drastically reduced the time needed to regather my data, reducing it to typically less than 10 seconds. As such, I had completed the first phase of <span class="book-title">MCC</span> by developing a script that allowed me to quickly and easily gather the large amount of data needed for my database.
+</p>
+
+<p>
+The Python script used for this section may be found in the project repository <a href="https://github.com/PurpleMB/MCC/blob/main/monster-curiosity-calculator/py/pokeapi_parser.py" target="_blank">here</a>.
 </p>
 
 <span class="anchor" id="database"></span>
@@ -122,6 +126,15 @@ SELECT * WHERE &#40;'type' = "Fire"&#41;
 </code>
 . In this instance, our type is, funnily enough, "Type", our operation is "=", and our value is "Fire". It is easy to create a generic pattern that can be used to form any equation of this type, allowing for the utilization of the format system mentioned above. Furthermore, while using this pattern each parameter can be evaluated as a separate logical argument, allowing for any amount of parameters to be combined to form a detailed set of criteria. 
 </p>
+
+<ul class="img-row">
+    <li>
+        <img src="/assets/imgs/format-usage.jpg" height="240" width = "360">
+    </li>
+    <li>
+        The technique can be extended to combine parameters into groups for usage in queries that define data subsets.
+    </li>
+</ul>
 
 <p>
 With some slight modifications to this approach, it is also easy to define a system for calculating values derived from database data. Mutating the previous approach to something like :
@@ -163,7 +176,7 @@ Additionally, as I learned over the course of utilizing the library, <a href="ht
 </ul>
 
 <p>
-As such, learning and exploring <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is a very hands-on, self-driven process. This, in my experience, leads to the development process with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> being primarily defined by exploration, iteration, and curiosity in a way that many tools and libraries fail to be. Overall, the simple experience of getting to grips with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is more fun and engaging than many other interface development tools.
+As such, learning and exploring <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is a very hands-on, self-driven process. This, in my experience, leads to the development process with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> being primarily defined by exploration, iteration, and curiosity in a way that many tools and libraries fail to be. Overall, the experience of getting to grips with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is more fun and engaging than many other interface development tools. As a result, I highly recommend <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> and plan to use it for future projects.
 </p>     
 
 <p>
@@ -171,7 +184,7 @@ While <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> 
 </p>
 
 <p>
-To better isolate generic <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> code from project-specific code, I elected to migrate all backend and application preparation to an "App" class. In essense, App defined functions to contain any required preparation for <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> while leaving open virtual functions for project-specific code. As such, for any project that utilizes <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> I can now simply bring in this app framework and create a child class of App to contain the code for drawing the UI of that specific project.
+To better isolate generic <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> code from project-specific code, I elected to migrate all backend and application preparation to an "App" class. In essense, App defines functions to contain any required preparation for <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> while leaving open virtual functions for project-specific code. As such, for any project that utilizes <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> I can now simply bring in this app framework and create a child class of App to contain the code for drawing the UI of that specific project.
 </p>
 
 <p>
