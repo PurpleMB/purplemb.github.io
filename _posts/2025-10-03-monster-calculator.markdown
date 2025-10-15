@@ -6,7 +6,7 @@ prev-page: /projects
 prev-page-name: Projects
 topic-list: API Querying, Database Interaction, User Interfaces, Libraries
 description: Monster Curiosity Calculator is a statistics application created in C++. It utilizes the DearImGui library to facilitate user interaction with an SQLite database that is populated with data about pocket-sized monsters!
-preview_img: /assets/gifs/mcc_demo.gif
+preview_img: /assets/gifs/mcc-preview.gif
 tools: C++, SQLite, Dear ImGui, Python 
 role: Programmer & Designer
 team-size: 1
@@ -198,10 +198,26 @@ Lessons Learned
 </p>
 
 <p>
-During the course of developing <span class="book-title">MCC</span>, I learned much about data gathering and sanitization, 
+During the course of developing <span class="book-title">MCC</span>, I was able to tackle a large number of distinct challanges. The initial stages of the project allowed me to experiment with more efficiently querying APIs to gather required data, requiring an analysis of what queries could be optimized or changed to minimize unnecessary waiting. Following this, working with the SQLite C++ integration provided an opportunity to evaluate patterns in database queries in order to ensure queries could be formed flexibly while mitigating dangers such as unsanitized user input. Concluding the project by developing a interface using <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> required mapping the connections between different phases of data processing and interaction in order to properly manage state and user input. By utilizing a range of tools and languages, I was able to deepen my understanding of topics such as API usage, database formation and interaction, and creating an interface to faciliate a better user experience.
 </p>
 
 <p>
-While functional to my specifications, there are areas of <span class="book-title">MCC</span> that are still ripe for improvement.
+While functional to my specifications, there are areas of <span class="book-title">MCC</span> that are still ripe for improvement. To begin, the state management and overall code architecture of <span class="book-title">MCC</span> warrant iteration. Furthermore, I wish to add additional features that felt unnecessary for an initial release that I nonetheless wish to eventually add. 
+</p>
+
+<p>
+In terms of state, the approach taken at time of writing is inelegant at best. A rather large and unwieldy "environment" struct is frequently passed about to allow various parts of the interface to share persistent state. I would enjoy dissecting this into multiple smaller, more regulated objects to make the overall flow of data in the program easier to track and modify. This combines with some lingering artifacts of the early development process to make the program more difficult to inspect and analyze than is desirable. Additionally, the amount of data generated at launch due to elements such as loading images and creating dynamic lists of values is sufficient to create a more in-depth initialization process that ensures initializing the program happens in an orderly fashion.
 </p>    
+
+<p>
+Regarding my desire for additional features, I plan to continue adding a number of quality-of-life features that will make my own experience using <span class="book-title">MCC</span> more enjoyable. For example, allowing for the Subset Group Size display to toggle which subset groups are currently displayed is a planned addition. More ambitiously, I also plan to eventually allow for the user to define custom data columns and values. This would allow users to fully customize <span class="book-title">MCC</span> to suit their own needs, providing the ability to track information specific to a user such as "have I caught this specific monster?"
+</p>
+
+<p>
+<span class="book-title">MCC</span>, overall, was a great learning experience and I look forward to applying the lessons it provided to the development of future projects and the continued development of <span class="book-title">MCC</span> itself. 
+</p>
+
+<p>
+To potentially save you a trip to the top of this article, the repository for <span class="book-title">MCC</span> may be found <a href="https://github.com/PurpleMB/MCC/" target="_blank">here</a>.
+</p>
 
