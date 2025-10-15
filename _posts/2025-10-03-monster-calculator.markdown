@@ -6,7 +6,7 @@ prev-page: /projects
 prev-page-name: Projects
 topic-list: API Querying, Database Interaction, User Interfaces, Libraries
 description: Monster Curiosity Calculator is a statistics application created in C++. It utilizes the DearImGui library to facilitate user interaction with an SQLite database that is populated with data about pocket-sized monsters!
-preview_img: /assets/gifs/drinkgame-preview-rough.gif
+preview_img: /assets/gifs/mcc_demo.gif
 tools: C++, SQLite, Dear ImGui, Python 
 role: Programmer & Designer
 team-size: 1
@@ -42,7 +42,7 @@ I decided to take this idea as an opportunity to experiment with a number of dif
 </p>
 
 <p>
-I continued to develop the functionality and ease-of-use of <span class="book-title">MCC</span> until I felt I had achieved the goal I set out with: making a tool that allows calculating extremely niche and specific statistics about fictional monsters. To accomplish that goal, I gained knowledge on effective API querying, data processing, database usage, UI development, and designing flexible code systems.
+I continued to develop the functionality and ease-of-use of <span class="book-title">Monster Curiosity Calculator (MCC)</span> until I felt I had achieved the goal I set out with: making a tool that allows calculating extremely niche and specific statistics about fictional monsters. To accomplish that goal, I gained knowledge on effective API querying, data processing, database usage, UI development, and designing flexible code systems.
 </p>
 
 <span class="anchor" id="api"></span>
@@ -52,24 +52,42 @@ API Querying
 </p>
 
 <p>
-When beginning the development of <span class="book-title">MCC</span>, I began by evaluating the data requirements of the task at hand. Ultimately, I was looking to generate a database with 1000+ columns each comprised of 20+ rows. Additionally, I wanted to generate an intermediate, human-readable file that would be dynamically converted into a database. This approach would allow me to more easily change the information gathered/processed and allow for database restoration in the event the database file was corrupted or lost.
+When beginning the development of <span class="book-title">MCC</span>, I began by evaluating the data requirements of the task at hand. There are 1000+ monsters and I wished to support as much quantifiable information for each monster as possible (type, color, shape, abilities, etc.). Assuming a row per monster with a column per data field, I was envisioning a database of roughly 1000 rows by approximately 30 columns. Additionally, I wanted to generate an intermediate, human-readable file that would be dynamically converted into a database. This approach would allow me to more easily change the information gathered/processed and allow for database restoration in the event the database file was corrupted or lost.
 </p>
 
 <p>
-Fortunately, during a previous project I had gained experience interacting with <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, a RESTful API with an intuitive and easy to process data structure. Knowing that the later parts of this project would take place in C++ (I had decided by this point to construct the eventual GUI in C++), I elected to create the script for querying the API in Python due to its easy to use networking libraries.
+This amount of data (30,000 cells at a conservative estimate), was beyond my capabilties to manually generate in any reasonable timeframe. Fortunately, during a previous project I had gained experience interacting with <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, a RESTful API with an intuitive and easy to process data structure. Knowing that the later parts of this project would take place in C++ (I had decided by this point to construct the eventual GUI in C++), I elected to create a script for querying the API in Python due to its easy to use networking libraries.
 </p>     
 
 <p>
-<a href="https://pokeapi.co/" target="_blank">PokéAPI</a> contains a truly massive amount of data, much of which is simply not pertinent to <span class="book-title">MCC</span>. As such, the key purpose of the querying script was to identify the list of queries containing information I did require, obtain the data from those queries, and prune down the obtained information to contain only the data which I cared about.
+<a href="https://pokeapi.co/" target="_blank">PokéAPI</a> contains a truly massive amount of data, much of which is simply not pertinent to <span class="book-title">MCC</span>. As such, the key purpose of the querying script was to identify the list of queries containing information I did require, obtain the data from those queries, and prune down and organize the obtained information to form a single file that could be processed to form my database.
 </p>
 
+<ul class="img-row">
+    <li>
+        <img src="/assets/imgs/data-pruning.jpg" height="240" width = "360">
+    </li>
+    <li>
+        Entries gather all needed data, refine it down, and add themselves to a list of entries.
+    </li>
+</ul>
+
 <p>
-Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, I was able to retrieve a list of all monsters with query links to additional information for each monster. With this list I could construct a dictionary of information for each monster, ultimately combining all the entries together into a single JSON file. This cumulative JSON file, thanks to its list & dictionary structure, was easy to visually evaluate, making debug quick as well as making it easy to maintain a connection between column names and values for easier database generation.
+Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, I was able to retrieve a list of all monsters with query links to additional information for each monster. With this list I could construct a dictionary of information for each monster, ultimately combining all the entries together into a single JSON file. This cumulative JSON file, thanks to its list & dictionary structure, was easy to visually evaluate, making debugging errors quick as well as making it easy to maintain a connection between column names and values for easier database generation.
 </p>
 
 <p>
 The data for a single monster is comprised of information relating to that monster, its overall species, and its specific form, meaning that to generate the compiled information for 1000+ monsters required more than 3000 queries. This number of requests, when processed in sequence, could lead to data gathering taking almost a minute. During the process of development, where I was frequently regathering data to fix bugs or add new data fields, this meant that I was spending significant amounts of time simply waiting for my data to compile. 
 </p>
+
+<ul class="img-row">
+    <li>
+        <img src="/assets/imgs/seq-vs-async-lrg.jpg" height="240" width = "360">
+    </li>
+    <li>
+        Monsters shouldn't have to wait for unrelated data querying.
+    </li>
+</ul>
 
 <p>
 Each final entry is independent of each other final entry. As such, instead of processing each query in sequence it was possible to break them up into ~1000 asynchronous groups each containing only a few queries. Switching to this asynchronous request grouping drastically reduced the time needed to regather my data, reducing it to typically less than 10 seconds. As such, I had completed the first phase of <span class="book-title">MCC</span> by developing a script that allowed me to quickly and easily gather the large amount of data needed for my database.
@@ -128,6 +146,21 @@ I utilized the <a href="https://github.com/ocornut/imgui" target="_blank">Dear I
 <p>
 Additionally, as I learned over the course of utilizing the library, <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is designed to be "self-documenting". Once downloaded, the library comes with an extensive demo which explores and explains the range of features included in the library. The link between any aspect of the demo and the corresponding code is extremely easy to find and the demo code is written to be as spatially-continuous as possible, meaning it is almost always intuitive to identify the code snippet responsible for an element and then dissect how that code works. 
 </p>
+
+<ul class="img-row">
+    <li>
+        <img src="/assets/gifs/demo-example.gif" height="200" width = "300">
+    </li>
+    <li>
+        <img src="/assets/gifs/code-search.gif" height="200" width = "300">
+    </li>
+    <li>
+        <img src="/assets/gifs/feature-recreated.gif" height="200" width = "300">
+    </li>
+    <li>
+        Search the demo for a feature, find the related code, and then use that as the base for your own feature.
+    </li>
+</ul>
 
 <p>
 As such, learning and exploring <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is a very hands-on, self-driven process. This, in my experience, leads to the development process with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> being primarily defined by exploration, iteration, and curiosity in a way that many tools and libraries fail to be. Overall, the simple experience of getting to grips with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is more fun and engaging than many other interface development tools.
