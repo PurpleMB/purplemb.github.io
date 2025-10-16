@@ -144,7 +144,12 @@ SELECT operation&#40;value&#41;
 </p>
 
 <p>
-Beyond these elements, the largest concern present was converting the raw database data to a prettier, user-facing format. To achieve this, I elected to use maps that were generated during the creation of each database "type". During type creation, when the list of possible values is being declared for the user to access, it was easy to add an additional stage linking raw values to the properly formatted "pretty" values. After a database query has been evaluated, the data, which is still associated with a column name, can be fed into the appropriate map to retrieve the data for use by the GUI.
+Beyond these elements, the largest concern present was converting the raw database data to a prettier, user-facing format. To achieve this, I elected to use maps that were generated during the creation of each database "type". During type creation, when the list of possible values is being declared for the user to access, it was easy to add an additional stage linking raw values to the properly formatted "pretty" values. After a database query has been evaluated, the data, which is still associated with a column name, can be fed into the appropriate map to retrieve the data for use by the GUI.\
+</p>
+
+<p>
+The C++ file primarily used for database interaction may be found in the project repository <a href="https://github.com/PurpleMB/MCC/blob/main/monster-curiosity-calculator/src/mcc_database_querying.cpp" target="_blank">here</a>.
+</p>
 
 <span class="anchor" id="interface"></span>
 <div>
