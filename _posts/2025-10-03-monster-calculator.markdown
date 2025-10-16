@@ -56,11 +56,11 @@ When beginning the development of <span class="book-title">MCC</span>, I began b
 </p>
 
 <p>
-This amount of data (30,000 cells at a conservative estimate), was beyond my capabilties to manually generate in any reasonable timeframe. Fortunately, during a previous project I had gained experience interacting with <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, a RESTful API with an intuitive and easy to process data structure. Knowing that the later parts of this project would take place in C++ (I had decided by this point to construct the eventual GUI in C++), I elected to create a script for querying the API in Python due to its easy to use networking libraries.
+This amount of data (30,000 cells at a conservative estimate), was beyond my capabilities to manually generate in any reasonable timeframe. Fortunately, during a previous project I had gained experience interacting with <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, a RESTful API with an intuitive and easy to process data structure. Knowing that the later parts of this project would take place in C++ (I had decided by this point to construct the eventual GUI in C++), I elected to create a script for querying the API in Python due to its easy to use networking libraries.
 </p>     
 
 <p>
-<a href="https://pokeapi.co/" target="_blank">PokéAPI</a> contains a truly massive amount of data, much of which is simply not pertinent to <span class="book-title">MCC</span>. As such, the key purpose of the querying script was to identify the list of queries containing information I did require, obtain the data from those queries, and prune down and organize the obtained information to form a single file that could be processed to form my database.
+PokéAPI contains a truly massive amount of data, much of which is simply not pertinent to <span class="book-title">MCC</span>. As such, the key purpose of the querying script was to identify the list of queries containing information I did require, obtain the data from those queries, and prune down and organize the obtained information to form a single file that could be processed to form my database.
 </p>
 
 <ul class="img-row">
@@ -73,11 +73,11 @@ This amount of data (30,000 cells at a conservative estimate), was beyond my cap
 </ul>
 
 <p>
-Using <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>, I was able to retrieve a list of all monsters with query links to additional information for each monster. With this list I could construct a dictionary of information for each monster, ultimately combining all the entries together into a single JSON file. I chose to organize this file as a list of dictionaries, as this made the file easy to visually evaluate, making debugging errors quick, while also maintaining a connection between column names and values for easier database generation down the line.
+PokéAPI, I was able to retrieve a list of all monsters with query links to additional information for each monster. With this list I could construct a dictionary of information for each monster, ultimately combining all the entries together into a single JSON file. I chose to organize this file as a list of dictionaries, as this made the file easy to visually evaluate, making debugging errors quick, while also maintaining a connection between column names and values for easier database generation down the line.
 </p>
 
 <p>
-The data for a single monster is comprised of information relating to that monster, its overall species, and its specific form, meaning that to generate the compiled information for 1000+ monsters required more than 3000 queries. This number of requests, when processed in sequence, could lead to data gathering taking almost a minute. During the process of development, where I was frequently regathering data to fix bugs or add new data fields, this meant that I was spending significant amounts of time simply waiting for my data to compile. 
+The data for a single monster is synthesized using information relating to that monster, its overall species, and its specific form. Due to this, generating the compiled information for 1000+ monsters requires more than 3000 queries. This number of requests, when processed in sequence, could lead to data gathering taking almost a minute. During the process of development, where I was frequently regathering data to fix bugs or add new data fields, this meant that I was spending significant amounts of time simply waiting for my data to compile. 
 </p>
 
 <ul class="img-row">
@@ -90,7 +90,7 @@ The data for a single monster is comprised of information relating to that monst
 </ul>
 
 <p>
-Each final entry is independent of each other final entry. As such, instead of processing each query in sequence it was possible to break them up into ~1000 asynchronous groups each containing only a few queries. Switching to this asynchronous request grouping drastically reduced the time needed to regather my data, reducing it to typically less than 10 seconds. As such, I had completed the first phase of <span class="book-title">MCC</span> by developing a script that allowed me to quickly and easily gather the large amount of data needed for my database.
+Each final entry is, with only a few exceptions, formed using information entirely independent of any other final entry. As such, instead of processing each query in sequence it was possible to break them up into ~1000 asynchronous groups each containing only a few queries. Switching to this asynchronous request grouping drastically reduced the time needed to regather my data, reducing it to typically less than 10 seconds. As such, I had completed the first phase of <span class="book-title">MCC</span> by developing a script that allowed me to quickly and easily gather the large amount of data needed for my database.
 </p>
 
 <p>
@@ -104,15 +104,15 @@ Database Creation & Interaction
 </p>
 
 <p>
-To contain and process the data generated by my Python script, I elected to utilize SQLite to form a database to serve as the heart of <span class="book-title">MCC</span>. I chose to use SQLite as opposed to other SQL flavors due to its self-contained nature, lightweight size, and intuitive C++ integration. These factors combined to make SQLite an ideal choice for my application devoted to processing static data without the need for a central remote database or server.
+To contain and process the data generated by my Python script, I elected to utilize <a href="https://www.sqlite.org/" target="_blank">SQLite</a> to form a database to serve as the heart of <span class="book-title">MCC</span>. I chose to use SQLite as opposed to other SQL flavors due to its self-contained nature, lightweight size, and its well-documented C/C++ interface. These factors combined to make SQLite an ideal choice for my application devoted to processing static data without the need for a central remote database or server.
 </p>     
 
 <p>
-SQLite features excellent C++ support that allows for the easy conversion of simple string data to SQL queries that can be efficiently evaluated in a number of ways. SQLite's statement preparation system works by outlining the statement fields before sanitizing and substituting in the specific statement values. As such, it is easy to dynamically build statements capable of handling a wide range of situations. During this project, I frequently used a pattern of creating string "formats" that I could combine in different arrangements to handle the data refinement and value calculation features that I wished to support. This approach naturally synergized with the similar tactic used by SQLite, meaning that developing database features was primarily an exercise in pattern deconstruction.
+SQLite allows for the easy conversion of simple string data to SQL queries that can be efficiently evaluated in a number of ways. SQLite's statement preparation system works by outlining the statement fields before sanitizing and substituting in the specific statement values. As such, it is easy to dynamically build statements capable of handling a wide range of situations. During this project, I frequently used a pattern of creating string "formats" that I could combine in different arrangements to handle the data refinement and value calculation features that I wished to support. This approach naturally synergized with the similar tactic used by SQLite, meaning that developing database features was primarily an exercise in pattern deconstruction.
 </p>
 
 <p>
-Beginning with table creation, table schemas are comprised of a series of column specifications. As a typical schema has one row per column definition, I elected to develop a system wherein I could define an arbitrary list of column specifications where each entry contains information such as the name of the column, its data type, and any additional column arguments. This list is then converted to a single query that defines and populates a table using my previously gathered data. This system allowed me to maintain a large degree of flexibility, providing me the ability to easily modify the names and types of data processed as I iterated on the database and its source information.
+Beginning with table creation, table schemas are formed by a series of column specifications. As a typical schema has one row per column definition, I elected to develop a system wherein I could define an arbitrary list of column specifications where each entry contains information such as the name of the column, its data type, and any additional column arguments. This list is then converted to a single query that defines and populates a table using my previously gathered data. This system allowed me to maintain a large degree of flexibility, providing me the ability to easily modify the names and types of data processed as I iterated on the database and its source information.
 </p>
 
 <p>
@@ -140,7 +140,7 @@ SELECT * WHERE &#40;'type' = "Fire"&#41;
 With some slight modifications to this approach, it is also easy to define a system for calculating values derived from database data. Mutating the previous approach to something like :
 <code>
 SELECT operation&#40;value&#41;
-</code>, where 'operation()' is itself a format statement unique to each operation, we can achieve the same amount of uniformity and flexibilty as with parameter defintion. This approach, combined with SQLite's innate data cleaning while using the statement preparation system, allowed for the rapid formation of an easy to expand and secure system for defining and creating queries to the database.
+</code>, where 'operation()' is itself a format statement unique to each operation, we can achieve the same amount of uniformity and flexibility as with parameter definition. This approach, combined with SQLite's innate data cleaning while using the statement preparation system, allowed for the rapid formation of an easy to expand and secure system for defining and creating queries to the database.
 </p>
 
 <p>
@@ -153,11 +153,11 @@ User Interface Development
 </p>
 
 <p>
-I utilized the <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> library to develop the interface for <span class="book-title">MCC</span> in C++. I chose to use <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> because it is open-source, allows for the rapid creation of a functional user-interface with only C++ code, and is designed to have functional similarities to the style of frame management and rendering used in video game engines. This allowed me to utilize some of my existing knowledge of graphics and game development while minimizing the amount of additional languages and tools required to create a user-friendly interface for my applicaiton.
+I utilized the <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> library to develop the interface for <span class="book-title">MCC</span> in C++. I chose to use Dear ImGui because it is open-source, allows for the rapid creation of a functional user-interface with only C++ code, and is designed to have functional similarities to the style of frame management and rendering used in video game engines. This allowed me to utilize some of my existing knowledge of graphics and game development while minimizing the amount of additional languages and tools required to create a user-friendly interface for my application.
 </p>
 
 <p>
-Additionally, as I learned over the course of utilizing the library, <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is designed to be "self-documenting". Once downloaded, the library comes with an extensive demo which explores and explains the range of features included in the library. The link between any aspect of the demo and the corresponding code is extremely easy to find and the demo code is written to be as spatially-continuous as possible, meaning it is almost always intuitive to identify the code snippet responsible for an element and then dissect how that code works. 
+Additionally, as I learned over the course of utilizing the library, Dear ImGui is designed to be "self-documenting". Once downloaded, the library comes with an extensive demo which explores and explains the range of features included in the library. The link between any aspect of the demo and the corresponding code is extremely easy to find and the demo code is written to be as spatially-continuous as possible, meaning it is almost always intuitive to identify the code snippet responsible for an element and then dissect how that code works. 
 </p>
 
 <ul class="img-row">
@@ -176,19 +176,15 @@ Additionally, as I learned over the course of utilizing the library, <a href="ht
 </ul>
 
 <p>
-As such, learning and exploring <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is a very hands-on, self-driven process. This, in my experience, leads to the development process with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> being primarily defined by exploration, iteration, and curiosity in a way that many tools and libraries fail to be. Overall, the experience of getting to grips with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> is more fun and engaging than many other interface development tools. As a result, I highly recommend <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> and plan to use it for future projects.
+As such, learning and exploring Dear ImGui is a very hands-on, self-driven process. This, in my experience, leads to the development process with Dear ImGui being primarily defined by exploration, iteration, and curiosity in a way that many tools and libraries fail to be. Overall, the experience of getting to grips with Dear ImGui is more fun and engaging than many other interface development tools. As a result, I highly recommend Dear ImGui and plan to use it for future projects.
 </p>     
 
 <p>
-While <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> already handles much of the boiler-plate work required to establish a rendering environment (it helpfully includes examples of establishing a functional application for a wide range of rendering backends), there is still a small amount of "ugly code" that goes into creating an application with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a>. 
+While Dear ImGui already handles much of the boiler-plate work required to establish a rendering environment (it helpfully includes examples of establishing a functional application for a wide range of rendering backends), there is still a small amount of "ugly code" that goes into creating an application with Dear ImGui. To better isolate generic Dear ImGui code from project-specific code, I elected to migrate all backend and application preparation to an "App" class. In essence, App defines functions to contain any required preparation for Dear ImGui while leaving open virtual functions for project-specific code. As such, for any project that utilizes Dear ImGui I can now simply bring in this app framework and create a child class of App to contain the code for drawing the UI of that specific project.
 </p>
 
 <p>
-To better isolate generic <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> code from project-specific code, I elected to migrate all backend and application preparation to an "App" class. In essense, App defines functions to contain any required preparation for <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> while leaving open virtual functions for project-specific code. As such, for any project that utilizes <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> I can now simply bring in this app framework and create a child class of App to contain the code for drawing the UI of that specific project.
-</p>
-
-<p>
-Armed with <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a>'s intuitive design patterns and a framework to make working with the library even easier, I fleshed out the interface for <span class="book-title">MCC</span> by determining its core features and use-stages and creating a simple, independently functional window for each stage of program usage. After creating windows for dataset refinement, dataset viewing, and dataset value calculation, I simply had to create a structure to encapsulate and preserve data that needed to be communicated between windows.
+Armed with Dear ImGui's intuitive design patterns and a framework to make working with the library even easier, I fleshed out the interface for <span class="book-title">MCC</span> by determining its core features and use-stages and creating a simple, independently functional window for each stage of program usage. After creating windows for dataset refinement, dataset viewing, and dataset value calculation, I simply had to create a structure to encapsulate and preserve data that needed to be communicated between windows.
 </p>
 
 <span class="anchor" id="lessons"></span>
@@ -198,7 +194,7 @@ Lessons Learned
 </p>
 
 <p>
-During the course of developing <span class="book-title">MCC</span>, I was able to tackle a large number of distinct challanges. The initial stages of the project allowed me to experiment with more efficiently querying APIs to gather required data, requiring an analysis of what queries could be optimized or changed to minimize unnecessary waiting. Following this, working with the SQLite C++ integration provided an opportunity to evaluate patterns in database queries in order to ensure queries could be formed flexibly while mitigating dangers such as unsanitized user input. Concluding the project by developing a interface using <a href="https://github.com/ocornut/imgui" target="_blank">Dear ImGui</a> required mapping the connections between different phases of data processing and interaction in order to properly manage state and user input. By utilizing a range of tools and languages, I was able to deepen my understanding of topics such as API usage, database formation and interaction, and creating an interface to faciliate a better user experience.
+During the course of developing <span class="book-title">MCC</span>, I was able to tackle a large number of distinct challenges. The initial stages of the project allowed me to experiment with more efficiently querying APIs to gather required data, requiring an analysis of what queries could be optimized or changed to minimize unnecessary waiting. Following this, working with the SQLite C++ integration provided an opportunity to evaluate patterns in database queries in order to ensure queries could be formed flexibly while mitigating dangers such as unsanitized user input. Concluding the project by developing a user interface using Dear ImGui required mapping the connections between different phases of data processing and interaction in order to properly manage state and user input. By utilizing a range of tools and languages, I was able to deepen my understanding of topics such as API usage, database formation and interaction, and creating an interface to facilitate a better user experience.
 </p>
 
 <p>
