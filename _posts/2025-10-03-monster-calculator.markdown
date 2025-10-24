@@ -11,6 +11,7 @@ tools: C++, SQLite, Dear ImGui, Python
 role: Programmer & Designer
 team-size: 1
 repo-link: https://github.com/PurpleMB/MCC
+video-link: https://youtu.be/mzaODFaIKeg
 sections: Introduction, API Querying, Database Creation & Interaction, User Interface Development, Lessons
 section-anchors: intro, api, database, interface, lessons
 ---
