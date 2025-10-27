@@ -5,7 +5,7 @@ date:   2025-10-01 12:16:30 -0600
 prev-page: /projects
 prev-page-name: Projects
 topic-list: API Querying, Database Interaction, User Interfaces, Libraries
-description: Monster Curiosity Calculator is a statistics application created in C++. It utilizes the DearImGui library to facilitate user interaction with an SQLite database that is populated with data about pocket-sized monsters!
+description: <span class="book-title">Monster Curiosity Calculator</span> is a statistics application created in C++. It utilizes the DearImGui library to facilitate user interaction with an SQLite database that is populated with data about pocket-sized monsters!
 preview_img: /assets/gifs/mcc-preview.gif
 tools: C++, SQLite, Dear ImGui, Python 
 role: Programmer & Designer
