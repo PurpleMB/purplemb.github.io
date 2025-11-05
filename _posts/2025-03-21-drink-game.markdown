@@ -18,7 +18,7 @@ section-anchors: intro, scriptableobjects, channels, shaders, lessons
     <span class="overview-title">Overview</span>
     <br>
     <p>
-        <span class="book-title">Boba Eye</span> is a casual game about making bubble drinks developed in Unity. During development, constructing systems that were <span class="accent">data-driven</span> and <span class="accent">decoupled</span> was a top priority. Two key tools that helped to achieve these goals were <span class="accent">ScriptableObjects</span> and <span class="accent">Event Channels</span>, which helped keep systems flexible and untangled. Additionally, <span class="accent">shaders</span> were utilized to provide some visual flair and diversity to the primary gameplay task of making drinks
+        <span class="book-title">Boba Eye</span> is a casual game about making bubble drinks developed in Unity. During development, constructing systems that were <span class="accent">data-driven</span> and <span class="accent">decoupled</span> was a top priority. <span class="accent">ScriptableObjects</span> and <span class="accent">Event Channels</span> were two of the most important tools utilized to keep systems extensible and untangled. As an extra little treat, <span class="accent">shaders</span> helped to provide some visual flair and diversity to the primary gameplay task of making drinks!
     </p>
 </div>
 
@@ -29,12 +29,16 @@ Introduction
 </p>
 
 <p>
-This paragraph should introduce why we tried to make systems decoupled. Reference past examples, such as PUNCHERMAN!.
+Reflecting on my experiences with previous development projects, namely <span class="book-title">PUNCHERMAN!</span>, I began <span class="book-title">Boba Eye</span> with one main directive: constructing a game that I could return to and develop over time. After navigating the rather large amount of tech debt <span class="book-title">PUNCHERMAN!</span> accumulated during its first development cycle, I gained a renewed appreciation for the necessity of constructing systems that are durable, easily understood, and easily extended. Where we had spend months untangling messy, codependent systems to add new elements to <span class="book-title">PUNCHERMAN!</span>, I wished to be able to occasionally return to <span class="book-title">Boba Eye</span> and easily add in a new character or an additional component to the drink construction process.
 </p>       
 
 <p>
-This paragraph should go on to explain the interest in continued development and the implications on system design.
+In order to achieve this, I would need a project capable of being easily understood again after some time away. Forming systems that function independently, thus reducing the number of elements requiring direct manipulation at any time, would ease the process of re-learning the game's workings. Additionally, designing systems to be data-driven would allow me to make defining new game content largely a matter of creating new data to feed into existing, flexible systems. As such, the paradigms I followed to help achieve my ultimate goal of a long-term supportable game were decoupling and being data-driven.
 </p>       
+
+<p>
+With these core design principles in mind, I created documentation outlining the features and development roadmap of the game, noting which elements were absolutely essential and which would be nice to have someday. To construct systems adhering to my goals, I would need a strong understanding of what possibilities each system must be capable of handling and which systems would be in communication with each other. During <span class="book-title">PUNCHERMAN!</span>, I learned how great the challenge can be to adapt a system to accomodate previously unconsidered possibilities. Thus, this early mapping of game systems, their interactions, and possible future additions would help to construct stronger systems capable of handling continued development.
+</p>
 
 <span class="anchor" id="scriptableobjects"></span>
 <div>
