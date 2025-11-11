@@ -4,12 +4,13 @@ title:  "Boba Eye"
 date:   2025-03-21 12:16:30 -0600
 prev-page: /projects
 prev-page-name: Projects
-topic-list: Event-driven Programming, ScriptableObjects, Dialogue Systems, Shaders, Decoupling
+topic-list: Decoupling, ScriptableObjects, Event-driven Programming, Shaders
 description: <span class="book-title">Boba Eye</span> is a cozy 2D game about creating drinks for a cast of cute critters. It utilizes tools such as ScriptableObjects and Event Channels to keep systems designer-friendly, extensible, and decoupled. It also uses some fun shaders to create unique-looking drinks!
-preview_img: /assets/gifs/drinkgame-preview-rough.gif
+preview_img: /assets/gifs/BobaEyePreviewWIP.gif
 engine: Unity(C#)
 role: Programmer & Designer
 team-size: 2
+itch-link: https://purpleml.itch.io/boba-eye-wip
 sections: Introduction, Scriptable Objects, Event Channels, Shaders, Lessons
 section-anchors: intro, scriptableobjects, channels, shaders, lessons
 ---
