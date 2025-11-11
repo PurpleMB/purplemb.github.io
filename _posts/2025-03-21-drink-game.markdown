@@ -29,7 +29,7 @@ Introduction
 </p>
 
 <p>
-Reflecting on my experiences with previous development projects, namely <span class="book-title">PUNCHERMAN!</span>, I began <span class="book-title">Boba Eye</span> with one main directive: constructing a game that I could return to and develop over time. After navigating the rather large amount of tech debt <span class="book-title">PUNCHERMAN!</span> accumulated during its first development cycle, I gained a renewed appreciation for the necessity of constructing systems that are durable, easily understood, and easily extended. Where we had spend months untangling messy, codependent systems to add new elements to <span class="book-title">PUNCHERMAN!</span>, I wished to be able to occasionally return to <span class="book-title">Boba Eye</span> and easily add in a new character or an additional component to the drink construction process.
+Reflecting on my experiences with previous development projects, namely <span class="book-title">PUNCHERMAN!</span>, I began <span class="book-title">Boba Eye</span> with one main directive: constructing a game that I could return to and develop over time. After navigating the rather large amount of tech debt <span class="book-title">PUNCHERMAN!</span> accumulated during its first development cycle, I gained a renewed appreciation for the necessity of constructing systems that are durable, easily understood, and easily extended. Where we had spent months untangling messy, codependent systems to add new elements to <span class="book-title">PUNCHERMAN!</span>, I wished to be able to occasionally return to <span class="book-title">Boba Eye</span> and easily add in a new character or an additional component to the drink construction process.
 </p>       
 
 <p>
@@ -37,7 +37,7 @@ In order to achieve this, I would need a project capable of being easily underst
 </p>       
 
 <p>
-With these core design principles in mind, I created documentation outlining the features and development roadmap of the game, noting which elements were absolutely essential and which would be nice to have someday. To construct systems adhering to my goals, I would need a strong understanding of what possibilities each system must be capable of handling and which systems would be in communication with each other. During <span class="book-title">PUNCHERMAN!</span>, I learned how great the challenge can be to adapt a system to accomodate previously unconsidered possibilities. Thus, this early mapping of game systems, their interactions, and possible future additions would help to construct stronger systems capable of handling continued development.
+With these core design principles in mind, I created documentation outlining the features and development roadmap of the game, noting which elements were absolutely essential and which would be nice to have someday. To construct systems adhering to my goals, I would need a strong understanding of what possibilities each system must be capable of handling and which systems would be in communication with each other. During <span class="book-title">PUNCHERMAN!</span>, I learned how great the challenge can be to adapt a system to accommodate previously unconsidered possibilities. Thus, this early mapping of game systems, their interactions, and possible future additions would help to construct stronger systems capable of handling continued development.
 </p>
 
 <span class="anchor" id="scriptableobjects"></span>
@@ -47,12 +47,24 @@ Scriptable Objects
 </p>  
 
 <p>
-ScriptableObjects are a potentially unassuming feature of Unity. ScriptableObject is, much like the more prevalent MonoBehaviour, a base class which scripts may inherit from in order to be easily utilized within the Unity editor. Similarly to a MonoBehaviour, ScriptableObjects are capable of containing state and functions that can be utilized by objects during a game's execution. However, ScriptableObjects differ from MonoBehavior in several crucial aspects. They do not share the same lifecycle as a MonoBehaviour and are not created as components of GameObjects. Instead, ScriptableObjects are created as assets which may be referenced by more standard GameObjects. Due to existing as assets, they are outside the standard scene-based lifecycle of most objects. As such, ScriptableObjects are able to serve as easily-accessible bundles of data and functions that do not need to be located within a currently active scene
+ScriptableObjects are a potentially unassuming feature of Unity that proved vital at developing systems that were more modular and data-driven. 
+</p>
+
+<p>
+ScriptableObject is, much like the more prevalent MonoBehaviour, a base class which scripts may inherit from in order to be easily utilized within the Unity editor. Similarly to a MonoBehaviour, ScriptableObjects are capable of containing state and functions that can be utilized by objects during a game's execution. 
+</p>
+
+<p>
+However, ScriptableObjects differ from MonoBehaviours in several crucial aspects. They do not share the same lifecycle as a MonoBehaviour and are not created as components of GameObjects. Instead, ScriptableObjects are created as assets which may be referenced by more standard GameObjects. Due to existing as assets, they are outside the standard scene-based lifecycle of most objects and are usable without requiring any explicit instantiation. As such, ScriptableObjects are able to serve as easily-accessible bundles of data and functions that do not need to be located within a currently active scene
 and are not tied to specific GameObject instances.
 </p>
 
 <p>
-As an example of their potential usefulness, consider ScriptableObjects as they could be utilized as part of a game's weapon systems. If designed with ScriptableObjects in mind, the class <code>Weapon</code> may expose the variables <code>FiringSO</code> and <code>ProjectileSO</code>, each being ScriptableObjects. The functions in <code>Weapon</code> may call functions and use data from the ScriptableObjects, using those implementations to guide its own behavior. In this way, <code>FiringScriptable</code> assets could be created that allow a weapon to fire automatically or semi-automatically. Similarly, certain <code>ProjectileScriptable</code> implementations could allow some weapons to fire projectiles using raycasts while others use physics projectiles.
+As an example of their potential usefulness, consider ScriptableObjects as they could be utilized as part of a game's weapon systems. 
+</p>
+
+<p>
+If designed with ScriptableObjects in mind, the class <code>Weapon</code> may expose the variables <code>_firingSO</code> and <code>_projectileSO</code>, each being references to ScriptableObject assets. The functions in <code>Weapon</code> may call functions and use data from the ScriptableObjects, using those implementations to guide its own behavior. In this way, <code>FiringScriptable</code> assets could be created that allow a weapon to fire automatically or semi-automatically. Similarly, certain <code>ProjectileScriptable</code> implementations could allow some weapons to fire projectiles using raycasts while others use physics projectiles.
 </p>
 
 <p>
@@ -105,7 +117,7 @@ public class ProjectileScriptable : ScriptableObject
 </p>
 
 <p>
-In a situation such as this example, similar weapons could share implementation details by utilizing shared ScriptableObjects while entirely new kinds of weapons could be created by defining a new ScriptableObject that fires in a novel way. Furthermore, if, for example, all rocket-based weapons eventually switch to a different projectile then updating the <code>ProjectileScriptable</code> they reference will propagate those changes to all impacted <code>Weapon</code> instances. In this way, ScriptableObjects can improve the flow of development by creating systems that can easily combine reusable parts while allowing for those shared parts to be easily updated across all usages.
+In a situation such as this example, <code>Weapon</code> could be used to define a wide range of different weapons by using different ScriptableObject assets to define aspects of the weapon's behavior. Furthermore, if, for example, all rocket-based weapons eventually need to switch to a different projectile, updating the <code>ProjectileScriptable</code> they reference will propagate those changes to all impacted <code>Weapon</code> instances. In this way, ScriptableObjects can improve the flow of development by creating systems that can easily combine reusable parts while allowing for those shared parts to be simultaneously updated across all usages.
 </p>
 
 <p>
@@ -113,7 +125,11 @@ Within <span class="book-title">Boba Eye</span>, this general technique is used 
 </p>
 
 <p>
-ScriptableObjects are widely used across <span class="book-title">Boba Eye</span>, also being the basis of the system for defining new customers as a combination of ScriptableObjects defining the appearance, taste preferences, and speech patterns of a customer. In this way, ScriptableObjects were a key component in creating a maintainable, extensible game system as they allowed me to develop frameworks which could be easily filled to create new flavors, customers, and more. However, while these instances do display and benefit from the unique traits of ScriptableObjects, there is an even more powerful way they may be used.
+ScriptableObjects are widely used across <span class="book-title">Boba Eye</span>. They also serve as the basis of systems such as customer definition, where a combination of ScriptableObjects defining the appearance, taste preferences, and speech patterns of a customer can be combined to easily create new cafe guests. 
+</p>
+
+<p>
+In this way, ScriptableObjects were a key component in creating maintainable, extensible game systems as they allowed me to develop frameworks which could be easily filled to create new flavors, customers, and more. To tie this back to my initial thesis, ScriptableObjects are an easy-to-use and convenient tool in Unity that promote a more data-driven approach to system design. However, don't forget about ScriptableObjects just yet as they are also a key ingredient in a powerful decoupling technique!
 </p>
 
 <span class="anchor" id="channels"></span>
@@ -123,15 +139,51 @@ Event Channels
 </p>
 
 <p>
-This paragraph will now explain Event Channels as a combination of event-driven programming and SOs. 
-</p>  
+Event-driven programming is a common and extremely useful paradigm when programming games and other user-driven pieces of software. Generally speaking, an event system allows for the creation of events that may be "fired" when certain conditions are met. These events often include data about the inciting incident, such as what object initiated it or when the event occured. Other objects then listen for events, each declaring what response it will make when it finally receives any events it is awaiting. This simple pattern allows for the creation of chains of functions to be called across objects without each object in the chain needing to know what consequences its own action will have.
+</p>
 
 <p>
-This paragraph will explain how Event Channels reduce the amount of information listeners require, promoting decoupling.
-</p>  
+As an example, consider a scoring system in a game where the player obtains points every time they click a coin. In a direct, naive approach, this could be handled by letting coins know about the UI that shows the score. When clicked, a coin uses its reference to the UI and calls a function that increases the score and updates the UI. While seemingly innocuous at first, this approach is ripe for the accumulation of tech debt due to its tightly-coupled nature. The coin needs to be directly aware of the UI and must tell the UI what to do. If eventually it is decided that collecting coins should also play a sound and cause another coin to spawn, suddenly a coin also requires direct knowledge of the systems for playing audio and spawning coins. In this instance, it is easy to see how designing systems to be tightly-coupled reduces flexibility and increases the likelihood of individual objects becoming bloated and unwieldy.
+</p>
 
 <p>
-This paragraph will explain how they can serve to group related events from different sources.
+Designing the same system with an event-driven approach, each coin would instead fire an event when it is clicked. The UI, audio, and additional miscellaneous responses would all then be individually handled by the corresponding objects and systems, which would each listen for the event of a coin being collected. With this approach, adding any additional responses to a coin being collected does not require any direct modification to the coin itself. In this way, event-driven programming allows for the decoupling of systems and objects.
+</p>
+
+<p>
+There is, however, a potential caveat that technically-inclined readers may have considered: how do the objects gain knowledge of the specific events they are listening for? There are a number of reasonable ways to provide event information to eager listeners, each with its own strengths and weaknesses. Objects of certain types may be dynamically found and listened to, references to event broadcasting objects may be manually provided, events may be static members of their classes, and so on. Ultimately, however, a listener does need some way to know what events it is listening for.
+</p>
+
+<p>
+Additionally, events require careful consideration of the lifecycles of involved objects and their listening patterns. If used wantonly, events can prohibit garbage collection from functioning at full efficiency and can introduce difficult to dissect memory leaks. Events can, as a worst case, also lead to null exceptions if they are carelessly fired or listened to without ensuring they exist and have listeners.
+</p>
+
+<p>
+Thankfully, ScriptableObjects can help to mitigate these potential weaknesses. ScriptableObjects are, just like any other object, capable of possessing and firing events. Furthermore, they are, as mentioned previously, exempt from the standard lifecycle and scene restrictions of standard Unity GameObjects. These factors allow them to be utilized as "channels" for events.
+</p>
+
+<p>
+ An EventChannel is a ScriptableObject that contains an event that may be publicly listened to as well as a public function for firing that event. Due to its nature as an asset as opposed to a GameObject instance in a scene, it does not need to "exist" in a scene to be referenced and used by objects in any scene. Any object that wishes to send a message along a channel can be given a reference to the desired channel and call its public firing function when in need of sending a message. Similarly, objects that want to listen for events along a channel can be given the channel reference without it being tied to any specific set of scene objects.
+</p>
+
+<p>
+Utilizing ScriptableObjects like this, it is possible to create an event-driven system where objects do not need to be concerned with who may be sending or listening to events or whether anyone is even utilizing a given event channel. This decreases the burden placed on listeners to acquire event information while also removing the actual event launching code from objects that wish to communicate, allowing for easier decoration or modification of event functions. 
+</p>
+
+<p>
+As a bonus, EventChannels also serve as an easy way to group related events into a single channel without needing to explicitly declare lists of objects or events that are related. Returning to the previous coin example, all coins could communicate in an EventChannel for coin collecting without the need for a shared static class event or a list of all coins waiting to be collected. 
+</p>
+
+<p>
+EventChannels also increase the safety of events by reducing the risk of firing or listening to non-existent events by connecting the events to objects that have a less volatile lifecycle. ScriptableObjects are always accessible during runtime, and as such will never be null if properly provided to an object. As such, a coin will always be able to fire its event and a coin responder will always be able to listen for its event, regardless of if any other active objects are around to broadcast/receive the same event.
+</p>
+
+<p>
+Within <span class="book-title">Boba Eye</span>, EventChannels are used frequently to allow communication between objects from distinct systems that may wish to respond to one another. For example, the UI system for displaying characters and their dialogue lines is activated in response to an EventChannel that is activated when an occupied table is interacted with. The table has no knowledge of the UI; the UI has no knowledge of the table. They each only need to know of the EventChannel, which is a durable project asset capable of being easily provided in-editor. 
+</p>
+
+<p>
+Using this technique, ScriptableObjects are able to combine with event-driven programming to allow for even more flexible, safe decoupling. This, combined with the data-driven design of systems utilizing ScriptableObjects in a more standard manner, allows for the creation of gameplay systems that are easily extended and responsive without becoming brittle or codependent.
 </p>
 
 <span class="anchor" id="channels"></span>
