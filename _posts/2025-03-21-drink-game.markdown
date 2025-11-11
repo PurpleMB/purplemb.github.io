@@ -44,23 +44,77 @@ With these core design principles in mind, I created documentation outlining the
 <div>
 <p class="section-title">
 Scriptable Objects
+</p>  
+
+<p>
+ScriptableObjects are a potentially unassuming feature of Unity. ScriptableObject is, much like the more prevalent MonoBehaviour, a base class which scripts may inherit from in order to be easily utilized within the Unity editor. Similarly to a MonoBehaviour, ScriptableObjects are capable of containing state and functions that can be utilized by objects during a game's execution. However, ScriptableObjects differ from MonoBehavior in several crucial aspects. They do not share the same lifecycle as a MonoBehaviour and are not created as components of GameObjects. Instead, ScriptableObjects are created as assets which may be referenced by more standard GameObjects. Due to existing as assets, they are outside the standard scene-based lifecycle of most objects. As such, ScriptableObjects are able to serve as easily-accessible bundles of data and functions that do not need to be located within a currently active scene
+and are not tied to specific GameObject instances.
 </p>
 
 <p>
-This paragraph should explain what scriptableobjects are. They are scene-independent assets capable of containing variables and code outside of the MB lifecycle.
-</p>     
+As an example of their potential usefulness, consider ScriptableObjects as they could be utilized as part of a game's weapon systems. If designed with ScriptableObjects in mind, the class <code>Weapon</code> may expose the variables <code>FiringSO</code> and <code>ProjectileSO</code>, each being ScriptableObjects. The functions in <code>Weapon</code> may call functions and use data from the ScriptableObjects, using those implementations to guide its own behavior. In this way, <code>FiringScriptable</code> assets could be created that allow a weapon to fire automatically or semi-automatically. Similarly, certain <code>ProjectileScriptable</code> implementations could allow some weapons to fire projectiles using raycasts while others use physics projectiles.
+</p>
 
 <p>
-This paragraph will go on to explain how SOs can be used to provide information and implementations to be used by MB objects to make those classes more flexible and decoupled.
-</p>       
+<pre>
+<code>
+public class Weapon : MonoBehaviour
+{
+    [SerializeField] private FiringScriptable _firingSO;
+    [SerializeField] private ProjectileScriptable _projectileSO;
+
+    public bool TryToFireWeapon()
+    {
+        if(_firingSO.CanFire(WeaponState))
+        {
+            FireWeapon();
+        }
+    }
+
+    private void FireWeapon()
+    {
+        _projectileSO.LaunchProjectile(WeaponState);
+    }
+}
+</code>
+</pre>
+
+<pre>
+<code>
+public class FiringScriptable : ScriptableObject
+{
+    public bool CanFire(WeaponState)
+    {
+        // code checking if the parameters should allow this weapon to fire
+    }
+}
+</code>
+</pre>
+
+<pre>
+<code>
+public class ProjectileScriptable : ScriptableObject
+{
+    public void LaunchProjectile(WeaponState)
+    {
+        // code creating a projectile using parameters
+    }
+}
+</code>
+</pre>
+</p>
 
 <p>
-This paragraph will explain that they also make it easier to expose data for non-programmer designers to interact with. In this way, they ease development for both parties.
-</p> 
+In a situation such as this example, similar weapons could share implementation details by utilizing shared ScriptableObjects while entirely new kinds of weapons could be created by defining a new ScriptableObject that fires in a novel way. Furthermore, if, for example, all rocket-based weapons eventually switch to a different projectile then updating the <code>ProjectileScriptable</code> they reference will propagate those changes to all impacted <code>Weapon</code> instances. In this way, ScriptableObjects can improve the flow of development by creating systems that can easily combine reusable parts while allowing for those shared parts to be easily updated across all usages.
+</p>
 
 <p>
-This paragraph will now explain an example of the SOs being used in the project: customer data.
-</p>  
+Within <span class="book-title">Boba Eye</span>, this general technique is used for defining data that may need to be shared by different instances of objects across scenes. For example, all flavors are defined as ScriptableObjects that contain information such as the name of the flavor and its color. Thus, I can create assets outlining each possible flavor and pass those assets to any GameObject that requires flavor information (such as drink particles). Furthermore, I can easily define more flavors or alter the definition of existing flavors without having to manually update the related information across multiple locations.
+</p>
+
+<p>
+ScriptableObjects are widely used across <span class="book-title">Boba Eye</span>, also being the basis of the system for defining new customers as a combination of ScriptableObjects defining the appearance, taste preferences, and speech patterns of a customer. In this way, ScriptableObjects were a key component in creating a maintainable, extensible game system as they allowed me to develop frameworks which could be easily filled to create new flavors, customers, and more. However, while these instances do display and benefit from the unique traits of ScriptableObjects, there is an even more powerful way they may be used.
+</p>
 
 <span class="anchor" id="channels"></span>
 <div>
