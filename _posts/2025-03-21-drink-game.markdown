@@ -187,26 +187,48 @@ Within <span class="book-title">Boba Eye</span>, EventChannels are used frequent
 Using this technique, ScriptableObjects are able to combine with event-driven programming to allow for even more flexible, safe decoupling. This, combined with the data-driven design of systems utilizing ScriptableObjects in a more standard manner, allows for the creation of gameplay systems that are easily extended and responsive without becoming brittle or codependent.
 </p>
 
-<span class="anchor" id="channels"></span>
+<span class="anchor" id="shaders"></span>
 <div>
 <p class="section-title">
 Shaders
 </p>
 
 <p>
-This paragraph will explain the need for shaders to represent a large number of possible drinks.
+Shifting gears from scalable programming techniques, <span class="book-title">Boba Eye</span> also required a scalable solution for generating visuals for player-created drinks. Due to its freeform system of allowing players to create drinks out of arbitrary flavor combinations, it wasn't feasible to create bespoke pieces of artwork for all the drinks the player could make. Instead, shaders, scripts capable of modifying how models or sprites are displayed in a rendering environment, were utilized to allow for drink visuals to synthesize authored and procedural elements in a way that ensured each drink is both visually enticing and distinct. 
+</p>
+
+<p>
+The least exciting, and yet most mechanically relavent, shader utlized by the drink system is that responsible for visualizing drinks being poured. As the player pours flavors into a drink, different colored segments will be created and stacked to display the amount of each flavor added to the drink. This is, primarily, a tool to allow players to visually interpret the ratio of different flavors in their drinks as they seek to fulfill the customer requirements. 
 </p>  
 
 <p>
-This paragraph will explain the segment shader used to display the drink ingredients.
-</p>  
+This relatively simple shader works by taking a texture matching the shape of the cup and using a "step" function to only display a specified segment of the entire texture. This segment is defined by two decimal numbers corresponding to the percent full the cup was before the flavor was added and the percent full the cup is with that flavor. These numbers are determined by a component on the cup that is responsible for coalescing the information of all drink particles taken in by the cup, which then communicates segments of that information to the segment shader to create appropriate color slices.
+</p>
 
 <p>
-This paragraph will explain how a simple effect can be used to make the stirring shader.
-</p>  
+Utilizing this approach, the player is presented with clean, uniformly colored segments that allow them to make more informed decisions regarding their drink creation. While not as visually interesting as some of the following shaders, it was essential to create a shader that allowed for effective communication of gameplay information to the player when constructing drinks.
+</p>
 
 <p>
-This paragraph will go into using noise and randomization to create dynamic shaders like the finished shader.
+Having been poured, drinks must be stirred up before being served. While only a transitional state for drinks, it still felt important to ensure drinks are distinguishable while being stirred in order to help the player maintain their organization as they prepare different orders. Additionally, I wanted the drinks to communicate a sense of motion and action as they are stirred simply for the sake of making the process more exciting and fun. As such, I required a shader capable of maintaining the unique color of each flavor while also being dynamic and lively.
+</p>
+
+<p>
+ To achieve both of these goals, it felt best to find a simple technique for creating motion that could be applied to each flavor in the drink. For this reason, I turned to a good old-fashioned scrolling UV shader. UV coordinates, the values responsible for controlling how textures are applied to models or sprites, can be manipulated by shaders to give the appearance that the texture is "moving" across the surface it is applied to.
+ </p>
+
+ <p>
+Using a technique similar to that described when creating flavor segments, the drink objects communicates information to the shader about the amount of each flavor present within itself. The most dominant flavor is used as the background for the entire shader. Following this, additional flavors are each used to create a scrolling texture that is colored to match the flavor. The texture utilized for this has an appearance similar to streaks, allowing it to appear like segments of flavor rapidly swirling around the cup once the scrolling motion is applied. 
+</p>
+
+<p>
+The cumulative effect is that the drink appears to be a base liquid (taken from the most common flavor) that contains many rapidly moving segments of additional ingredients. If desired, additional motion may be applied to the cup object or parameters such as the scroll speed or textures utilized may be changed to alter the "feel" of the shader. As each element of the shader is still simple and colored to match the flavor it represents, it is still easy for the player to appraise what kind of flavors each stirring drink contains. As such, this shader serves as a good example of the way that simple effects can be combined and layered to create shaders that are versatile and reactive while maintaining visual clarity.
+</p>
+
+<p>
+<span class="book-title">
+TODO: This paragraph will go into using noise and randomization to create dynamic shaders like the finished shader.
+</span>
 </p>  
 
 <span class="anchor" id="lessons"></span>
@@ -216,26 +238,44 @@ Lessons Learned
 </p>
 
 <p>
-This paragraph will acknowledge some of the successes of the BE architecture: capable of quickly defining new characters, flavors, etc.
-</p>     
-
-<p>
-This paragraph will now go on to introduce some areas that could have gone better: such as systems becoming overengineered, difficulties with sprite layering and collision, and potential pitfalls with SOs and Events.
-</p>  
-
-<p>
-This paragraph will explore the overengineering that happened and go into ways to prevent that in the future. Ways: clear, subdivided tasks; more planning.
+<span class="book-title">Boba Eye</span> was an excellent testing ground for experimenting with many techniques and design paradigms that I plan to continue utilzing as I progress development on it and other projects. By and large, it was a success in terms of creating systems that are more open to extension and modification than previous projects. I am pleased with the ways in which its systems facilitate and support the rapid, easy creation of additional content such as new customers and flavors. Furthermore, its utilization of ScriptableObjecs and EventChannels helped to keep its systems decoupled and flexible. This will be invaluable as I continue to iterate on and improve different facets of the user experience.
 </p>
 
 <p>
+However, that is not to say that all aspects of <span class="book-title">Boba Eye</span>'s development progressed flawlessly. There are three primary issues that arose during the development of <span class="book-title">Boba Eye</span>: overengineering, managing distinct visual and physics layers, and navigating potential shortcomings of reliance upon ScriptableObjects and events.
+</p> 
+
+<p>
+As with any programming project, <span class="book-title">Boba Eye</span> was an exercise in properly planning interlocking systems while attempting to elegantly navigate any unforseen shortcomings in those plans. 
+</p>
+
+<p>
+As mentioned, <span class="book-title">Boba Eye</span> was heavily documented before it entered active development. Most of its systems were planned and outlined, detailing the possibilities they would need to accomodate and the connections they would have with related systems. However, in my attempt to design systems capable of handling as wide a range of inputs as possible, I failed to leverage some of my own authorial power to design constructive limitations into those systems. Additionally, in my pursuit of decoupling I occasionally connected elements, that by all rights should be allowed to function closely together, in fashions that engendered ambiguity and reduced clarity.
+</p>
+
+<p>
+That is to say, I overengineered certain elements of <span class="book-title">Boba Eye</span>. For example, the routine process of handling the player attempting to interact with an occupied table, at one time, invovled a rather absurd chain of objects going , "Hey, I've been interacted with. Would anyone like to do anything about that?" that went far beyond the reasonble progression of table to party to contained customers.
+</p>
+
+<p>
+Going forward, I plan to continue developing a better sense of the ideal balance between simplicity and flexibility for systems I design. In order to achieve this, I am improving my diligence with creating clear, subdivided development tasks that ask direct questions and receive direct answers. Instead of approaching a more vague task like "Allow the player to speak to customers", I will instead tackle more concrete tasks like allowing a player to click on an object, allowing an object to activate a UI element, and allowing a dialogue line to be typed out. This, combined with improving my architecure planning by spending more time considering what reasonable limitations for a system should look like, will hopefully help me to avoid some of the overengineering I partook in during the creation of <span class="book-title">Boba Eye</span>.
+</p>
+
+<p>
+<span class="book-title">
 This paragraph will explore issues with sprite layering and collision and discuss issues.
+</span>
 </p>  
 
 <p>
+<span class="book-title">
 This paragraph will explore issues with SOs and Events, such as being prone to editor corruption or potentially being hard to debug if sources become unclear.
+</span>
 </p>  
 
 <p>
+<span class="book-title">
 This paragraph will conclude the article by saying BE was a great experience that helped to learn about developing extensible systems and such.
+</span>
 </p>
 
