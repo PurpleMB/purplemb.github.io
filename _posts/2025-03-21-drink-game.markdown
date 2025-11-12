@@ -198,7 +198,7 @@ Shifting gears from scalable programming techniques, <span class="book-title">Bo
 </p>
 
 <p>
-The least exciting, and yet most mechanically relavent, shader utlized by the drink system is that responsible for visualizing drinks being poured. As the player pours flavors into a drink, different colored segments will be created and stacked to display the amount of each flavor added to the drink. This is, primarily, a tool to allow players to visually interpret the ratio of different flavors in their drinks as they seek to fulfill the customer requirements. 
+The least exciting, and yet most mechanically relevant, shader utilized by the drink system is that responsible for visualizing drinks being poured. As the player pours flavors into a drink, different colored segments will be created and stacked to display the amount of each flavor added to the drink. This is, primarily, a tool to allow players to visually interpret the ratio of different flavors in their drinks as they seek to fulfill the customer requirements. 
 </p>  
 
 <p>
@@ -218,7 +218,7 @@ Having been poured, drinks must be stirred up before being served. While only a 
  </p>
 
  <p>
-Using a technique similar to that described when creating flavor segments, the drink objects communicates information to the shader about the amount of each flavor present within itself. The most dominant flavor is used as the background for the entire shader. Following this, additional flavors are each used to create a scrolling texture that is colored to match the flavor. The texture utilized for this has an appearance similar to streaks, allowing it to appear like segments of flavor rapidly swirling around the cup once the scrolling motion is applied. 
+Using a technique similar to that described when creating flavor segments, the drink object communicates information to the shader about the amount of each flavor present within itself. The most dominant flavor is used as the background for the entire shader. Following this, additional flavors are each used to create a scrolling texture that is colored to match the flavor. The texture utilized for this has an appearance similar to streaks, allowing it to appear like segments of flavor rapidly swirling around the cup once the scrolling motion is applied. 
 </p>
 
 <p>
@@ -238,7 +238,7 @@ Lessons Learned
 </p>
 
 <p>
-<span class="book-title">Boba Eye</span> was an excellent testing ground for experimenting with many techniques and design paradigms that I plan to continue utilzing as I progress development on it and other projects. By and large, it was a success in terms of creating systems that are more open to extension and modification than previous projects. I am pleased with the ways in which its systems facilitate and support the rapid, easy creation of additional content such as new customers and flavors. Furthermore, its utilization of ScriptableObjecs and EventChannels helped to keep its systems decoupled and flexible. This will be invaluable as I continue to iterate on and improve different facets of the user experience.
+<span class="book-title">Boba Eye</span> was an excellent testing ground for experimenting with many techniques and design paradigms that I plan to continue utilizing as I progress development on it and other projects. By and large, it was a success in terms of creating systems that are more open to extension and modification than previous projects. I am pleased with the ways in which its systems facilitate and support the rapid, easy creation of additional content such as new customers and flavors. Furthermore, its utilization of ScriptableObjects and EventChannels helped to keep its systems decoupled and flexible. This will be invaluable as I continue to iterate on and improve different facets of the user experience.
 </p>
 
 <p>
@@ -246,36 +246,54 @@ However, that is not to say that all aspects of <span class="book-title">Boba Ey
 </p> 
 
 <p>
-As with any programming project, <span class="book-title">Boba Eye</span> was an exercise in properly planning interlocking systems while attempting to elegantly navigate any unforseen shortcomings in those plans. 
+As with any programming project, <span class="book-title">Boba Eye</span> was an exercise in properly planning interlocking systems while attempting to elegantly navigate any unforeseen shortcomings in those plans. 
 </p>
 
 <p>
-As mentioned, <span class="book-title">Boba Eye</span> was heavily documented before it entered active development. Most of its systems were planned and outlined, detailing the possibilities they would need to accomodate and the connections they would have with related systems. However, in my attempt to design systems capable of handling as wide a range of inputs as possible, I failed to leverage some of my own authorial power to design constructive limitations into those systems. Additionally, in my pursuit of decoupling I occasionally connected elements, that by all rights should be allowed to function closely together, in fashions that engendered ambiguity and reduced clarity.
+As mentioned, <span class="book-title">Boba Eye</span> was heavily documented before it entered active development. Most of its systems were planned and outlined, detailing the possibilities they would need to accommodate and the connections they would have with related systems. However, in my attempt to design systems capable of handling as wide a range of inputs as possible, I failed to leverage some of my own authorial power to design constructive limitations into those systems. Additionally, in my pursuit of decoupling I occasionally connected elements, which by all rights should be allowed to function closely together, in fashions that engendered ambiguity and reduced clarity.
 </p>
 
 <p>
-That is to say, I overengineered certain elements of <span class="book-title">Boba Eye</span>. For example, the routine process of handling the player attempting to interact with an occupied table, at one time, invovled a rather absurd chain of objects going , "Hey, I've been interacted with. Would anyone like to do anything about that?" that went far beyond the reasonble progression of table to party to contained customers.
+That is to say, I overengineered certain elements of <span class="book-title">Boba Eye</span>. For example, the routine process of handling the player attempting to interact with an occupied table, at one time, involved a rather absurd chain of objects going , "Hey, I've been interacted with. Would anyone like to do anything about that?" that went far beyond the reasonable progression of table to party to contained customers.
 </p>
 
 <p>
-Going forward, I plan to continue developing a better sense of the ideal balance between simplicity and flexibility for systems I design. In order to achieve this, I am improving my diligence with creating clear, subdivided development tasks that ask direct questions and receive direct answers. Instead of approaching a more vague task like "Allow the player to speak to customers", I will instead tackle more concrete tasks like allowing a player to click on an object, allowing an object to activate a UI element, and allowing a dialogue line to be typed out. This, combined with improving my architecure planning by spending more time considering what reasonable limitations for a system should look like, will hopefully help me to avoid some of the overengineering I partook in during the creation of <span class="book-title">Boba Eye</span>.
+Going forward, I plan to continue developing a better sense of the ideal balance between simplicity and flexibility for systems I design. In order to achieve this, I am improving my diligence with creating clear, subdivided development tasks that ask direct questions and receive direct answers. Instead of approaching a vague task such as, "Allow the player to speak to customers", I will instead tackle more concrete tasks like allowing a player to click on an object, allowing an object to activate a UI element, and allowing a dialogue line to be typed out. This, combined with improving my architecture planning by spending more time considering what reasonable limitations for a system should look like, will hopefully help me to avoid some of the overengineering I partook in during the creation of <span class="book-title">Boba Eye</span>.
 </p>
 
 <p>
-<span class="book-title">
-This paragraph will explore issues with sprite layering and collision and discuss issues.
-</span>
-</p>  
+As a 2D game, <span class="book-title">Boba Eye</span> involves a large number of different sprites interacting in a flat world, with layer order of those sprites being determined by what group and numerical value a given object is assigned. Particularly complex objects, such as cups containing drinks, involve many different layers for things such as the front of the cup, lines for measuring pour amounts, and the contents of the cup itself. 
+</p>
 
 <p>
-<span class="book-title">
-This paragraph will explore issues with SOs and Events, such as being prone to editor corruption or potentially being hard to debug if sources become unclear.
-</span>
-</p>  
+As these multifaceted objects are interacted with and moved around the game area, they must move behind and in front of other objects in a fashion that makes logical sense and communicates a sense of depth to the player. Maintaining this illusion in instances where the ordering of objects may be dynamic, such as ensuring held cups overlay cups merely sitting on the tray, or when different visual elements may appear or disappear, such as interfaces for dialogue, proved to be a fairly substantial challenge. 
+</p>
 
 <p>
-<span class="book-title">
-This paragraph will conclude the article by saying BE was a great experience that helped to learn about developing extensible systems and such.
-</span>
+While a multitude of potential solutions to such problems exist, one that I shall specifically strive to internalize and extrapolate to similar instances is making better use of Unity's scene system. Unity is capable of additively loading different game scenes and environments, allowing for elements such as the UI and game world to be created and loaded independently. This allows for the construction and layering of each element to be simplified, allowing for clearer consideration of how to handle game elements that do require more complex layering solutions.
+</p>
+
+<p>
+As a bonus, this greater division of game areas helps to promote a more productive consideration of which elements should and should not be in direct contact. In this way, this approach will also help to promote decoupling of systems from distinct scenes while reducing the potential for overengineering.
+</p>
+
+<p>
+Lastly, there are, contrary to my prior glowing praise, some potential drawbacks to overreliance upon events and ScriptableObjects. 
+</p>
+
+<p>
+Events, as a natural consequence of their more decoupled nature, can prove more difficult to debug as time must be spent tracing the series of events that actions may initiate. They also require adequate foresight, as designing an event system that must later be updated to account for previously unconsidered information will involve editing all listeners of that event and can become prone to bloating.
+</p>
+
+<p>
+ScriptableObjects, similarly, do possess some nuances that temper their immense utility. They can be, for one, somewhat deceptive with their durability. While they are more durable than a GameObject, they are still not entirely adequate for long-term storage of things like a save state. They are also prone to the methods of misuse that most centralizing design patterns can be. Similar to a singleton, they can, if used carelessly, lead to an overreliance on pseudo-global state as an easy solution to designing more complex channels of inter-object communication. Anecdotally, they can also simply be prone to corruption in certain Unity versions. It seems that, in some instances, the connection between the underlying script and the ScriptableObject asset can become disconnected, potentially losing the asset information.
+</p>
+
+<p>
+Regardless, ScriptableObjects are still an incredible tool for Unity developers and I merely mention these points to ward off the idea that they are a panacea for poor software design.
+</p>
+
+<p>
+Ultimately, <span class="book-title">Boba Eye</span> has been perhaps one of the most valuable projects I have undertaken. It has provided valuable insight into designing flexible, decoupled code systems, deepened my understanding of the balance between system simplicity and ability, and given me an opportunity to construct an extensible game base that I look forward to adding to periodically as I continue to grow as a developer. It has, additionally, allowed me to clarify and refine the methods I use to communicate with less technically-inclined teammates, giving me a greater appreciation in particular of the constraints and factors important to properly utilizing an artist as part of a development team.
 </p>
 
