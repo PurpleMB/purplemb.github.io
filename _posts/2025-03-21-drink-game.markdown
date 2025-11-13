@@ -198,7 +198,7 @@ Shaders
 </p>
 
 <p>
-Shifting gears from scalable programming techniques, <span class="book-title">Boba Eye</span> also required a scalable solution for generating visuals for player-created drinks. Due to its freeform system of allowing players to create drinks out of arbitrary flavor combinations, it wasn't feasible to create bespoke pieces of artwork for all the drinks the player could make. Instead, shaders, scripts capable of modifying how models or sprites are displayed in a rendering environment, were utilized to allow for drink visuals to synthesize authored and procedural elements in a way that ensured each drink was both visually enticing and distinct. 
+Shifting gears from scalable programming techniques, <span class="book-title">Boba Eye</span> also required a scalable solution for generating visuals for player-created drinks. Due to its freeform system of allowing players to create drinks out of arbitrary flavor combinations, it wasn't feasible to create bespoke pieces of artwork for all the drinks the player could make. Instead, shaders (scripts capable of modifying how models or sprites are displayed in a rendering environment) were utilized to allow for drink visuals to synthesize authored and procedural elements in a way that ensured each drink was both visually enticing and distinct. 
 </p>
 
 <p>
@@ -226,14 +226,28 @@ Using a technique similar to that described when creating flavor segments, the d
 </p>
 
 <p>
-The cumulative effect is that the drink appears to be a base liquid (taken from the most common flavor) that contains many rapidly moving segments of additional ingredients. If desired, additional motion may be applied to the cup object or parameters such as the scroll speed or textures utilized may be changed to alter the "feel" of the shader. As each element of the shader is still simple and colored to match the flavor it represents, it is still easy for the player to appraise what kind of flavors each stirring drink contains. As such, this shader serves as a good example of the way that simple effects can be combined and layered to create shaders that are versatile and reactive while maintaining visual clarity.
+The cumulative effect is that the drink appears to be a base liquid (taken from the most common flavor) that contains many rapidly moving segments of additional ingredients. As each element of the shader is still simple and colored to match the flavor it represents, it is easy for the player to appraise what kind of flavors each stirring drink contains. As such, this shader serves as a good example of the way that simple effects can be combined and layered to create shaders that are versatile and reactive while maintaining visual clarity.
 </p>
 
 <p>
-<span class="book-title">
-TODO: This paragraph will go into using noise and randomization to create dynamic shaders like the finished shader.
-</span>
-</p>  
+The most complex shader utilized within <span class="book-title">Boba Eye</span> is, perhaps not too surprisingly, the one responsible for attempting to create unique, identifiable, and appealing visuals for an essentially infinite number of possible finished drinks. At the low-level, however, this shader shares many similarities with previous shaders in terms of layering individually simpler techniques to represent the multiple ingredients present in a drink. The fundamental idea of the finished drink shader is to create pockets of each flavor color that dynamically blend into each other in ways that appear cohesive and natural. 
+</p>
+
+<p>
+Much like the previous drink varieties, this shader begins by being supplied with flavor information by its host drink. Following this, each flavor is once again split off to do its own computations. Each flavor is randomly assigned a "pattern" representing its distribution within the cup, with the opacity of the texture corresponding to the "strength" of the flavor in a given area. However, because the patterns are structured and appear too artificial if used in their base state, noise is applied to each pattern in order to make the formation of each pattern more varied and mottled. This noise, which is slightly modified by the values of the connected flavor, helps to ensure that each flavor is distributed somewhat smoothly and unpredictably. 
+</p>
+
+<p>
+Each flavor having been applied to a noise-disrupted pattern, the shader now evaluates the flavor strengths at each location of the drink and arranges them in order of prevalence. Using this ordering, the color at a given drink location is determined by merging the colors of the strongest flavors at that location. In order to provide a more smooth transition between flavor colors and to provide more variety to the coloration of drinks, the overlapping colors are "interpolated" (smoothly merged between) using the difference in their respective strengths at that location.
+</p>
+
+<p>
+At this point, the shader has constructed a warping, varied patchwork of colors that still clearly maintain the source colors of the component flavors. To complete the process, some finishing touches (such as applying a gentle "frost" tint to the overall image) are done to ensure the finished drink's appearance is pleasing, cohesive, and still readable. Thus, the shader is able to create a unique pattern of colors to represent any possible drink a player may try to make.
+</p>
+
+<p>
+Using shaders in this fashion allows for the dynamic creation of visuals to represent any arbitrary ingredient combination while maintaining crucial gameplay information. Thus, shaders, due to their ability to augment and enhance existing art assets, were an invaluable tool for navigating a situation where manually creating art for all possible gameplay situations simply wasn't possible.
+</p>
 
 <span class="anchor" id="lessons"></span>
 <div>
