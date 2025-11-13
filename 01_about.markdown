@@ -16,7 +16,7 @@ prev-page-name: Home
         <ul>
             <li>
                 <p>
-                    With a diverse skillset ranging from systems development to graphics programming, I craft clean, <span class="accent">modular</span> code driven by research, iteration, and collaboration. 
+                    With a wide skillset ranging from systems development to graphics programming, I craft clean, <span class="accent">modular</span> code driven by research, iteration, and collaboration. 
                 </p>
             </li>
             <li>
