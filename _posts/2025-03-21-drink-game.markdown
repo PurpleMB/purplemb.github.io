@@ -56,7 +56,7 @@ ScriptableObject is, much like the more prevalent MonoBehaviour, a base class wh
 </p>
 
 <p>
-However, ScriptableObjects differ from MonoBehaviours in several crucial aspects. They do not share the same lifecycle as a MonoBehaviour and are not created as components of GameObjects. Instead, ScriptableObjects are created as assets which may be referenced by more standard GameObjects. Due to existing as assets, they are outside the standard scene-based lifecycle of most objects and are usable without requiring any explicit instantiation. As such, ScriptableObjects are able to serve as easily-accessible bundles of data and functions that do not need to be located within a currently active scene
+However, ScriptableObjects differ from MonoBehaviours in several crucial aspects. They do not share the same lifecycle as a MonoBehaviour and are not created as components of GameObjects. Instead, ScriptableObjects are created as assets which may be referenced by more standard GameObjects. As "assets", they are outside the standard scene-based lifecycle of most objects and are usable without requiring any explicit instantiation after their initial asset creation. As such, ScriptableObjects are able to serve as easily-accessible bundles of data and functions that do not need to be located within a currently active scene
 and are not tied to specific GameObject instances.
 </p>
 
@@ -118,19 +118,19 @@ public class ProjectileScriptable : ScriptableObject
 </p>
 
 <p>
-In a situation such as this example, <code>Weapon</code> could be used to define a wide range of different weapons by using different ScriptableObject assets to define aspects of the weapon's behavior. Furthermore, if, for example, all rocket-based weapons eventually need to switch to a different projectile, updating the <code>ProjectileScriptable</code> they reference will propagate those changes to all impacted <code>Weapon</code> instances. In this way, ScriptableObjects can improve the flow of development by creating systems that can easily combine reusable parts while allowing for those shared parts to be simultaneously updated across all usages.
+In a situation such as this example, <code>Weapon</code> could be used to define a wide range of weapons by using different combinations of ScriptableObject assets to define aspects of the weapon's behavior. Furthermore, if, for example, all rocket-based weapons eventually need to switch to a different projectile, updating the <code>ProjectileScriptable</code> they reference will propagate those changes to all impacted <code>Weapon</code> instances. In this way, ScriptableObjects can improve the flow of development by creating systems that can easily combine reusable parts while allowing for those shared parts to be simultaneously updated across all usages.
 </p>
 
 <p>
-Within <span class="book-title">Boba Eye</span>, this general technique is used for defining data that may need to be shared by different instances of objects across scenes. For example, all flavors are defined as ScriptableObjects that contain information such as the name of the flavor and its color. Thus, I can create assets outlining each possible flavor and pass those assets to any GameObject that requires flavor information (such as drink particles). Furthermore, I can easily define more flavors or alter the definition of existing flavors without having to manually update the related information across multiple locations.
+Within <span class="book-title">Boba Eye</span>, this general technique is used for defining data that may need to be shared by different instances of objects across scenes. For example, all flavors are defined as ScriptableObjects that contain information such as the name of the flavor and its color. Thus, I can create assets outlining each possible flavor and pass those assets to any GameObject that requires flavor information (such as drink particles). With this approach, I can easily define more flavors or alter the definition of existing flavors without having to manually update the related information across multiple locations.
 </p>
 
 <p>
-ScriptableObjects are widely used across <span class="book-title">Boba Eye</span>. They also serve as the basis of systems such as customer definition, where a combination of ScriptableObjects defining the appearance, taste preferences, and speech patterns of a customer can be combined to easily create new cafe guests. 
+ScriptableObjects are widely used across <span class="book-title">Boba Eye</span>, also serving as the basis of systems such as customer definition, where a combination of ScriptableObjects defining the appearance, taste preferences, and speech patterns of a customer can be combined to easily create new cafe guests. 
 </p>
 
 <p>
-In this way, ScriptableObjects were a key component in creating maintainable, extensible game systems as they allowed me to develop frameworks which could be easily filled to create new flavors, customers, and more. To tie this back to my initial thesis, ScriptableObjects are an easy-to-use and convenient tool in Unity that promote a more data-driven approach to system design. However, don't forget about ScriptableObjects just yet as they are also a key ingredient in a powerful decoupling technique!
+In this way, ScriptableObjects were a key component in creating maintainable, extensible game systems as they allowed me to develop frameworks which could be easily navigated to create new flavors, customers, and more. Returning to my overarching goal when developing this game, ScriptableObjects are an easy-to-use and convenient tool in Unity that promote a more data-driven approach to system design. However, don't forget about ScriptableObjects just yet as they are also a key ingredient in a powerful decoupling technique!
 </p>
 
 <span class="anchor" id="channels"></span>
@@ -140,11 +140,15 @@ Event Channels
 </p>
 
 <p>
-Event-driven programming is a common and extremely useful paradigm when programming games and other user-driven pieces of software. Generally speaking, an event system allows for the creation of events that may be "fired" when certain conditions are met. These events often include data about the inciting incident, such as what object initiated it or when the event occured. Other objects then listen for events, each declaring what response it will make when it finally receives any events it is awaiting. This simple pattern allows for the creation of chains of functions to be called across objects without each object in the chain needing to know what consequences its own action will have.
+Event-driven programming is a common and extremely useful paradigm when programming games and other user-driven pieces of software. Generally speaking, an event system allows for the creation of events that may be "fired" when certain conditions are met. These events often include data about the inciting incident, such as what object initiated it or when the event occured. Other objects then listen for events, each declaring what response it will make when it finally receives any events it is awaiting. This simple pattern allows for the creation of chains of functions to be called across objects without each object in the chain needing to know what consequences its own actions will have.
 </p>
 
 <p>
-As an example, consider a scoring system in a game where the player obtains points every time they click a coin. In a direct, naive approach, this could be handled by letting coins know about the UI that shows the score. When clicked, a coin uses its reference to the UI and calls a function that increases the score and updates the UI. While seemingly innocuous at first, this approach is ripe for the accumulation of tech debt due to its tightly-coupled nature. The coin needs to be directly aware of the UI and must tell the UI what to do. If eventually it is decided that collecting coins should also play a sound and cause another coin to spawn, suddenly a coin also requires direct knowledge of the systems for playing audio and spawning coins. In this instance, it is easy to see how designing systems to be tightly-coupled reduces flexibility and increases the likelihood of individual objects becoming bloated and unwieldy.
+As an example, consider a scoring system in a game where the player obtains points every time they click a coin. In a direct, naive approach, this could be handled by letting coins know about the UI that shows the score. When clicked, a coin uses its reference to the UI and calls a function that increases the score and updates the UI. 
+</p>
+
+<p>
+While seemingly innocuous at first, this approach is ripe for the accumulation of tech debt due to its tightly-coupled nature. The coin needs to be directly aware of the UI and must tell the UI what to do. If eventually it is decided that collecting coins should also play a sound and cause another coin to spawn, suddenly a coin also requires direct knowledge of the systems for playing audio and spawning coins. As development continues and similar situations arise, this tightly-coupled approach will reduce flexibility and increase the likelihood of individual objects, like the coin, becoming bloated and unwieldy as they connect to more and more distinct systems.
 </p>
 
 <p>
@@ -152,23 +156,23 @@ Designing the same system with an event-driven approach, each coin would instead
 </p>
 
 <p>
-There is, however, a potential caveat that technically-inclined readers may have considered: how do the objects gain knowledge of the specific events they are listening for? There are a number of reasonable ways to provide event information to eager listeners, each with its own strengths and weaknesses. Objects of certain types may be dynamically found and listened to, references to event broadcasting objects may be manually provided, events may be static members of their classes, and so on. Ultimately, however, a listener does need some way to know what events it is listening for.
+There is, however, a question that technically-inclined readers may have considered: how do listeners gain knowledge of the specific events they are waiting for? There are a number of reasonable ways to provide event information to eager listeners, each with its own strengths and weaknesses. Objects of certain types may be dynamically found and listened to, references to event broadcasting objects may be manually provided, events may be static members of their classes, and so on. Ultimately, however, a listener does need some way to know what events it is listening for.
 </p>
 
 <p>
-Additionally, events require careful consideration of the lifecycles of involved objects and their listening patterns. If used wantonly, events can prohibit garbage collection from functioning at full efficiency and can introduce difficult to dissect memory leaks. Events can, as a worst case, also lead to null exceptions if they are carelessly fired or listened to without ensuring they exist and have listeners.
+Additionally, events require careful consideration of the lifecycles of involved objects and their listening patterns. If used wantonly, events can prohibit garbage collection from functioning at full efficiency by preserving otherwise useless data and can introduce difficult to dissect memory leaks and null exceptions by hiding references to non-existent objects and events.
 </p>
 
 <p>
-Thankfully, ScriptableObjects can help to mitigate these potential weaknesses. ScriptableObjects are, just like any other object, capable of possessing and firing events. Furthermore, they are, as mentioned previously, exempt from the standard lifecycle and scene restrictions of standard Unity GameObjects. These factors allow them to be utilized as "channels" for events.
+Thankfully, ScriptableObjects can help to mitigate these potential weaknesses. ScriptableObjects are, just like any other object, capable of possessing and firing events. They are also, as mentioned previously, exempt from the standard lifecycle and scene restrictions of standard Unity GameObjects. These factors allow them to be utilized as "channels" for events.
 </p>
 
 <p>
- An EventChannel is a ScriptableObject that contains an event that may be publicly listened to as well as a public function for firing that event. Due to its nature as an asset as opposed to a GameObject instance in a scene, it does not need to "exist" in a scene to be referenced and used by objects in any scene. Any object that wishes to send a message along a channel can be given a reference to the desired channel and call its public firing function when in need of sending a message. Similarly, objects that want to listen for events along a channel can be given the channel reference without it being tied to any specific set of scene objects.
+ An EventChannel is a ScriptableObject that contains an event that may be publicly listened to as well as a public function for firing that event. Due to its nature as an asset, as opposed to a GameObject instance in a scene, it does not need to "exist" in a scene to be referenced and used by objects in any scene. Any object that wishes to send a message along a channel can be given a reference to the desired channel and call its public firing function when in need of sending a message. Similarly, objects that want to listen for events along a channel can be given the channel reference without it being tied to any specific set of scene objects.
 </p>
 
 <p>
-Utilizing ScriptableObjects like this, it is possible to create an event-driven system where objects do not need to be concerned with who may be sending or listening to events or whether anyone is even utilizing a given event channel. This decreases the burden placed on listeners to acquire event information while also removing the actual event launching code from objects that wish to communicate, allowing for easier decoration or modification of event functions. 
+Utilizing ScriptableObjects like this, it is possible to create an event-driven system where objects do not need to be concerned with who may be sending or listening to events or whether anyone is even utilizing a given event channel. This decreases the burden placed on listeners to acquire event information while also removing the actual event launching code from broadcasters, allowing for easier decoration or modification of event functions. 
 </p>
 
 <p>
@@ -176,11 +180,11 @@ As a bonus, EventChannels also serve as an easy way to group related events into
 </p>
 
 <p>
-EventChannels also increase the safety of events by reducing the risk of firing or listening to non-existent events by connecting the events to objects that have a less volatile lifecycle. ScriptableObjects are always accessible during runtime, and as such will never be null if properly provided to an object. As such, a coin will always be able to fire its event and a coin responder will always be able to listen for its event, regardless of if any other active objects are around to broadcast/receive the same event.
+EventChannels also increase the safety of events by reducing the risk of firing or listening to non-existent events by connecting the events to objects that have a less volatile lifecycle. ScriptableObjects are always accessible during runtime, and will never be null if properly provided to an object. As a result, a coin will always be able to fire its event and a coin responder will always be able to listen for its event, regardless of if any other active objects are around to broadcast/receive the same event.
 </p>
 
 <p>
-Within <span class="book-title">Boba Eye</span>, EventChannels are used frequently to allow communication between objects from distinct systems that may wish to respond to one another. For example, the UI system for displaying characters and their dialogue lines is activated in response to an EventChannel that is activated when an occupied table is interacted with. The table has no knowledge of the UI; the UI has no knowledge of the table. They each only need to know of the EventChannel, which is a durable project asset capable of being easily provided in-editor. 
+Within <span class="book-title">Boba Eye</span>, EventChannels are used frequently to allow communication between objects from distinct systems that may wish to respond to one another. For example, the UI system for displaying characters and their dialogue lines is activated in response to an EventChannel that is fired when an occupied table is interacted with. The table has no knowledge of the UI; the UI has no knowledge of the table. They each only need to know of the EventChannel, which is a durable project asset capable of being easily provided in-editor. 
 </p>
 
 <p>
@@ -194,7 +198,7 @@ Shaders
 </p>
 
 <p>
-Shifting gears from scalable programming techniques, <span class="book-title">Boba Eye</span> also required a scalable solution for generating visuals for player-created drinks. Due to its freeform system of allowing players to create drinks out of arbitrary flavor combinations, it wasn't feasible to create bespoke pieces of artwork for all the drinks the player could make. Instead, shaders, scripts capable of modifying how models or sprites are displayed in a rendering environment, were utilized to allow for drink visuals to synthesize authored and procedural elements in a way that ensured each drink is both visually enticing and distinct. 
+Shifting gears from scalable programming techniques, <span class="book-title">Boba Eye</span> also required a scalable solution for generating visuals for player-created drinks. Due to its freeform system of allowing players to create drinks out of arbitrary flavor combinations, it wasn't feasible to create bespoke pieces of artwork for all the drinks the player could make. Instead, shaders, scripts capable of modifying how models or sprites are displayed in a rendering environment, were utilized to allow for drink visuals to synthesize authored and procedural elements in a way that ensured each drink was both visually enticing and distinct. 
 </p>
 
 <p>
@@ -202,15 +206,15 @@ The least exciting, and yet most mechanically relevant, shader utilized by the d
 </p>  
 
 <p>
-This relatively simple shader works by taking a texture matching the shape of the cup and using a "step" function to only display a specified segment of the entire texture. This segment is defined by two decimal numbers corresponding to the percent full the cup was before the flavor was added and the percent full the cup is with that flavor. These numbers are determined by a component on the cup that is responsible for coalescing the information of all drink particles taken in by the cup, which then communicates segments of that information to the segment shader to create appropriate color slices.
+This simple shader works by taking a texture matching the shape of the cup and using a "step" function to only display a specified segment of the entire texture. This segment is defined by two decimal numbers corresponding to the percent full the cup was before the flavor was added and the percent full the cup is with that flavor. These numbers are determined by a component on the cup that is responsible for coalescing the information of all drink particles taken in by the cup, which then communicates portions of that information to the segment shader in order to create appropriate color slices.
 </p>
 
 <p>
-Utilizing this approach, the player is presented with clean, uniformly colored segments that allow them to make more informed decisions regarding their drink creation. While not as visually interesting as some of the following shaders, it was essential to create a shader that allowed for effective communication of gameplay information to the player when constructing drinks.
+Utilizing this approach, the player is presented with dynamic, cleanly colored segments that allow them to make more informed decisions regarding their drink creation. While not as visually interesting as some of the following shaders, it was essential to create a shader that allowed for effective communication of changing gameplay information to the player when constructing drinks.
 </p>
 
 <p>
-Having been poured, drinks must be stirred up before being served. While only a transitional state for drinks, it still felt important to ensure drinks are distinguishable while being stirred in order to help the player maintain their organization as they prepare different orders. Additionally, I wanted the drinks to communicate a sense of motion and action as they are stirred simply for the sake of making the process more exciting and fun. As such, I required a shader capable of maintaining the unique color of each flavor while also being dynamic and lively.
+Having been poured, drinks must be stirred up before being served. While only a transitional state for drinks, it was still important to ensure drinks are distinguishable while being stirred in order to help the player maintain their organization as they prepare different orders. Additionally, I wanted the drinks to communicate a sense of motion and action as they are stirred simply for the sake of making the process more exciting and fun. As such, I required a shader capable of maintaining the unique color of each flavor while also being dynamic and lively.
 </p>
 
 <p>
@@ -218,7 +222,7 @@ Having been poured, drinks must be stirred up before being served. While only a 
  </p>
 
  <p>
-Using a technique similar to that described when creating flavor segments, the drink object communicates information to the shader about the amount of each flavor present within itself. The most dominant flavor is used as the background for the entire shader. Following this, additional flavors are each used to create a scrolling texture that is colored to match the flavor. The texture utilized for this has an appearance similar to streaks, allowing it to appear like segments of flavor rapidly swirling around the cup once the scrolling motion is applied. 
+Using a technique similar to that described when creating flavor segments, the drink object communicates information to the shader about the amount of each flavor present within itself. The most dominant flavor is used as the background for the entire shader. Following this, additional flavors are each used to create a scrolling texture that is colored to match the corresponding flavor. The texture utilized for this has an appearance similar to streaks, allowing it to appear like segments of flavor rapidly swirling around the cup once the scrolling motion is applied. 
 </p>
 
 <p>
@@ -238,11 +242,11 @@ Lessons Learned
 </p>
 
 <p>
-<span class="book-title">Boba Eye</span> was an excellent testing ground for experimenting with many techniques and design paradigms that I plan to continue utilizing as I progress development on it and other projects. By and large, it was a success in terms of creating systems that are more open to extension and modification than previous projects. I am pleased with the ways in which its systems facilitate and support the rapid, easy creation of additional content such as new customers and flavors. Furthermore, its utilization of ScriptableObjects and EventChannels helped to keep its systems decoupled and flexible. This will be invaluable as I continue to iterate on and improve different facets of the user experience.
+<span class="book-title">Boba Eye</span> was an excellent testing ground for experimenting with many techniques and design paradigms that I plan to continue utilizing as I progress development on it and other projects. By and large, it was a success in terms of creating systems that are more open to extension and modification than previous projects. I am pleased with the ways in which its systems facilitate the rapid, intuitive creation of additional content such as new customers and flavors. Furthermore, its utilization of ScriptableObjects and EventChannels helped to keep its systems decoupled and flexible, allowing for easier modification of systems to absorb new content and features
 </p>
 
 <p>
-However, that is not to say that all aspects of <span class="book-title">Boba Eye</span>'s development progressed flawlessly. There are three primary issues that arose during the development of <span class="book-title">Boba Eye</span>: overengineering, managing distinct visual and physics layers, and navigating potential shortcomings of reliance upon ScriptableObjects and events.
+However, that is not to say that all aspects of <span class="book-title">Boba Eye</span>'s development progressed flawlessly. There are three primary issues that arose during the development of <span class="book-title">Boba Eye</span>: overengineering, managing distinct visual and physics layers, and navigating potential shortcomings of overreliance upon ScriptableObjects and events.
 </p> 
 
 <p>
@@ -258,7 +262,7 @@ That is to say, I overengineered certain elements of <span class="book-title">Bo
 </p>
 
 <p>
-Going forward, I plan to continue developing a better sense of the ideal balance between simplicity and flexibility for systems I design. In order to achieve this, I am improving my diligence with creating clear, subdivided development tasks that ask direct questions and receive direct answers. Instead of approaching a vague task such as, "Allow the player to speak to customers", I will instead tackle more concrete tasks like allowing a player to click on an object, allowing an object to activate a UI element, and allowing a dialogue line to be typed out. This, combined with improving my architecture planning by spending more time considering what reasonable limitations for a system should look like, will hopefully help me to avoid some of the overengineering I partook in during the creation of <span class="book-title">Boba Eye</span>.
+Going forward, I plan to continue developing a better sense of the ideal balance between simplicity and flexibility for systems I design. In order to achieve this, I am improving my diligence with creating clear, subdivided development tasks that ask direct questions and receive direct answers. Instead of approaching a vague task such as, "Allow the player to speak to customers", I will instead tackle more concrete objectives like allowing a player to click on an object, allowing an object to activate a UI element, and allowing a dialogue line to be typed out. This, combined with improving my architecture planning by spending more time considering what reasonable limitations for a system should look like, will hopefully help me to avoid some of the overengineering I partook in during the creation of <span class="book-title">Boba Eye</span>.
 </p>
 
 <p>
@@ -282,11 +286,11 @@ Lastly, there are, contrary to my prior glowing praise, some potential drawbacks
 </p>
 
 <p>
-Events, as a natural consequence of their more decoupled nature, can prove more difficult to debug as time must be spent tracing the series of events that actions may initiate. They also require adequate foresight, as designing an event system that must later be updated to account for previously unconsidered information will involve editing all listeners of that event and can become prone to bloating.
+Events, as a natural consequence of their more decoupled nature, can prove more difficult to debug as time must be spent tracing the series of cascading reactions that events may initiate. They also require adequate foresight, as designing an event system that must later be updated to account for previously unconsidered information will involve editing all listeners of that event and can become prone to bloating.
 </p>
 
 <p>
-ScriptableObjects, similarly, do possess some nuances that temper their immense utility. They can be, for one, somewhat deceptive with their durability. While they are more durable than a GameObject, they are still not entirely adequate for long-term storage of things like a save state. They are also prone to the methods of misuse that most centralizing design patterns can be. Similar to a singleton, they can, if used carelessly, lead to an overreliance on pseudo-global state as an easy solution to designing more complex channels of inter-object communication. Anecdotally, they can also simply be prone to corruption in certain Unity versions. It seems that, in some instances, the connection between the underlying script and the ScriptableObject asset can become disconnected, potentially losing the asset information.
+ScriptableObjects, similarly, do possess some nuances that temper their immense utility. They can be, for one, somewhat deceptive with their durability. While they are more durable than a GameObject, they are still not entirely adequate for long-term storage of things like a save state. They are also prone to the methods of misuse that most centralizing design patterns can be. Similar to a singleton, they can, if used carelessly, lead to a proliferation of pseudo-global state as an easy solution to designing more complex channels of inter-object communication. Anecdotally, they also appear somewhat prone to corruption in certain Unity versions. It seems, in some instances, that the connection between the underlying script and the ScriptableObject asset can become disconnected, potentially losing the asset information.
 </p>
 
 <p>
@@ -294,6 +298,10 @@ Regardless, ScriptableObjects are still an incredible tool for Unity developers 
 </p>
 
 <p>
-Ultimately, <span class="book-title">Boba Eye</span> has been perhaps one of the most valuable projects I have undertaken. It has provided valuable insight into designing flexible, decoupled code systems, deepened my understanding of the balance between system simplicity and ability, and given me an opportunity to construct an extensible game base that I look forward to adding to periodically as I continue to grow as a developer. It has, additionally, allowed me to clarify and refine the methods I use to communicate with less technically-inclined teammates, giving me a greater appreciation in particular of the constraints and factors important to properly utilizing an artist as part of a development team.
+ While not mentioned elsewhere in the article due to not being a matter of technical discussion, <span class="book-title">Boba Eye</span> has also allowed me to clarify and refine the methods I use to communicate with less technically-inclined teammates. Via creating requisition documents for art assets and communicating more clearly on asset creation and revision, I have accrued a greater appreciation of the constraints and factors important to properly utilizing an artist as part of a development team.
+</p>
+
+<p>
+Ultimately, <span class="book-title">Boba Eye</span> has been perhaps one of the most valuable projects I have undertaken. It has provided valuable insight into designing flexible, decoupled code systems, deepened my understanding of the balance between system simplicity and ability, and given me an opportunity to construct an extensible game base that I look forward to adding to periodically as I continue to grow as a developer.
 </p>
 
