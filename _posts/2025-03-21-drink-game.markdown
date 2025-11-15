@@ -261,6 +261,18 @@ The least exciting, and yet most mechanically relevant, shader utilized by the d
 This simple shader works by taking a texture matching the shape of the cup and using a "step" function to only display a specified segment of the entire texture. This segment is defined by two decimal numbers corresponding to the percent full the cup was before the flavor was added and the percent full the cup is with that flavor. These numbers are determined by a component on the cup that is responsible for coalescing the information of all drink particles taken in by the cup, which then communicates portions of that information to the segment shader in order to create appropriate color slices.
 </p>
 
+<ul class="img-row">
+    <li>
+        <img src="/assets/imgs/SegmentShader.jpg" height="320">
+    </li>
+    <li>
+        <img src="/assets/gifs/DrinkPouring.gif" height="320">
+    </li>
+    <li>
+        The drink creates and layers segments for each component flavor.
+    </li>
+</ul>
+
 <p>
 Utilizing this approach, the player is presented with dynamic, cleanly colored segments that allow them to make more informed decisions regarding their drink creation. While not as visually interesting as some of the following shaders, it was essential to create a shader that allowed for effective communication of changing gameplay information to the player when constructing drinks.
 </p>
@@ -276,6 +288,12 @@ Having been poured, drinks must be stirred up before being served. While only a 
  <p>
 Using a technique similar to that described when creating flavor segments, the drink object communicates information to the shader about the amount of each flavor present within itself. The most dominant flavor is used as the background for the entire shader. Following this, additional flavors are each used to create a scrolling texture that is colored to match the corresponding flavor. The texture utilized for this has an appearance similar to streaks, allowing it to appear like segments of flavor rapidly swirling around the cup once the scrolling motion is applied. 
 </p>
+
+<ul class="img-row">
+    <li>
+        <img src="/assets/gifs/DrinkStirring.gif" height="320">
+    </li>
+</ul>
 
 <p>
 The cumulative effect is that the drink appears to be a base liquid (taken from the most common flavor) that contains many rapidly moving segments of additional ingredients. As each element of the shader is still simple and colored to match the flavor it represents, it is easy for the player to appraise what kind of flavors each stirring drink contains. As such, this shader serves as a good example of the way that simple effects can be combined and layered to create shaders that are versatile and reactive while maintaining visual clarity.
@@ -297,9 +315,24 @@ Each flavor having been applied to a noise-disrupted pattern, the shader now eva
 At this point, the shader has constructed a warping, varied patchwork of colors that still clearly maintain the source colors of the component flavors. To complete the process, some finishing touches (such as applying a gentle "frost" tint to the overall image) are done to ensure the finished drink's appearance is pleasing, cohesive, and still readable. Thus, the shader is able to create a unique pattern of colors to represent any possible drink a player may try to make.
 </p>
 
+<ul class="img-row">
+    <li>
+        <img src="/assets/gifs/DrinkFinishing.gif" height="320">
+    </li>
+</ul>
+
 <p>
 Using shaders in this fashion allows for the dynamic creation of visuals to represent any arbitrary ingredient combination while maintaining crucial gameplay information. Thus, shaders, due to their ability to augment and enhance existing art assets, were an invaluable tool for navigating a situation where manually creating art for all possible gameplay situations simply wasn't possible.
 </p>
+
+<ul class="img-row">
+    <li>
+        <img src="/assets/imgs/FinishedDrinks.jpg" height="320">
+    </li>
+    <li>
+        Each drink it always a little different!
+    </li>
+</ul>
 
 <span class="anchor" id="lessons"></span>
 <div>
