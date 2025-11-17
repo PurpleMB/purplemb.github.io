@@ -74,7 +74,7 @@ As an example of their potential usefulness, consider ScriptableObjects as they 
 </p>
 
 <p>
-If designed with ScriptableObjects in mind, the class <code>Weapon</code> may expose the variables <code>_firingSO</code> and <code>_projectileSO</code>, each being references to ScriptableObject assets. The functions in <code>Weapon</code> may call functions and use data from the ScriptableObjects, using those implementations to guide its own behavior. In this way, <code>FiringScriptable</code> assets could be created that allow a weapon to fire automatically or semi-automatically. Similarly, certain <code>ProjectileScriptable</code> implementations could allow some weapons to fire projectiles using raycasts while others use physics projectiles.
+If designed with ScriptableObjects in mind, the class <code>Weapon</code> could expose the variables <code>_firingSO</code> and <code>_projectileSO</code>, each being references to ScriptableObject assets. The functions in <code>Weapon</code> may call functions and use data from the ScriptableObjects, using those implementations to guide their own behavior. In this way, <code>FiringScriptable</code> assets could be created that allow a weapon to fire automatically or semi-automatically. Similarly, certain <code>ProjectileScriptable</code> implementations could allow some weapons to fire projectiles using raycasts while others use physics projectiles.
 </p>
 
 <p>
@@ -356,7 +356,7 @@ Lessons Learned
 </p>
 
 <p>
-<span class="book-title">Boba Eye</span> was an excellent testing ground for experimenting with many techniques and design paradigms that I plan to continue utilizing as I progress development on it and other projects. By and large, it was a success in terms of creating systems that are more open to extension and modification than previous projects. I am pleased with the ways in which its systems facilitate the rapid, intuitive creation of additional content such as new customers and flavors. Furthermore, its utilization of ScriptableObjects and EventChannels helped to keep its systems decoupled and flexible, allowing for easier modification of systems to absorb new content and features
+<span class="book-title">Boba Eye</span> was an excellent testing ground for experimenting with many techniques and design paradigms that I plan to continue utilizing as I progress development on it and other projects. By and large, it was a success in terms of creating systems that are more open to extension and modification than previous projects. I am pleased with the ways in which its systems facilitate the rapid, intuitive creation of additional content such as new customers and flavors. Furthermore, its utilization of ScriptableObjects and EventChannels helped to keep its systems decoupled and flexible, allowing for easier modification of systems to absorb new content and features.
 </p>
 
 <p>
