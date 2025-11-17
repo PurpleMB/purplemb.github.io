@@ -35,7 +35,7 @@ Reflecting on my experiences with previous development projects, namely <span cl
 
 <ul class="img-row">
     <li>
-        <img src="/assets/imgs/BEDevGraph.jpg" height="300" width = "500">
+        <img src="/assets/imgs/DevGraph.jpg" height="300" width = "500">
     </li>
     <li>
         I wanted systems that, after an initially more complex development process, expedited future development.
@@ -291,7 +291,16 @@ Using a technique similar to that described when creating flavor segments, the d
 
 <ul class="img-row">
     <li>
+        <img src="/assets/gifs/SingleStirBall.gif" height="320">
+    </li>
+    <li>
+        <img src="/assets/gifs/CompositeStirBall.gif" height="320">
+    </li>
+    <li>
         <img src="/assets/gifs/DrinkStirring.gif" height="320">
+    </li>
+    <li>
+        Individual layers are combined to create a composite stirring visual.
     </li>
 </ul>
 
@@ -317,7 +326,13 @@ At this point, the shader has constructed a warping, varied patchwork of colors 
 
 <ul class="img-row">
     <li>
+        <img src="/assets/imgs/FinishShadeBreakdown.jpg" height="320">
+    </li>
+    <li>
         <img src="/assets/gifs/DrinkFinishing.gif" height="320">
+    </li>
+    <li>
+        This breakdown helps to visualize how each layer is formed before being combined.
     </li>
 </ul>
 
@@ -327,7 +342,7 @@ Using shaders in this fashion allows for the dynamic creation of visuals to repr
 
 <ul class="img-row">
     <li>
-        <img src="/assets/imgs/FinishedDrinks.jpg" height="320">
+        <img src="/assets/imgs/FinDrinkUpdated.png" height="320">
     </li>
     <li>
         Each drink it always a little different!
