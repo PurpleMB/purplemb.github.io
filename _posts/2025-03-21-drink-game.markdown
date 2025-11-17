@@ -345,7 +345,7 @@ Using shaders in this fashion allows for the dynamic creation of visuals to repr
         <img src="/assets/imgs/FinDrinkUpdated.png" height="320">
     </li>
     <li>
-        Each drink it always a little different!
+        Each drink is always a little different!
     </li>
 </ul>
 
